@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title> Namaste React </title>
+</head>
+<body>
+<!-- 1) React is a JavaScript library not a framework, it does not impose an exhaustive application structure like frameworks do
+     2) React uses one-way data binding and virtual DOM, whereas Angular uses two-way data binding and real DOM -->
+
+<!-- 3)  index.html gets executed line by line if the script tag is placed above react script tags the react will not work -->
+<!-- 4)  ONLY APPLICABLE FOR THE DIV WITH ID ROOT    And if there's something inside root div it will get replaced as soon as the execution of react script tags and app.js occurs -->
+
+    <h2>heading above root</h2>
+    <div id="root"></div>
+    <h2>heading below root</h2>
+<!-- 5) This means we can use react in small portion of page also only the div with root id consists react in it -->
+
+<!-- 6) How to give heading using JS into html -->
+
+    <!-- <script>
+         
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello World from jS";
+
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+    </script> -->
+
+<!-- 7) How to inject react in the project 
+     a) Using React CDN links -->
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="./App.js"></script>
+</body>
+</html>
