@@ -52,6 +52,11 @@
     <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 
-    <script src="./App.js"></script>
+    <script type="module" src="./App.js"></script>
+<!-- 20) 
+    -type="module" is defined bcz the normal js file does not have import or exports in it.
+    -We need to tell that this is not a normal JS file it's a module
+    -if u write type="module" it will be considered as a module not a normal js file
+-->
 </body>
 </html>
