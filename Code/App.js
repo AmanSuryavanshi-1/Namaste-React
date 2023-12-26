@@ -42,15 +42,3 @@
 // to use it inside app.js we have to import it from our node modules
 import React from "react"
 import ReactDOM from "react-dom"
-
-// 21) Parcel
-//    - It plays a imporatant role in making a react app faster
-//    - parcel is a bundler which minifizes and optimizes the code  
-//    - it creates a Dev Build 
-//    - creates a local server
-//    - Automatically refreshing the page or (HMR) hot module replacement
-//    - it uses a File Watching Algorithm which is written in C++
-//    - It gives Faster builds because it uses Caching in .parcel-cache
-//    - It does Image Omptimization
-//    - Compresses
-//    - Webpack / Vite / parcel are the commonly used bundler

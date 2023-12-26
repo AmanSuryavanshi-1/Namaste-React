@@ -2965,15 +2965,21 @@ try {
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom"); // 21) Parcel
- //    - It plays a imporatant role in making a react app faster
- //    - parcel is a bundler which minifizes and optimizes the code  
+ //    - It plays a important role in making a react app faster
+ //    - parcel uses other libraries from node modules to work things out 
+ //    - parcel is a bundler which minifies and optimizes the code  
  //    - it creates a Dev Build 
  //    - creates a local server
  //    - Automatically refreshing the page or (HMR) hot module replacement
  //    - it uses a File Watching Algorithm which is written in C++
  //    - It gives Faster builds because it uses Caching in .parcel-cache
- //    - It does Image Omptimization
+ //    - It does Image Optimization
  //    - Compresses
+ //    - consistent hashing
+ //    - Differential Bundling (to support older browsers)
+ //    - Helps in Error handling
+ //    - tree shaking (remove's unused code)
+ //    - There are many feature's like lazy mode for slow loading and HTTPS load
  //    - Webpack / Vite / parcel are the commonly used bundler
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
