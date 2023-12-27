@@ -25,7 +25,7 @@
    - Webpack / Vite / parcel are the commonly used bundler
  
  # Can be used for BUILDING by using command npx parcel build index.html 
-<!-- IF it gives error just remove this ("main": "index.js") line from package json -->
+<!-- If it gives error just remove this ("main": "index.js") line from package json -->
    - It will give you three file 
         
         dist\index.html      
