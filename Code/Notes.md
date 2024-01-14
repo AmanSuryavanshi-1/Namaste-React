@@ -5,6 +5,7 @@
 14) Node Modules are the collection of dependencies.And  are very huge in size
 15) No need to push Node modules on github as the size of node modules is very huge 
 16) .git-ignore file is used to ignore the things which a developer don't want to push to Github
+17) - 20) index.html
 
 21) # Parcel
    - It plays a important role in making a react app faster
