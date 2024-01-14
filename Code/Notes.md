@@ -25,7 +25,7 @@
    - There are many feature's like lazy mode for slow loading and HTTPS load (read parcel documentation)
    - Webpack / Vite / parcel are the commonly used bundler
  
- # Can be used for BUILDING by using command npx parcel build index.html 
+ # Can be used for BUILDING by using command *npx parcel build index.html*
 <!-- If it gives error just remove this ("main": "index.js") line from package json -->
    - It will give you three file 
         
@@ -39,3 +39,18 @@
 
       * You do not have to push dist and .parcel-cache to your github as these files gets generated again if it gets deleted same happens in case when hosting on a server
       *  So you can add dist and .parcel-cache to your .gitignore
+
+    # EP3
+    - *npx parcel index.html* will create a development build for us and host it on localHost
+    - NPX means u r executing a NPM package. In this case npm package is parcel and giving source file as index.html
+    - to make it easier we will write a script so we don't have to write our s *npx parcel index.html* to initiate our project again and again.
+    - And that script will be created in package.json in script tag
+    ```JSON
+    "scripts": {
+    "start": "parcel index.html", //dev mode
+    "build": "parcel build index.html", // build mode
+    }
+    ```
+    - now we can just write parcel index.html
+    - exactly same as npm run start (it is also calling npx parcel index.html behind the scenes) 
+    - in that case we can just write npm start or npm run start both will start the project.

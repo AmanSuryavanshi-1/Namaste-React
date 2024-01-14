@@ -1,1 +1,56 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="stylesheet" href="/index.96c45174.css"><title> Namaste React </title></head><body>     <h2>heading above root</h2> <div id="root"></div> <h2>heading below root</h2>                <script type="module" src="/index.2357549c.js"></script>  </body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/index.9e4c6fd2.css">
+    <title> Namaste React </title>
+</head>
+<body>
+
+<!-- EP1 -->
+<!-- 1) React is a JavaScript library not a framework, it does not impose an exhaustive application structure like frameworks do
+     2) React uses one-way data binding and virtual DOM, whereas Angular uses two-way data binding and real DOM -->
+<!--               One Way Data Binding =  Data flow is one-directional.
+                                           This means that the flow of code is from typescript file to Html file.
+                   Two Way Binding = Data flow is bi-directional.
+                                     This means that the flow of code is from ts file to Html file as well as from Html file to ts file.-->
+<!-- 3)  index.html gets executed line by line if the script tag is placed above react script tags the react will not work -->
+<!-- 4)  REACT IS ONLY APPLICABLE FOR THE DIV WITH ID ROOT    And if there's something inside root div it will get replaced as soon as the execution of react script tags and app.js occurs -->
+
+    <h2>heading above root</h2>
+    <div id="root"></div>
+    <h2>heading below root</h2>
+
+<!-- 5) This means we can use react in small portion of page also only the div with root id consists react in it -->
+
+<!-- 6) How to give heading using JS into html -->
+
+    <!-- <script>
+         
+        const heading = document.createElement("h1");
+        heading.innerHTML = "Hello World from jS";
+
+        const root = document.getElementById("root");
+        root.appendChild(heading);
+    </script> -->
+
+<!-- 7) How to inject react in the project 
+     a) Using React CDN links -->
+
+<!-- Notes.md 11-16 -->
+<!-- 17) CDN links is not a preferred way to host a react app bcz fetching from CDN is costly as it have to fetch data from unpkg.com  -->
+<!-- 18) And it will not be present in the package.json so if there's some updates it will be easy to update the dependencies -->
+<!-- 19) So the best way to get react in our project is by installing it using npm i react (i is short form for install) -->
+
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+
+    <script src="/index.7826abd7.js" defer=""></script>
+<!-- 20) 
+    -type="module" is defined bcz the normal js file does not have import or exports in it.
+    -We need to tell that this is not a normal JS file it's a module
+    -if u write type="module" it will be considered as a module not a normal js file
+-->
+</body>
+</html>
