@@ -2958,25 +2958,28 @@ try {
     *    </div>
     * </div>
 
-    ReactElement(Object) => HTML that browser understands */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+    ReactElement(Object) => HTML that browser understands */ // const parent = React.createElement(
+//     "div",
+//     {id:"parent"},
+//     React.createElement("div",
+//     {id:"child"},
+//     [ 
+//     React.createElement("h1",{},"This is EP2 of Namaste React Course"),
+//     React.createElement("h1",{},"I'm h2 tag"),
+//     ]
+//     )
+//     ); 
+//     console.log(parent);
+//     const root = ReactDOM.createRoot(document.getElementById("root"));
+//     root.render(parent);
 // 10) to solve the above complex writing structure we use JSX
 // EP2
 // to use it inside app.js we have to import it from our node modules
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
 var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
-const parent = /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "parent"
-}, /*#__PURE__*/ (0, _reactDefault.default).createElement("div", {
-    id: "child"
-}, [
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "This is EP2 of Namaste React Course"),
-    /*#__PURE__*/ (0, _reactDefault.default).createElement("h1", {}, "I'm h2 tag")
-]));
-console.log(parent);
-const root = (0, _reactDomDefault.default).createRoot(document.getElementById("root"));
-root.render(parent);
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {

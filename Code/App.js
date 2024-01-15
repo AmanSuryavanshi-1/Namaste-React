@@ -20,21 +20,21 @@
 
     ReactElement(Object) => HTML that browser understands */
 
-    const parent = React.createElement(
-        "div",
-        {id:"parent"},
-        React.createElement("div",
-        {id:"child"},
-        [ 
-        React.createElement("h1",{},"This is EP2 of Namaste React Course"),
-        React.createElement("h1",{},"I'm h2 tag"),
-        ]
-        )
-        ); 
+    // const parent = React.createElement(
+    //     "div",
+    //     {id:"parent"},
+    //     React.createElement("div",
+    //     {id:"child"},
+    //     [ 
+    //     React.createElement("h1",{},"This is EP2 of Namaste React Course"),
+    //     React.createElement("h1",{},"I'm h2 tag"),
+    //     ]
+    //     )
+    //     ); 
 
-        console.log(parent);
-        const root = ReactDOM.createRoot(document.getElementById("root"));
-        root.render(parent);
+    //     console.log(parent);
+    //     const root = ReactDOM.createRoot(document.getElementById("root"));
+    //     root.render(parent);
 
 // 10) to solve the above complex writing structure we use JSX
 
