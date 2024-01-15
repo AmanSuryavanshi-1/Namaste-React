@@ -1,1 +1,1 @@
-{"mappings":"AACA","sources":["index.css"],"sourcesContent":["\r\nh2{\r\n    color: aquamarine;\r\n}"],"names":[],"version":3,"file":"index.9e4c6fd2.css.map","sourceRoot":"/__parcel_source_root/"}
+{"mappings":"AACA","sources":["index.css"],"sourcesContent":["\r\nh1,h2{\r\n    color: aquamarine;\r\n}"],"names":[],"version":3,"file":"index.9e4c6fd2.css.map","sourceRoot":"/__parcel_source_root/"}
