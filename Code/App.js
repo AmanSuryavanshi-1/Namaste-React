@@ -121,11 +121,30 @@ import ReactDOM from "react-dom"
 // 35) How to enter this is in root.render or how to render it on webpage
     // root.render(jsxHeading); not like this. This method is used to render REACT ELEMENTS
     // root.render(<HeadingComponent/>); This method is used to render REACT FUNCTIONAL COMPONENTS on the webpage
+
+// 36) Rendering a component inside heading component
     
+    const Title = () =>(
+    <div className="div">
+        <h1>Title Component</h1>
+    </div>
+    );
+
     const HeadingComponent = () => (
         <div id="container">
+            <Title/>
             <h1> Namaste react Functional Component</h1>;
         </div>
         );
+        //It means all the code of title will come in HeadingComponent
+
+        // const HeadingComponent = () => (
+        //     <div id="container">
+        //         <div className="div">
+        //         <h1>Title Component</h1>
+        //     </div>
+        //         <h1> Namaste react Functional Component</h1>;
+        //     </div>
+        //     );
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<HeadingComponent/>);
