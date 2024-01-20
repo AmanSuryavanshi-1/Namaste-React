@@ -3022,57 +3022,90 @@ var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 // const HeadingComponent = () => {
 //     return <h1>Namaste react Functional Component</h1>;
 // };
-// 4. Short hand syntax: no need to write return and the brackets "()" if the code is one liner as shown below :-
-// const fn = () => true;
-// or
-// const fn = () =>(
-//     return true;
-// );
-// both are same
-// const HeadingComponent = () => (
-//     return <h1>Namaste react Functional Component</h1>;
-// );
-// or 
-// const HeadingComponent = () => <h1>Namaste react Functional Component</h1>;
-// both are same
+//$ 4. Short hand syntax: no need to write return and the brackets "()" if the code is one liner as shown below :-
+//? const fn = () => true;
+//& or
+//? const fn = () =>(
+//?     return true;
+//? );
+//& both are same
+//? const HeadingComponent = () => (
+//?     return <h1>Namaste react Functional Component</h1>;
+//? );
+//& or 
+//? const HeadingComponent = () => <h1>Namaste react Functional Component</h1>;
+//& both are same
 // Sometimes we write return and some times we don't for EG:-
-// const HeadingComponent = () => (
-//     return <h1> Namaste react Functional Component</h1>;
-// );
-// or 
-// const HeadingComponent = () => (
-//     <h1> Namaste react Functional Component</h1>;
-// );
-// both are same
-// 35) How to enter this is in root.render or how to render it on webpage
+//? const HeadingComponent = () => (
+//?     return <h1> Namaste react Functional Component</h1>;
+//? );
+//& or 
+//? const HeadingComponent = () => (
+//?     <h1> Namaste react Functional Component</h1>;
+//? );
+//& both are same
+//^ 35) How to enter this is in root.render or how to render it on webpage
 // root.render(jsxHeading); not like this. This method is used to render REACT ELEMENTS
 // root.render(<HeadingComponent/>); This method is used to render REACT FUNCTIONAL COMPONENTS on the webpage
+//^ 36) Rendering a component inside heading component
+const Title = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+        className: "div",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+            children: "Title Component"
+        }, void 0, false, {
+            fileName: "App.js",
+            lineNumber: 132,
+            columnNumber: 9
+        }, undefined)
+    }, void 0, false, {
+        fileName: "App.js",
+        lineNumber: 131,
+        columnNumber: 5
+    }, undefined);
+_c = Title;
 const HeadingComponent = ()=>/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
         id: "container",
         children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Title, {}, void 0, false, {
+                fileName: "App.js",
+                lineNumber: 138,
+                columnNumber: 13
+            }, undefined),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
                 children: " Namaste react Functional Component"
             }, void 0, false, {
                 fileName: "App.js",
-                lineNumber: 127,
+                lineNumber: 139,
                 columnNumber: 13
             }, undefined),
             ";"
         ]
     }, void 0, true, {
         fileName: "App.js",
-        lineNumber: 126,
+        lineNumber: 137,
         columnNumber: 9
     }, undefined);
-_c = HeadingComponent;
+_c1 = HeadingComponent;
+//^ 36.1) It means all the code of title will come in HeadingComponent
+// const HeadingComponent = () => (
+//     <div id="container">
+//         <div className="div">
+//         <h1>Title Component</h1>
+//     </div> 
+//         <h1> Namaste react Functional Component</h1>;
+//     </div>
+//     );
+//^ 37) can we write components without using arrow function.
+//     ==> YES YOU CAN YOU JUST HAVE TO REMOVE THE ARROW AND HAVE TO WRITE RETURN IF YOU WANT TO REMOVE ARROW 
 const root = (0, _reactDomDefault.default).createRoot(document.getElementById("root"));
 root.render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(HeadingComponent, {}, void 0, false, {
     fileName: "App.js",
-    lineNumber: 131,
+    lineNumber: 169,
     columnNumber: 13
 }, undefined));
-var _c;
-$RefreshReg$(_c, "HeadingComponent");
+var _c, _c1;
+$RefreshReg$(_c, "Title");
+$RefreshReg$(_c1, "HeadingComponent");
 
   $parcel$ReactRefreshHelpers$c1db.postlude(module);
 } finally {
