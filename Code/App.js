@@ -157,7 +157,7 @@ import ReactDOM from "react-dom"
 //$ 37) can we write components without using arrow function.
 //     ==> YES YOU CAN YOU JUST HAVE TO REMOVE THE ARROW AND HAVE TO WRITE RETURN IF YOU WANT TO REMOVE ARROW 
 
-
+// just
 
 
 
