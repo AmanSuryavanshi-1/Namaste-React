@@ -25,7 +25,7 @@ Footer
                     <li>Home</li>
                     <li>About</li>
                     <li>Cart</li>
-                    <li>Cart</li>
+                    <li>Favorites</li>
                 </ul>
             </div>
         </div>
@@ -181,9 +181,9 @@ const resList = [
 
                 {/* 45) b. cleaning the code  */}
                 {/* Using map to get the item one by one */}
-               {/* {resList.map((restaurant) => (
+               {resList.map((restaurant) => (
                  <ResCard resData={restaurant} key={restaurant.data.id}/>
-            ))} */}
+            ))}
             {/* 45) c. you should provide a unique id so that the component can differentiate between the Array of data. It would work without provide unique key or id but its good to provide data objects a unique identity by key. */}
             {/* There is one more advantage of giving key is that if a ResCard with a key is not rendered on the first run then the react component will not re render all the ResCards again it will re render only that card which is not rendered at that time by using it key*/}
          
@@ -191,10 +191,14 @@ const resList = [
                     - Map is like a loop which runs again and again. index is like i while iterating through a loop.
                     - a for loop allows you to have more control over the iteration process, while the map() method provides a more concise and functional way to transform elements of an array into a new array.
                     - map and list comprehensions are faster than loops
-            */}
-            {resList.map((restaurant, index) => (
+                    - React don't recommend using indexes for keys bcz the order of items may change.
+                    - Using unique keys is the best practice
+                    
+                    {resList.map((restaurant, index) => (
                  <ResCard resData={restaurant} key={index}/>
-            ))}
+                ))}
+            */}
+            
             </div>
         </div>
     )
