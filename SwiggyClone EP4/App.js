@@ -284,7 +284,9 @@ const resList = [
 const ResCard = ({resData}) =>{
     // destructuring 
     const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime, costForTwo} = resData?.data;
-    // ?. this is optional chaining 
+    //?  -> (?.) this is optional chaining 
+    //?  -> The optional chaining (?.) operator accesses an object's property or calls a function. 
+    //?  -> If the object accessed or function called using this operator is undefined or null, the expression short circuits and evaluates to undefined instead of throwing an error.
         return (
             <div className="ResCard">
                 <img className="ResLogo" src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/"+cloudinaryImageId} alt="img"/>
