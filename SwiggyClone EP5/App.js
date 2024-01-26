@@ -14,7 +14,6 @@ Footer
    --Links
    --Address
    --Contact */
-   
    const HeaderComponent = () =>{
     return (
         <div className='Navbar'>
@@ -32,7 +31,6 @@ Footer
         </div>
     )
    }
-
 const resList = [
     {
         type: "restaurant",
@@ -162,8 +160,8 @@ const resList = [
             <div className="search">Search</div>
             <div className="ResContainer">
              
-               {resList.map((restaurant) => (
-                 <ResCard resData={restaurant} key={restaurant.data.id}/>
+               {resList.map((resList) => (
+                 <ResCard resData={resList} key={resList.data.id}/>
             ))}
             </div>
         </div>
