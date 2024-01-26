@@ -1,3 +1,4 @@
+//! Read Point wise from  40) after EP2 
 import React from 'react'
 import ReactDOM from "react-dom/client"
 import "./App.css"
@@ -165,12 +166,15 @@ const resList = [
                {/* resName =... cuisine=... are the props which are passed along with it */}
                 {/* <ResCard resData="Meghana Foods"/>
                 <ResCard resData="Northen Ley" cuisine="Briyani, SouthIndian"/> */}
+
+
                 {/* 42) c. <ResCard resName="Burger King" cuisine="Burger, Fires"/>
-                Lets not define data like this we will create a json object from where we will take the data in our body container */}
+                            Lets not define data like this we will create a json object from where we will take the data in our body container */}
                 {/* <ResCard resData={resList}/> */}
+
                 {/* 42) d. data from the resList in the form of props is provided to ResCard component */}
-                {/* 43) e. == IMP == from now onward resData is props for ResCard*/}
-                
+                {/* 42) e. == IMP == from now onward resData is props for ResCard*/}
+                {/* 42) f. Fetching data from resList using indexes */}
                 {/* <ResCard resData={resList[0]}/>
                 <ResCard resData={resList[1]}/>
                 <ResCard resData={resList[2]}/>
@@ -179,20 +183,22 @@ const resList = [
                 <ResCard resData={resList[5]}/>
                 <ResCard resData={resList[6]}/> */}
 
+
                 {/* 45) b. cleaning the code  */}
                 {/* Using map to get the item one by one */}
+                {/* map will look for restaurant in resList and then it will give restaurant type data to resData */}
                {resList.map((restaurant) => (
                  <ResCard resData={restaurant} key={restaurant.data.id}/>
             ))}
-            {/* 45) c. you should provide a unique id so that the component can differentiate between the Array of data. It would work without provide unique key or id but its good to provide data objects a unique identity by key. */}
-            {/* There is one more advantage of giving key is that if a ResCard with a key is not rendered on the first run then the react component will not re render all the ResCards again it will re render only that card which is not rendered at that time by using it key*/}
+            {/* 45) c. -> You should provide a unique id so that the component can differentiate between the Array of data. It would work without provide unique key or id but its good to provide data objects a unique identity by key. */}
+            {/*        -> There is one more advantage of giving key is that if a ResCard with a key is not rendered on the first run then the react component will not re render all the ResCards again it will re render only that card which is not rendered at that time by using that particular key*/}
          
             {/* 45) d. index is the second property of map. It can be used as key. 
-                    - Map is like a loop which runs again and again. index is like i while iterating through a loop.
-                    - a for loop allows you to have more control over the iteration process, while the map() method provides a more concise and functional way to transform elements of an array into a new array.
-                    - map and list comprehensions are faster than loops
-                    - React don't recommend using indexes for keys bcz the order of items may change.
-                    - Using unique keys is the best practice
+                    -> Map is like a loop which runs again and again. index is like i while iterating through a loop.
+                    -> (FOR LOOP VS MAP) => A for loop allows you to have more control over the iteration process, while the map() method provides a more concise and functional way to transform elements of an array into a new array.
+                    -> map and list comprehensions are faster than loops
+                    -> React don't recommend using indexes for keys bcz the order of items may change.
+                    -> Using unique keys is the best practice
                     
                     {resList.map((restaurant, index) => (
                  <ResCard resData={restaurant} key={index}/>
@@ -203,19 +209,22 @@ const resList = [
         </div>
     )
    }
-//^ 40) HOW TO FETCH DIFFERENT DATA FOR ResCards Dynamically
+//$ 40) HOW TO FETCH DIFFERENT DATA FOR ResCards Dynamically
 //&  -- It is done using PROPS
-//      Props is the shortform for properties which you can pass through components 
-//      used to Dynamically pass data to components
-//      Props are argument to the functions
-//      Props assigned in the body is fetched in ResCard by taking ==> const ResCard = (props) =>{  <==
-//      Props are used in {} as normal JS arguments and functions like this ==> <h3>{props.resName}</h3> <==
-//&     When you have to pass some data dynamically to a component you pass it as a props
-//      You can pass any number of props. React will wrap everyone of them into an OBJECT and pass it in const ResCard = (props) =>{}
+//      -> Props is the shortform for properties which you can pass through components 
+//      -> used to Dynamically pass data to components
+//      -> Props are argument to the functions
+//@     -> Props assigned in the body is fetched in ResCard by taking                ==>  const ResCard = (props) =>{  <==
+//@     -> Props are used in {} as normal JS arguments and functions like this       ==>  <h3>{props.resName}</h3>     <==
+//&     -> When you have to pass some data dynamically to a component you pass it as a props
+//^     -> You can pass any number of props.
+//^     -> React will wrap everyone of them into an OBJECT and pass it like this     ==> const ResCard = (props) =>{}  <==
 
-//&  Props can be destructured it means instead of passing props to ResCard you can directly pass the arguments like this const ==> ResCard = ({resName, cuisine}) <== shown below:- 
+//!  Destructuring of PROPS 
+//&  Props can be destructured it means instead of passing props to ResCard you can directly pass the arguments like this shown below:- 
+//&                                                                                  ==>  const ResCard = ({resName, cuisine}) <== 
 //  This is known as destructuring on the fly. Destructing is not part of react it is a concept of JS
-// const ResCard = ({resName, cuisine}) =>{
+//   const ResCard = ({resName, cuisine}) =>{
 //     console.log(resName, cuisine);
 //     return (
 //         <div className="ResCard">
@@ -247,19 +256,21 @@ const resList = [
 //     )
 //    }
 
-//^  41) All This data comes in the form of API in JSON format 
+console.log("useCollapse");
+
+//$  41) All This data comes in the form of API in JSON format 
 //     -> it stores the data which has to be loaded in site
 //     -> The data can vary according to city, area etc.
 
-//^ 42) CONFIG DRIVEN UI - It means UI is driven by Config
+//$ 42) CONFIG DRIVEN UI - It means UI is driven by Config
 //  What is Config? Data in the form of API is config
 //^ The Crousel which shows offers data can be different in different locations and there can be no data or offers for some locations. All this data is stored statewise or location wise So, when there's a change in location the data in the frontend changes.
 //  It is a very imp concept used in almost every website like amazon,uber etc. (Frontend System Design)
 //  FOR EG:- You want to show different offers with different BGcolor in different areas. Then we have to send data in the JSON format as a config and this config will help us to drive the ui or change the ui this is known as config driven UI.
 
 
-//~ 42) e.  We will take the data in the form of props inside ResCard from body which is taking data from resList (an API,or a JSON object)
-//~ 42) f.  We are taking resData in brackets bcz we are taking an array of a data stored in resList
+//~ 42) g.  We will take the data in the form of props inside ResCard from body which is taking data from resList (an API,or a JSON object)
+//~ 42) h.  We are taking resData in brackets bcz we are taking an array of a data stored in resList
 //       const ResCard = ({resData}) =>{
 // console.log(resData);
 //     return (
@@ -279,8 +290,11 @@ const resList = [
 //     )
 //    }
 
+console.log("useCollapse and read 43-44 from notes.md");
+
 //^ 45) a. This is not a good way of writing the code, we have to destructure the resData on the fly
 //      cleaning resCard component and optimizing the code
+
 const ResCard = ({resData}) =>{
     // destructuring 
     const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime, costForTwo} = resData?.data;
