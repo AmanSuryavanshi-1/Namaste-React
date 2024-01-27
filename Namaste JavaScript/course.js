@@ -1,6 +1,7 @@
 
 // ! NAMASTE JAVASCRIPT
-//$ MAP filter and reduce
+
+// $ 1) MAP filter and reduce
    /*    const arr = [5,4,3,2,1];
 
       function double(x){
@@ -29,12 +30,12 @@
             
 // console.log(output);
 
-// $ ALL WILL GIVE SAME OUTPUT
+//^ ALL WILL GIVE SAME OUTPUT
 
-// * WHAT IS ARROW FUNCTION
-// Arrow functions were introduced in ES6.
-// Arrow functions allow us to write shorter function syntax.
-// ^ For Example:-
+// $ 1.1) WHAT IS ARROW FUNCTION
+//-> Arrow functions were introduced in ES6.
+//-> Arrow functions allow us to write shorter function syntax.
+//-> ^ For Example:-
 
 // ^ Before Arrow:
       /* hello = function() {
@@ -46,25 +47,153 @@
       } */
 // It gets shorter! If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
 
-//$ Filter ODD VALUES
-   const arr = [5,4,3,2,1];
+// $ 1.2) Filter 
+//-> Filter function is basically used to filter the value inside an array. 
+//-> The arr.filter() method is used to create a new array from a given array consisting of only those elements from the given array which satisfy a condition set by the argument method
+//-> Filter function creates an array and store only those values which evaluates to true.
+
+// @ EG-1 (Filter)
+  //  const arr = [5,4,3,2,1];
 
      /*  function isodd(x){
           return x%2;
       }
       const output = arr.filter(isodd); */
-//^ OR 
 
-/* const output = arr.filter(function isodd(x){
-  return x%2;
-}); */
+//^ OR You can now pass any function inside it.  
 
-//^ OR
-/* 
-const output = arr.filter((x) => x%2);
-console.log(output); */
+      /* const output = arr.filter(function isodd(x){
+        return x%2;
+      }); */
 
-// Output:-[ 5, 3, 1 ]
+//^ OR You can just remove the bracket and return in arrow function
+
+      /* 
+      const output = arr.filter((x) => x%2);
+      console.log(output); */
+
+      //* Output:-[ 5, 3, 1 ]
+
+// @ EG-2 (Filter)
+      /* const prices = [200,300,350,400,450,500,600];
+      const newPriceTag =(prices.filter((elem) => elem > 400));
+      console.log(newPriceTag); */
+        
+      //* Output - [ 450, 500, 600 ]
+
+//$ 1.3) REDUCE
+//-> It is a function which take all the values of array and gives a single output of it. It reduces the array to give a single output. 
+
+// => 1.3.1) SUM
+
+      /*  const arr = [5,4,3,2,1];
+
+    function findSum(arr){
+      let sum=0;
+      for(let i=0; i<arr.length; i++){
+        sum += arr[i];
+      }
+      return sum;
+    }
+    console.log(findSum(arr)); */
+
+// * Output:15
+
+//^ OR BY USING REDUCE
+
+// above sum can be written using REDUCE
+// in this case acc is sum in which the sum values will get stored or accumulated
+// curr will be 
+
+      /* const arr = [5,4,5,2,1];
+
+    const output = arr.reduce(function(acc, curr){
+        acc += curr;
+        return acc;
+    },0); // INITIAL VALUE IS SET TO 0 means acc = 0 in start
+    
+    
+    console.log(output); */
+//* Output:17
+// -> this reduce function is iterated over each element of this arr array. curr(current) will be these values [5,4,3,2,1]
+// -> reduce function takes two arguments :-
+//      - accumulator
+//      - current
+// -> AND TAKES A INITAL VALUE IF ANY AT THE END
+// & -> WHEN INITIAL VALUE IS SET TO 4 means acc = 4 in starting
+
+
+    /*const arr = [5,4,5,2,1];
+      const output = arr.reduce(function(acc, curr){
+        acc += curr;
+        return acc;
+      },4); // INITIAL VALUE IS SET TO 0 means acc = 4 in start
+      console.log(output);  */
+
+//* [Output:21]   (17+4)
+
+// => 1.3.2) MAX
+// -> Now writing for MAX
+
+const arr = [5,4,5,2,1];
+
+      /* function findMax(arr){
+        let max=0;
+      for(let i=0; i<arr.length; i++){
+        if(arr[i]>max) max=arr[i];
+      }
+      return max;
+      }*/
+// console.log(findMax(arr)); 
+
+//^ OR BY USING REDUCE
+
+      /* const output = arr.reduce(function(acc,curr){
+        if(curr>acc) acc== curr;
+        return acc;
+      }) */
+// OR u can change arguments name also
+      /* const output = arr.reduce(function(max,curr){
+        if(curr>max) max = curr;
+        return max;
+      }) */ 
+// console.log(output);
+
+//* Output:5
+
+
+// $ 1.4) MAP filter and reduce REAL WORLD EXAMPLES
+// consider this as data comming from API
+// List of user's
+const users =[
+{ firstName: "akshay", lastName: "saini", age: 26 },
+{ firstName: "donald", lastName: "trump", age: 75 },
+{ firstName: "elon", lastName: "musk", age: 50 },
+{ firstName: "deepika", lastName: "padukone", age: 26 },
+];
+
+//^ Give the list giving the fullnames of user's (MAP)
+
+// const output = users.map((users) => users.firstName+ " " +users.lastName);
+// console.log(output);
+//* Output: [ 'akshay saini', 'donald trump', 'elon musk', 'deepika padukone' ]
+
+//^ Give people with the particular same age (Reduce) 
+// FOR EG:- { age : no. of people of that age group } => {26:2, 75:1, 50:1}
+// We will be using reduce for it bcz we want to reduce a array to a particular value that we want in our case it's age
+
+const output = users.reduce(function(acc,curr){
+  
+})
+
+
+
+
+
+
+
+
+
 
 // ! THAPA TECHNICAL
 
@@ -1126,7 +1255,7 @@ console.log(output); */
 
 
 
-// 2️⃣ Array Subsection 2 👉 Searching and Filter in an Array 
+// 2️⃣ Array Subsection 2 👉 Searching in array 
 
  // Array.prototype.indexOf() 🙋‍♂️
 
@@ -1199,21 +1328,6 @@ console.log(output); */
 
 
 // console.log(  prices.findIndex((currVal) => currVal > 1400 )  );
-
-
-// Array.prototype.filter() 🙋‍♂️
-
-// Returns a new array containing all elements of the calling 
-// array for which the provided filtering function returns true.
-
-// const prices = [200,300,350,400,450,500,600];
-
-// // price < 400
-// const newPriceTag = prices.filter((elem, index) => {
-//   return elem > 1400;
-// })
-// console.log(newPriceTag);
-
 
 
 // 3️⃣ Array Subsection 3 👉 How to sort an Array
@@ -1491,68 +1605,6 @@ console.log(output); */
 //  console.log(arr2);
 
 // we can use the chaining too 
-
-
-
-
-// 👉 Reduce Method 
-
-// flatten an array means to convert the 3d or 2d array into a 
-// single dimensional array 
-
-// The reduce() method executes a reducer function (that you provide) 
-// on each element of the array, resulting in single output value.
-
-// The reducer function takes four arguments:
-
-// Accumulator
-// Current Value
-// Current Index
-// Source Array
-
-// 4 subj = 1sub= 7
-// 3dubj = [5,6,2]
-
-// let arr = [5,6,2];
-
-// let sum = arr.reduce((accumulator, curElem) => {
-//         debugger;
-//       return accumulator += curElem;
-// },7)
-// console.log(sum);
-
-
-
-
-// How to fatten an array 
-// converting 2d and 3d array into one dimensional array 
-
-// const arr = [
-//         ['zone_1', 'zone_2'],
-//         ['zone_3', 'zone_4'],
-//         ['zone_5', 'zone_6'],
-//         ['zone_7', ['zone_7', ['zone_7', 'zone_8']]]
-//     ];
-
-// // let flatArr = arr.reduce((accum, currVal)  => { 
-// //           return accum.concat(currVal);
-// // })
-
-// console.log(arr.flat(Infinity));
-
-
-
-
-
-
-
-// console.log(flatArr);
-
-
-// const arr = [ ['zone_1', 'zone_2'], ['zone_3', ['zone_1', 'zone_2', ['zone_1', 'zone_2']]] ];
-// console.log(arr.flat(3));
-// console.log(arr);
-
 
 
 
