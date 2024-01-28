@@ -292,7 +292,7 @@ console.log("useCollapse");
 
 console.log("useCollapse and read 43-44 from notes.md");
 
-//^ 45) a. This is not a good way of writing the code, we have to destructure the resData on the fly
+//$ 45) a. This is not a good way of writing the code, we have to destructure the resData on the fly
 //      cleaning resCard component and optimizing the code
 
 const ResCard = ({resData}) =>{
