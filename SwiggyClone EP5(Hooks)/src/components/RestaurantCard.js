@@ -17,6 +17,9 @@ const RestaurantCard = (props) => {
   )
   //$ 48) TypeError: Cannot read properties of undefined (reading 'cloudinaryImageId')," indicates that the resData or resData.data is undefined at the time you're trying to destructure it
   //      -> To avoid this error, you should ensure that resData and resData.data are always defined before trying to destructure them. You can use optional chaining (?.) to handle this situation gracefully.
+  //      -> resData?.data || {}; instead of undefined return an empty array
+  //      -> <h4>{cuisines?.join(", ")}</h4> 
+
 }
 
 export default RestaurantCard
