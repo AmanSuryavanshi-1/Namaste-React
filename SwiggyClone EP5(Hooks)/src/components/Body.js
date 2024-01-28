@@ -6,10 +6,10 @@ const Body = () =>{
     return(
         <div className="body">
             <div className="search">Search</div>
-            <div className="ResContainer">
+            <div className="RestaurantContainer">
              
-               {resList.map((resList) => (
-                 <RestaurantCard resData={resList} key={resList.data.id}/>
+               {resList.map((restaurant) => (
+                 <RestaurantCard resData={restaurant} key={restaurant.data.id}/>
             ))}
             </div>
         </div>

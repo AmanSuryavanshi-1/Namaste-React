@@ -1,6 +1,6 @@
 import { LOGO_URL } from "../utils/constant";
-
-const HeaderComponent = () =>{
+import React from "react";
+const Header = () =>{
     return (
         <div className='Navbar'>
             <div className="logoContainer">

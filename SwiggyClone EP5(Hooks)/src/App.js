@@ -5,7 +5,9 @@ import Header from "./components/Header"
 import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
-//$ 46)-47) in constant.js
+// $ 46)-47) in constant.js
+// $ 48) TypeError in RestaurantCard.js
+
 /* Header
    --logo
    --Nav Items

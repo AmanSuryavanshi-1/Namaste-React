@@ -36,12 +36,12 @@ padding: 0;
     text-align: center;
     background-color: rgb(255, 216, 143);
 }
-.ResContainer{
+.RestaurantContainer{
     display: flex;
     flex-wrap: wrap;
     margin: 0 15%;
 }
-.ResCard{
+.RestaurantCard{
     width: 200px;
     height: 300px;
     border: 1px solid black ;
@@ -50,7 +50,7 @@ padding: 0;
     border-radius: 5px;
     margin: 10px 5px;
 }
-.ResCard:hover{
+.RestaurantCard:hover{
     cursor: pointer;
     border: 1px solid black;
     box-shadow: 3px 3px 2px rgb(216, 66, 20);
