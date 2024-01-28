@@ -7,6 +7,7 @@ import Body from './components/Body'
 
 // $ 46)-47) in constant.js
 // $ 48) TypeError in RestaurantCard.js
+// $ 49) Creating a filter option for Top Rated Restaurant in Body.js
 
 /* Header
    --logo

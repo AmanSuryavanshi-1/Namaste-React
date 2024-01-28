@@ -3,7 +3,14 @@ import { CDN_URL } from '../utils/constant';
 
 const RestaurantCard = (props) => {
   const {resData} = props;
-    const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime, costForTwo} = resData?.data || {};
+  // $ 48.1) Getting a empty card with null values
+  if (!resData || !resData.data) {
+    return null;
+  }
+  // -> This if will not show the card if the props of a particular card is undefined and print other Card by taking details from reslist in the form of props
+  // -> We will just skip the card which is giving undefined data 
+    
+  const {cloudinaryImageId, name, cuisines, avgRating, deliveryTime, costForTwo} = resData?.data;
   return (
                 <div className="RestaurantCard">
                     <img className="ResLogo" src={CDN_URL+cloudinaryImageId} alt="img"/>
