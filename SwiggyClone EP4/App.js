@@ -315,9 +315,6 @@ const ResCard = ({resData}) =>{
         )
        }
 
-
-
-
    const AppLayout = () => {
     return (
     <div className="app">
