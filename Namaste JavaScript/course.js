@@ -151,12 +151,12 @@ const arr = [5,4,5,2,1];
       /* const output = arr.reduce(function(acc,curr){
         if(curr>acc) acc== curr;
         return acc;
-      }) */
+      },{}) */
 // OR u can change arguments name also
       /* const output = arr.reduce(function(max,curr){
         if(curr>max) max = curr;
         return max;
-      }) */ 
+      },{}) */ 
 // console.log(output);
 
 //* Output:5
@@ -169,24 +169,60 @@ const users =[
 { firstName: "akshay", lastName: "saini", age: 26 },
 { firstName: "donald", lastName: "trump", age: 75 },
 { firstName: "elon", lastName: "musk", age: 50 },
-{ firstName: "deepika", lastName: "padukone", age: 26 },
+{ firstName: "Aman", lastName: "suryavanshi", age: 26 },
 ];
 
-//^ Give the list giving the fullnames of user's (MAP)
+// $ 1.4.1) Give the list giving the fullnames of user's (MAP)
 
 // const output = users.map((users) => users.firstName+ " " +users.lastName);
 // console.log(output);
 //* Output: [ 'akshay saini', 'donald trump', 'elon musk', 'deepika padukone' ]
 
-//^ Give people with the particular same age (Reduce) 
+// $ 1.4.2) Give people with the particular same age (Reduce) 
 // FOR EG:- { age : no. of people of that age group } => {26:2, 75:1, 50:1}
 // We will be using reduce for it bcz we want to reduce a array to a particular value that we want in our case it's age
 
-const output = users.reduce(function(acc,curr){
-  
-})
+      /* const output = users.reduce(function(acc,curr){
+        if(acc[curr.age]){
+          acc[curr.age]++;
+        }
+        else{
+          acc[curr.age]=1;
+        }
+        return acc;
+      },{})
 
+      console.log(output); */
 
+//* Output:{ '26': 2, '50': 1, '75': 1 }
+
+// $ 1.4.3) Find out the name of people whose name is less then 30
+
+      /* const output = users.filter((x)=> {
+        if(x.age<30){
+          console.log(x.firstName);
+        }
+      }); 
+      // OR we can simply use map along wiht filter
+        const output=users.filter((x) => x.age<30).map((x)=>x.firstName);
+         console.log(output)
+         */
+
+//* Output:[ 'akshay', 'Aman' ]
+
+//^ solving it using Reduce
+
+      /* const output = users.reduce(function(acc,curr){
+        if(curr.age<30){
+          acc.push(curr.firstName);
+        }
+        return acc;
+      },[])
+
+      console.log(output); */
+// & why we used [] instead of empty object {} ?
+// & it's initial value and we want the result in the form of an array (names), not the object.
+//* Output:[ 'akshay', 'Aman' ]
 
 
 

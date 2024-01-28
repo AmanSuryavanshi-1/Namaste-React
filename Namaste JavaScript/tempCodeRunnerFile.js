@@ -1,1 +1,0 @@
-"Full name is" + {firstName} + {lastName}
