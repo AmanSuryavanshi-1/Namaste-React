@@ -78,7 +78,8 @@ const Body = () =>{
 //     h) When we click on Top rated restaurants list of restaurants get's filtered according to the logic inside onclick
 //     i) Then it is provided to setListOfRestaurants(filteredList) which will then use useState and update the list of restaurants.
 //  ~  j) Whenever we want to change the data going to the UI we will give that logic to setListOfRestaurants() and will then change the original data in listOfRestaurants.
-    return(
+//  ~  k) Whenever a state variable changes react ReRender's the component
+return(
         <div className="body">
             <div className="search">Search</div>
             <div className='filter'>
