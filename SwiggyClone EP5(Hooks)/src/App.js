@@ -9,6 +9,10 @@ import Body from './components/Body'
 // $ 48) TypeError in RestaurantCard.js
 // $ 49) Creating a filter option for Top Rated Restaurant in Body.js
 // $ 50) (STATES & HOOKS) in Body.js
+// $ 51) React Algorithm 
+
+
+
 /* Header
    --logo
    --Nav Items

@@ -34,41 +34,7 @@ const Body = () =>{
 //    d) local state variable is created inside the scope of component in our case inside Body
 
 // State variable
-        const [listOfRestaurants , setListOfRestaurants] = useState([
-            {
-                data: {
-                    id: 9,
-                    name: "Mama Mia Pizzeria",
-                    cuisines: ["Pizza", "Calzone", "Italian"],
-                    avgRating: ["4.4"],
-                    costForTwo: 48000,
-                    deliveryTime: "38mins",
-                    cloudinaryImageId: "30c154acd695b5f026aa01ac1d564e9a",
-                },
-            },
-            {
-                data: {
-                    id: 10,
-                    name: "Smoothie Haven",
-                    cuisines: ["Smoothies", "Juices", "Healthy"],
-                    avgRating: ["4.7"],
-                    costForTwo: 32000,
-                    deliveryTime: "30mins",
-                    cloudinaryImageId: "30c154acd695b5f026aa01ac1d564e9a",
-                },
-            },
-            {
-                data: {
-                id: 0,
-                name: "KFC",
-                cuisines: ["Burger", "Biryani", "American", "Chinese"],
-                avgRating: ["3.8"],
-                costForTwo: 45000,
-                deliveryTime: "30mins",
-                cloudinaryImageId: "30c154acd695b5f026aa01ac1d564e9a",
-            },
-        },
-        ]);
+        const [listOfRestaurants , setListOfRestaurants] = useState(resList);
 // Normal JS variable
     //    let listOfRestaurantsJS = [];
 
@@ -79,6 +45,7 @@ const Body = () =>{
 //     i) Then it is provided to setListOfRestaurants(filteredList) which will then use useState and update the list of restaurants.
 //  ~  j) Whenever we want to change the data going to the UI we will give that logic to setListOfRestaurants() and will then change the original data in listOfRestaurants.
 //  ~  k) Whenever a state variable changes react ReRender's the component
+
 return(
         <div className="body">
             <div className="search">Search</div>
@@ -109,3 +76,33 @@ return(
    };
 
 export default Body
+
+// $ 51) React Algorithm 
+
+// $ 51.1) Reconciliation Algorithm / REACT FIBER 
+// & React uses something known as Reconciliation Algorithm also known as React Fiber
+// & React Reconciliation is the process through which React updates the Browser DOM. 
+// & It makes the DOM updates faster in React. 
+// & It updates the virtual DOM first and then uses the diffing algorithm to make efficient and optimized updates in the Real DOM.
+
+//    -> suppose we have a RestaurantContainer and we have 7 cards init.
+//    -> After using filter and useState only 3 cards  are showed on the browser.
+//    -> React uses virtual DOM to achieve this smoothly.
+
+// $ 51.1.1) ACTUAL DOM 
+//    -> It is like a representation of actual DOM
+//    -> Actual DOM stores the components of a website in a tree structure.
+//    -> DOM structure is like  div in div inside there can be a img and a link in it etc.
+
+// $ 51.1.2) VIRTUAL DOM 
+//    -> VIRTUAL DOM is not an actual DOM
+//    -> It is representation of actual DOM
+//    -> It is a normal JS object.
+//    -> React uses virtual DOM which is a lightweight version of the DOM. 
+//    -> The only difference is the ability to write the screen like the real DOM,
+ 
+
+// $ 51.1.3) DIFFING ALGORITHM => Diffing is short form for Differences Algorithm 
+//    -> It is used to differentiate the DOM Tree for efficient updates.
+//    -> Diff algo will calculate the difference between old and new virtual dom and actually update it 
+//    -> It occurs after every render cycle. In fact, a new virtual DOM is created after every re-render.
