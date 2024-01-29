@@ -100,9 +100,17 @@ export default Body
 //    -> It is a normal JS object.
 //    -> React uses virtual DOM which is a lightweight version of the DOM. 
 //    -> The only difference is the ability to write the screen like the real DOM,
- 
 
 // $ 51.1.3) DIFFING ALGORITHM => Diffing is short form for Differences Algorithm 
 //    -> It is used to differentiate the DOM Tree for efficient updates.
-//    -> Diff algo will calculate the difference between old and new virtual dom and actually update it 
+//    -> Diff algo will calculate the difference between old and new virtual dom and when there is a difference it ReRenders the DOM.
 //    -> It occurs after every render cycle. In fact, a new virtual DOM is created after every re-render.
+
+// ~ why there are two functions in const [listOfRestaurants , setListOfRestaurants] = useState(resList);
+// ~ Why can't we change it directly?
+// Bcz there need to be a trigger to start the DIFF algorithm and so that the rerendering occurs and the DOM gets updated.
+// Whenever you will call setListOfRestaurants function it will automatically rerender your component
+
+// -> const [listOfRestaurants , setListOfRestaurants] = useState(resList) we are destructuring it on the fly.
+// -> It is basically a array of functions & We are just destructuring on fly
+// -> const [listOfRestaurants , setListOfRestaurants] = arr  &  arr= useState(resList);
