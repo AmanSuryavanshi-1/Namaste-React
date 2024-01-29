@@ -59,47 +59,6 @@
     - exactly same as npm run start (it is also calling npx parcel index.html behind the scenes)
     - in that case we can just write npm start or npm run start both will start the project.
 
-# HOW TO INITIATE A PARCEL APP
-
-[https://dev.to/coderific/using-parcel-to-create-a-react-app-3cp0#:~:text=Using%20Parcel%20to%20create%20a%20React%20app%201,file%20...%207%20Step%207%29%20Check%20everything%20works](https://)
-
-a) npm init -y
-b) npm i -D parcel-bundler
-
-c) npm i react react-dom
-
-d) <!--^ Open the package.json file, and in the "scripts" section add the following "start" script. -->
-
-   ```JSON
-      "scripts": {
-      "start": "parcel index.html", //dev mode
-      "build": "parcel build index.html", // build mode
-      }
-      ```
-
-e) Create the initial index.html
-
-```javascript
-<div id="root"></div>
-<script src="./index.js"></script>
-```
-
-f) Create the index.js file
-
-```javascript
-import React from "react";
-import { render } from "react-dom";
-
-render(<p>Hello, world!</p>, document.getElementById("root"));
-```
-
-g) Check everything works (npm start)
-
-h) create .gitignore and add following commands:-
-      /node_modules
-      /dist
-      .cache/
-
 
 # 6 Types of arrow functions
 
@@ -163,3 +122,56 @@ h) create .gitignore and add following commands:-
       console. log(doubled) ;
 ```
       <!--@  Output: [2,4,6,8] -->
+      
+# HOW TO INITIATE A PARCEL APP
+
+[https://dev.to/coderific/using-parcel-to-create-a-react-app-3cp0#:~:text=Using%20Parcel%20to%20create%20a%20React%20app%201,file%20...%207%20Step%207%29%20Check%20everything%20works](https://)
+
+a) npm init -y
+    <!-- Choose following before installing node modules
+         package name: (leave as it is)
+         version: (leave as it is)
+         description: (leave as it is)
+         entry point: (leave as it is)
+         test command: jest
+         git repository: (https://github.com/AmanSuryavanshi-1/Food_Clone.git)
+         keywords: React, AmanSuryavanshi
+         author: Aman Suryavanshi (AS)
+         license:(ISC)                                                       -->
+
+b) npm i -D parcel-bundler
+
+c) npm i react react-dom
+
+d) <!--^ Open the package.json file, and in the "scripts" section add the following "start" script. -->
+
+   ```JSON
+      "scripts": {
+      "start": "parcel index.html", //dev mode
+      "build": "parcel build index.html", // build mode
+      }
+      ```
+e) Create the initial index.html
+
+```javascript
+<div id="root"></div>
+<script src="./index.js"></script>
+```
+
+f) Create the index.js file
+
+```javascript
+import React from "react";
+import { render } from "react-dom";
+
+render(<p>Hello, world!</p>, document.getElementById("root"));
+```
+
+g) Check everything works (npm start)
+
+h) create .gitignore and add following commands:-
+      1] /node_modules
+      2] /dist
+      3] .cache/ OR .parcel-cache
+        
+
