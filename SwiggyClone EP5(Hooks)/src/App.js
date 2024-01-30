@@ -5,12 +5,14 @@ import Header from "./components/Header"
 import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
+// ! EP5
 // $ 46)-47) in constant.js
 // $ 48) TypeError in RestaurantCard.js
 // $ 49) Creating a filter option for Top Rated Restaurant in Body.js
 // $ 50) (STATES & HOOKS) in Body.js
 // $ 51) React Algorithm 
 
+// ! EP6
 // $ 52) MONOLITH ARCHITECTURE
 // -> “mono” represents the single codebase containing all the required functionalities. 
 // ->  All the functionalities of a project exist in a single codebase
@@ -36,6 +38,10 @@ import Body from './components/Body'
 //  &  How the services connect to each other?
 //  &  Every service is hosted on different ports and hosted in different URL for eg : api is stored in url/api , url/sms, url/ for UI etc.
 //  &  So when UI needs to connect to backend it sends request to url/api and to connect with sms services it calls for url/sms
+
+// $ 53) How react renders data from an API
+// $ 54) (useEffect HOOK) HOW TO GET DATA FROM AN API INSIDE REACT APP
+ 
 
 
 /* Header
