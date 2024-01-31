@@ -41,6 +41,8 @@ import Body from './components/Body'
 
 // $ 53) How react renders data from an API
 // $ 54) (useEffect HOOK) HOW TO GET DATA FROM AN API INSIDE REACT APP
+// $ 55) FETCH THE DATA AFTER GETTING IT FROM AN API USING UseEffect
+// $ 56) Getting the data from live API Link(Change link? EP6 44:55)
  
 
 
