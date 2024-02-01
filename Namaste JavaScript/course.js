@@ -225,6 +225,67 @@ const users =[
 //* Output:[ 'akshay', 'Aman' ]
 
 
+//$ 2) Callback Functions(NamasteJS s2ep1)
+// -> When a function is passed as an argument to another function, it becomes a callback function. This process continues and there are many callbacks inside another's Callback function.
+// -> This grows the code horizontally instead of vertically. That mechanism is known as callback hell. 
+
+// -> function is given in setTimeout which will be called out after 2sec of time
+/*       
+      console.log("Aman");
+      setTimeout(function(){
+        console.log("callback");
+      },[2000]) */
+
+//* Output:- Aman
+//*         callback(it will get printed after 2 sec)
+
+const cart=["shoes","jacket", "hoodies"];
+
+//=> REAL WORLD EG:-
+      /* api.createOrder(); // order placing api
+      api.proceedToPayment(); //redirection to payment gateway
+      api.showOrderSummary(); // after completion of payment showing order summary */ 
+
+// -> 1st we have to place an order then only we will proceed to payment gateway an then at last the order summary is shown
+// -> Callback helps to fetch the order placing api first and then the proceed to payment api and then after payment is completed the showOrderSummary Api is called and order summary is data is fetched.
+
+// -> proceedToPayment function is called after createOrder API is called.
+// -> Then we passed showOrderSummary function to proceedToPayment API
+// -> Suppose then we also have a updateWallet API which will show the updated data inside show order function
+      /* api.createOrder(cart,function(){
+
+        api.proceedToPayment(function(){
+
+          api.showOrderSummary(function(){
+            
+            api.updateWallet();
+
+            })
+        
+          });
+
+      }) */
+//~ 2.1) IMPORTANCE 
+// -> Callbacks are very efficient way of handling ASYNC operations in JS
+
+//~ 2.2) ISSUES WITH CALLBACKS:-
+//=> 2.2.1) CALLBACK HELL
+// -> For large scale application it is not possible to callback API's again and again
+// -> Calling API's using callback result in endless loops which is know as callback hell.
+// -> Callback hells are unreadable and unmaintainable
+
+//=> 2.2.2) INVERSION OF CONTROL
+//^ The callback function is passed to another callback, this way we lose the control of our code. 
+//^ We don't know what is happening behind the scene and the program becomes very difficult to maintain. That process is called inversion of control. 
+
+
+//$ 3) Promises(NamasteJS s2ep3)
+
+
+
+
+
+
 
 
 
