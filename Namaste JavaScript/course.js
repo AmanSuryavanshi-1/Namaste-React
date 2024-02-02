@@ -281,7 +281,7 @@ const users =[
 //^ We don't know what is happening behind the scene and the program becomes very difficult to maintain. That process is called inversion of control. 
 
 
-//$ 3) Promises(NamasteJS s2ep3)]
+//$ 3) Promises(NamasteJS s2ep2)]
 // -> A promise is an object that represents eventual completion/failure of an asynchronous operation.
 
 //&  What are asynchronous process?
@@ -330,7 +330,7 @@ const users =[
 // ~ 3.4) Callback Hell (Pyramid of doom) 
 
 // ~ 3.3) Inversion of control is overcome by using promise.
-//  -> 3.3.1) There are two things in promise 
+//  => 3.3.1) There are two things in promise 
 
 //  ->     a) State of the promise  [[promiseState]] 
 //           -> A promise has 3 states: pending | fulfilled | rejected.
@@ -357,8 +357,8 @@ const users =[
 //* JS don't wait for the data to come from the link so it just prints it concurrently.
 
 // ~ 3.4) How to avoid callback hell (Pyramid of doom) => We use promise chaining. 
-//   -> 3.4.1) This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
-//   -> 3.4.2) Using .then() we can control when we call the callback function.
+//   => 3.4.1) This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
+//   => 3.4.2) Using .then() we can control when we call the callback function.
 
       // const cart=["shoes","jacket", "hoodies"];
 
@@ -387,8 +387,9 @@ const users =[
         proceedToPayment(orderId);
       }) */
 
-// =>   3.4.2) Promise Chain
-//   -> 3.4.3) A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
+// => 3.4.2) Promise Chain
+// => 3.4.3) A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
+      
       /* const promise = createOrder(cart)
       .then(function (orderId){
         return proceedToPayment(orderId);
@@ -401,10 +402,79 @@ const users =[
       }) */
 
 //^ OR YOU CAN USE ARROW FUNCTION TO MAKE IT MORE READABLE
+
       /* const promise = createOrder(cart)
           .then((orderId)=> proceedToPayment(orderId))
           .then((paymentInfo) => showOrderSummary(paymentInfo))
           .then((paymentInfo) => updateWalletBalance(paymentInfo)); */
+
+
+//$ 4) Promise, Chaining & Error Handling(NamasteJS s2ep3)]
+
+// ~ 4.1) Creating a promise
+
+// => 4.1.1) Producer part of the code
+
+//&   HOW WE CREATE A PROMISE?
+// -> This is the way of creating a promise 
+// -> We pass 2 functions in it which has Resolve, Reject in it
+// -> new Promise is a promise Constructor which takes a function which has resolve and reject
+// -> These Resolve and Reject are functions provided by JS to build promises.
+
+
+// a) Creating order
+// b) Then validatingCart
+// c) And then providing an orderId
+
+      /* function createOrder(cart){
+        const pr  = new Promise(function(resolve, reject){
+          
+        //^ If ValidateCart is empty then passing reject
+          if(!validateCart(cart)){
+            const err = new Error("Cart is not valid");
+            reject(err);
+          }
+
+        // Logic for createOrder. If it get's resolve we will create a call for database for data
+        const orderId = DBcall.getOrderID;
+        //^ If we get order from data base then we will be passing resolve
+        if(orderId){
+          resolve(orderId);
+        }
+        //^ This resolved orderId is provided to consumer part of code
+        });
+        return pr;
+      } */
+
+// -> creating a temp validateCart Function
+// -> If validateCart returns true then it will return orderID to consumer
+// -> If validateCart returns false then it will give a error to the consumer
+// ->> So, at consumer part we have to write code for error handling (.catch)
+
+function validateCart(cart){
+  return true;
+}
+
+// => 4.1.2) Consumer part of the code
+
+       /*  const cart=["shoes","jacket", "hoodies"];
+
+        const promise = createOrder(cart)
+      .then(function (orderId){
+        proceedToPayment(orderId);
+      })
+      .catch(function (err){
+        console.log(err.message);
+      }) */
+
+// -> This create order function will return us a promise over here.
+// -> Backend can reject the promise or can resolve it
+// ->> So,for error handling promise offer's a function catch
+// -> We can attach a failure object to catch
+
+// ~ 4.2) Promise Chaining
+
+
 
 
 
