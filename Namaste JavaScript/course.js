@@ -459,13 +459,22 @@ function validateCart(cart){
 
        /*  const cart=["shoes","jacket", "hoodies"];
 
-        const promise = createOrder(cart)
+        const promise = createOrder(cart);
       .then(function (orderId){
         proceedToPayment(orderId);
       })
       .catch(function (err){
         console.log(err.message);
-      }) */
+      }) 
+      //^ OR WE CAN WRITE LIKE IN SHORT
+            createOrder(cart)
+      .then(function (orderId){
+        proceedToPayment(orderId);
+      })
+      .catch(function (err){
+        console.log(err.message);
+      }) 
+      */
 
 // -> This create order function will return us a promise over here.
 // -> Backend can reject the promise or can resolve it
@@ -474,11 +483,79 @@ function validateCart(cart){
 
 // ~ 4.2) Promise Chaining
 
+// ~ Adding proceedToPayment using promise chaining in consumer and producer part of code
 
+// => 4.2.1) Producer part of the code
 
+      /* function createOrder(cart){
+        const pr  = new Promise(function(resolve, reject){
+          if(!validateCart(cart)){
+            const err = new Error("Cart is not valid");
+            reject(err);
+          }
+          const orderId = 1234 ; //Assuming 1234 or DBcall.getOrderID 
+          if(orderId){
+          resolve(orderId);
+        }
+        });
+        return pr;
+      } 
 
+      function proceedToPayment(orderId){
+        return new Promise(function(resolve,reject){
+          resolve("Payment Successful");
+        })
+      }
 
+      function validateCart(cart){
+        return true
+      } */
 
+// => 4.2.2) Consumer part of the code
+// -> Whenever we keep chaining things up we need to keep return things from one chain down to another chain 
+// -> In our case returning return orderId from one chain down to other
+
+      //  const cart=["shoes","jacket", "hoodies"];
+
+      /* createOrder(cart)
+      .then(function (orderId){
+        proceedToPayment(orderId);
+        return orderId;
+      }) // now the below .then will get the orderId from createOrder
+      .then(function(orderId){
+        return proceedToPayment(orderId);
+      }) // returning the promise itself proceedToPayment(orderId) to paymentInfo
+      .then(function(paymentInfo){
+        console.log(paymentInfo);
+      })
+      .catch(function (err){
+        console.log(err.message);
+      })  */
+
+// -> if we get error (when we are passing false through validateCart) from any .then function then that error is handled by the last catch block it will give same errors for all the .then functions
+// -> If any of these steps fails it will lead to failure of complete .then or promise chain
+// -> So we have to handle error effectively for each .then and for that we can put .catch after any .then in the chain
+// -> .catch is responsible for the .then's that are present above it.
+
+      /* createOrder(cart)
+        .then(function (orderId){
+          proceedToPayment(orderId);
+          return orderId;
+        }) 
+        .then(function(orderId){
+          return proceedToPayment(orderId);
+        }) 
+        .then(function(paymentInfo){
+          console.log(paymentInfo);
+        })
+        .catch(function (err){
+          console.log(err.message);
+        })
+        .then(function(orderId){
+          console.log("It will definitely be called irrespective of the errors in above .then chains")
+        }) */
+         
+// -> THIS TYPE OF CHAINING HELPS US IN GETTING RID OF CALLBACK HELLS
 
 
 
