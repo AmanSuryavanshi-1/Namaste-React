@@ -226,7 +226,8 @@ const users =[
 
 
 //$ 2) Callback Functions(NamasteJS s2ep1)
-// -> When a function is passed as an argument to another function, it becomes a callback function. This process continues and there are many callbacks inside another's Callback function.
+// -> When a function is passed as an argument to another function, it becomes a callback function. 
+// -> This process continues and there are many callbacks inside another's Callback function.
 // -> This grows the code horizontally instead of vertically. That mechanism is known as callback hell. 
 
 // -> function is given in setTimeout which will be called out after 2sec of time
@@ -246,7 +247,7 @@ const users =[
       api.proceedToPayment(); //redirection to payment gateway
       api.showOrderSummary(); // after completion of payment showing order summary */ 
 
-// -> 1st we have to place an order then only we will proceed to payment gateway an then at last the order summary is shown
+// -> 1st we have to place an order then only we will proceed to payment gateway and then at last the order summary is shown
 // -> Callback helps to fetch the order placing api first and then the proceed to payment api and then after payment is completed the showOrderSummary Api is called and order summary is data is fetched.
 
 // -> proceedToPayment function is called after createOrder API is called.
@@ -269,6 +270,7 @@ const users =[
 // -> Callbacks are very efficient way of handling ASYNC operations in JS
 
 // ~ 2.2) ISSUES WITH CALLBACKS:-
+
 //=> 2.2.1) CALLBACK HELL
 // -> For large scale application it is not possible to callback API's again and again
 // -> Calling API's using callback result in endless loops which is know as callback hell.
@@ -279,8 +281,12 @@ const users =[
 //^ We don't know what is happening behind the scene and the program becomes very difficult to maintain. That process is called inversion of control. 
 
 
-//$ 3) Promises(NamasteJS s2ep3)
-// -> Promise Object represents eventual completion of ASYNC operation
+//$ 3) Promises(NamasteJS s2ep3)]
+// -> A promise is an object that represents eventual completion/failure of an asynchronous operation.
+
+//&  What are asynchronous process?
+//&  Fetching data is an asynchronous process which means it does not update instantly and takes time to fetch the data. 
+
 // -> Promises are use to handle async operations of JS 
 // -> suppose we have a cart and 2 more apis:-
         // createOrder(cart); // orderId
@@ -288,8 +294,6 @@ const users =[
         // ProceedToPayment(orderId);
 // -> ProceedToPayment api will take the orderId and will redirect to the payment gateway
 //&  Both of these api are asynchronous and both are time independent (we don't know how much time it will take)
-//&  What are asynchronous process?
-//&  Fetching data is an asynchronous process which means it does not update instantly and takes time to fetch the data. 
 
       /* const cart=["shoes","jacket", "hoodies"];
       createOrder(cart,function(orderId){
@@ -321,26 +325,24 @@ const users =[
 // -> This fetch function also returns us a PROMISE
 
 // ~ Before promise we used to depend on callback functions which would result in :-
-// ~ 3.3) Callback Hell (Pyramid of doom) 
-// ~ 3.4) Inversion of control
+
+// ~ 3.3) Inversion of control
+// ~ 3.4) Callback Hell (Pyramid of doom) 
 
 // ~ 3.3) Inversion of control is overcome by using promise.
-//   -> 3.3.1) A promise is an object that represents eventual completion/failure of an asynchronous operation.
+//  -> 3.3.1) There are two things in promise 
 
-//   -> 3.3.2) A promise has 3 states: pending | fulfilled | rejected.
-//   -> 3.3.3)  As soon as promise is fulfilled/rejected => It updates the empty object which is assigned undefined in pending state.
-//   -> 3.3.4) A promise resolves only once and it is immutable. 
-//   -> 3.3.5) Using .then() we can control when we call the cb(callback) function.
+//  ->     a) State of the promise  [[promiseState]] 
+//           -> A promise has 3 states: pending | fulfilled | rejected.
+//           -> Initially it will be pending 
+//           -> As soon as promise is fulfilled/rejected => It updates the empty object which is assigned undefined in pending state.
+//           -> And after we get the data the promise state changes to fulfilled state.
 
-//~  3.4) There are two things in promise 
-//  -> 3.4.1) State of the promise  [[promiseState]] 
-//        -> Initially it will be pending 
-//        -> And after we get the data the promise state changes to fulfilled state.
+//  ->     b) Result of the promise  [[promiseResult]]
+//           -> What ever the data it will return will be stored in PromiseResult.
+//           -> It can be the Response or it can return REJECTED also
 
-//  -> 3.4.2) Result of the promise  [[promiseResult]]
-//        -> What ever the data it will return will be stored in PromiseResult.
-//        -> It can be the Response or it can return REJECTED also
-//* IN CONSOLE:-
+//* IN CONSOLE USING DEBUGGER:-
 //* 1) user = undefined            (initially)
 //* 2) user: Promise 
 //* 3) [[promiseState]] : "fulfilled"   (After some time when data arrives)
@@ -354,10 +356,9 @@ const users =[
 //* OUTPUT  [Promise { <pending> } ]
 //* JS don't wait for the data to come from the link so it just prints it concurrently.
 
-
-
-// ~ 3.5) To avoid callback hell (Pyramid of doom) => We use promise chaining. 
-//   -> 3.5.1) This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
+// ~ 3.4) How to avoid callback hell (Pyramid of doom) => We use promise chaining. 
+//   -> 3.4.1) This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
+//   -> 3.4.2) Using .then() we can control when we call the callback function.
 
       // const cart=["shoes","jacket", "hoodies"];
 
@@ -378,6 +379,7 @@ const users =[
         promise.then(function (orderId){
           proceedToPayment(orderId);
         }); */
+        
 //^ OR we can directly write
 
       /* const promise = createOrder(cart)
@@ -385,8 +387,8 @@ const users =[
         proceedToPayment(orderId);
       }) */
 
-// => Promise Chain
-
+// =>   3.4.2) Promise Chain
+//   -> 3.4.3) A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
       /* const promise = createOrder(cart)
       .then(function (orderId){
         return proceedToPayment(orderId);
@@ -404,7 +406,6 @@ const users =[
           .then((paymentInfo) => showOrderSummary(paymentInfo))
           .then((paymentInfo) => updateWalletBalance(paymentInfo)); */
 
-//   -> 3.5.2) A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
 
 
 
