@@ -638,15 +638,247 @@ function validateCart(cart) {
   // return false;
 } */
 
+
 // $ 5) Promise API's + Interview Questions S2Ep5
 
+// IMP TERMS:-
+// Settled-> Got the result (RESULT CAN BE RESOLVED OR REJECTED)
+// |->Resolve :- Success or Fulfilled
+// |->Reject :-  Failure or Rejected
+
+// ~ 5.1) Promise.all
+
+//^ When you want the result of all the promises or you want ot get the quick error if there are any
+
+// -> Promise.all is used to get the result from parallel api call
+// -> Used to handle multiple promises or api calls at once
+// -> It takes an array of promises
+// -> It will make three parallel api calls and get the results
+
+// => Assumption 1
+
+// -> All Promise returns success
+// -> It's output will be array of result 
+// -> suppose p1 takes 3sec, p2 -> 1sec & p3 -> 2sec
+
+      //* Output:- [val1,val2,val3]
+
+// -> so the output of all will be displayed after 3sec
+// -> It will wait for all of them to finish
+
+      //@ Example 1:-
+/*     const p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P1 Success"),3000);
+      })
+      const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P2 Success"),1000);
+      })
+      const p3 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P3 Success"),2000);
+      })
+            Promise.all([p1,p2,p3]).then(res=>{
+              console.log(res);
+            }) */
+      //* Output:- [ 'P1 Success', 'P2 Success', 'P3 Success' ] // it will be printed after 3sec
+
+//& What if any of one promise fails or get's rejected?
+
+// => Assumption 2
+
+      /* Promise.all([p1,p2,p3]) */
+
+// -> p2 returns rejected
+// -> As soon as any one of the promises get rejected promise.all will through an error
+// -> It will not wait for other promises
+
+      //* Output:- [ERROR]
+
+      //@ Example 2:-
+      /* const p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P1 Success"),3000);
+      })
+      const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P2 Rejected"),1000);
+      })
+      const p3 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P3 Success"),2000);
+      })
+
+            Promise.all([p1,p2,p3]).then(res=>{
+              console.log(res);
+            }) 
+            .catch((err)=>{
+              console.error(err);
+            }) */
+      //* Output :- P2 Rejected
+      // -> WE WILL GET [Uncaught (in promise) P2 Success] in the console.
+      // -> You should never have uncaught errors in your code. It means the errors which u are not aware of. Always do error handling using catch statements
+      // -> We can write catch and through an actual error in console.
+      // -> console.error is used to through error in console.
+
+//& What if we want promise from successful results only(it's ok if one or two of them fails?
+//& we have promise.allSettled for that
 
 
+// ~ 5.2) Promise.allSettled
+
+// -> returns same in case of all returns success or resolved
+// ->
+
+      /* Promise.allSettled([p1,p2,p3]) */
+
+// -> p2 returns rejected
+// -> Even if one of the promises get rejected promise.allSettled will wait for rest of the promises to return the results.
+// -> It will wait for other promises to settled.
+// -> And then returns array of values and error in p2.
+
+      //* Output:- [val1,ERR2,val3] 
+      //@ Example 3:-
+      /* const p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P1 Success"),3000);
+      })
+      const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P2 Rejected"),1000);
+      })
+      const p3 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P3 Success"),2000);
+      })
+
+            Promise.allSettled([p1,p2,p3]).then(res=>{
+              console.log(res);
+            }) 
+            .catch((err)=>{
+              console.error(err);
+            }) */
+
+      /* 
+      * Output:-
+      {status: 'fulfilled', value: 'P1 Success'} 
+      {status: 'rejected', reason: 'P2 Rejected'}
+      {status: 'fulfilled', value: 'P3 Success'} */
 
 
+// ~ 5.2) Promise.race
+
+//^ Value of first settled promise is returned (only Time dependent)
+
+// => Assumption 1 (p1-> 3sec, p2-> 5sec, p3 -> 2sec)
+
+      /* Promise.race([p1,p2,p3]) */
+
+// -> value of p3 is returned
+
+      //* Output:- (val3)
+
+      //@ Example 4:-
+      /* const p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P1 Success"),3000);
+      })
+      const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P2 Rejected"),5000);
+      })
+      const p3 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P3 Success"),2000);
+      })
+
+            Promise.race([p1,p2,p3]).then(res=>{
+              console.log(res);
+            }) 
+            .catch((err)=>{
+              console.error(err);
+            }) */
+      //* Output :- P3 Success [gives rejected after 2sec(first settled promise)]
+
+// => Assumption 2
+//& what if after 2sec p3 fails ?
+//& Error will be thrown in output
+
+      //* Output:- (ERROR)
+
+      //@ Example 5:- (ASSUMPTION 2)
+      /* const p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P1 Success"),2000);
+      })
+      const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P2 Rejected"),2000);
+      })
+      const p3 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P3 Success"),3000);
+      })
+
+            Promise.race([p1,p2,p3]).then(res=>{
+              console.log(res);
+            }) 
+            .catch((err)=>{
+              console.error(err);
+            }) */
+//* Output :- P1 Success [gives resolved after 1sec(first settled promise)]
+// EVEN IF P1 & P2 HAVE SAME TIMEOUT = 2000 then also P1 is executed bcz line by line execution of JS.
 
 
+// ~ 5.3) Promise.any 
 
+// ^ Returns first settled success or first settled resolve (only Time & success dependent)
+// -> Wait for first success and then returns it
+// -> same as race but it will wait for any one promise to become successful and then it will return it
 
+// => Assumption 1 (p1-> 3sec, p2-> 1sec, p3->2sec)
 
+      /* Promise.any([p1,p2,p3]) */
+      //* Output:- (p2)
 
+// => Assumption 2 (p1-> 3sec, p2-> Rejected, p3->2sec)
+
+      /* Promise.any([p1,p2,p3]) */
+      //* Output:- (p3)
+
+      //@ Example 6:- (ASSUMPTION 2)
+      /* const p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P1 Success"),3000);
+      })
+      const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P2 Rejected"),5000);
+      })
+      const p3 = new Promise((resolve,reject)=>{
+        setTimeout(()=> resolve("P3 Success"),2000);
+      })
+
+            Promise.any([p1,p2,p3]).then(res=>{
+              console.log(res);
+            }) 
+            .catch((err)=>{
+              console.error(err);
+            }) */
+            //* Output:- P3 Success [returns success which takes lesser time]
+
+// => Assumption 3 
+//& What if every one returns rejected?
+//& than it will give aggregateError (Array of all the errors in output)
+
+//* output :- [err1,err2,err3]
+
+      //@ Example 7:- (ASSUMPTION 3)
+
+      /* const p1 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P1 Rejected"),3000);
+      })
+      const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P2 Rejected"),5000);
+      })
+      const p3 = new Promise((resolve,reject)=>{
+        setTimeout(()=> reject("P3 Rejected"),2000);
+      })
+
+            Promise.any([p1,p2,p3]).then(res=>{
+              console.log(res);
+            }) 
+            .catch((err)=>{
+              console.error(err);
+              console.log(err.errors);
+            }) */
+
+// -> TO GET AGGREGATEERROR ARRAY WE TO HAVE TO LOG (err.errors)
+            //* Output:- AggregateError: All promises were rejected [After 5sec]
+            //* Output:-['P1 Rejected', 'P2 Rejected', 'P3 Rejected'] 
+
+// $ 6) ASYNC AWAIT S2EP6
