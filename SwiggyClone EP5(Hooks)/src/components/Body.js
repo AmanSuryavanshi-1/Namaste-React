@@ -83,25 +83,24 @@ useEffect(()=>{
 // -> we can fetch data by using fetch() it is provided by JS to fetch the data from external sources
 // -> using live Swiggy data
 // -> This fetch will return a promise
+// -> Once the promise get's resolved we get the data.
+// -> Then we will convert the data into json.
+
 const fetchData = async () =>{
-  const data = await fetch(
-    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.632742&lng=77.1132792&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+  
+/*   const data = await fetch(
+    "https://corsproxy.io/"+("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING")
   );
   const json = await data.json();
   console.log(json);
-  setListOfRestaurants(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants[0].info);
+  setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants); */
 }
 // => HOW TO HANDLE PROMISE?
 // => 1st-> by .then and catch
 // => 2nd-> using async await (mostly preferred)
 
-// -> Then we will convert the data ino json.
-// -> CORS WILL BLOCK US TO GET DATA FROM 
-// -> Cross-origin resource sharing (CORS) is a browser mechanism which enables controlled access to resources located outside of a given domain.
-// -> Our browser with the help of CORS is not allowing us to access the swiggy live api in our localhost
-// -> There is a way to bypass CORS using Alow CORS chrome extension
-
-// $ 56) Getting the data from live API Link(Change link? EP6 44:55)
+// $ 56) CORS in notes.md
+// $ 57) Getting the data from live API Link(Change link? EP6 44:55)
 // -> Rendering data inside body with the live api link instead of using hardcoded Data.
 // -> using setListOfRestaurants inside fetchData
 // -> Then we will update the new data which is coming in const json to setListOfRestaurants();
