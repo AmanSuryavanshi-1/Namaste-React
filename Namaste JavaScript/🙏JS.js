@@ -882,3 +882,266 @@ function validateCart(cart) {
             //* Output:-['P1 Rejected', 'P2 Rejected', 'P3 Rejected'] 
 
 // $ 6) ASYNC AWAIT S2EP6
+
+//& Q6.1) What is asynchronous and synchronous?
+
+// => Asynchronous(ASYNC)
+// -> Some tasks may take time, like fetching data from the internet. Instead of waiting, the program can continue with other tasks and come back when the data is ready.
+// -> Fetching data is an asynchronous process which means it does not update instantly and takes time to fetch the data
+// -> Async is a keyword use to create a Async function
+// -> Helps in Multitasking
+// -> Offer's a more readable and structured way to handle Promises.
+
+//@ EXAMPLE OF ASYNC
+      /* console.log("Start");
+
+      setTimeout(() => {
+        console.log("Middle");
+      }, 1000);
+
+      console.log("End"); */
+      //* Output :- Start
+      //*           End
+      //*           Middle // After 1 second
+
+// => Synchronous(SYNC)
+// -> In synchronous processes, tasks are executed one after the other. 
+// -> It means sequential and Orderly execution of program.
+
+//@ EXAMPLE OF SYNC
+        /* console.log("Step 1");
+        console.log("Step 2");
+        console.log("Step 3"); */
+        //* Output :- Step 1
+        //*           Step 2
+        //*           Step 3
+
+//& Q6.2) How ASYNC is different from a normal function ?
+
+// => ASYNC Function
+// -> It always returns a promise
+// -> If we have simply returned any thing inside async function it will wrap it in a promise and then it will return that promise
+
+//@ EXAMPLE of ASYNC function:-
+      /* async function getData(){
+      return "Aman";
+      }
+
+      const data = getData();
+      console.log(data); */
+      // * Output:- Promise {<fulfilled>: 'Aman'}
+                    // [[Prototype]] : Promise
+                    // [[PromiseState]] : "fulfilled"
+                    // [[PromiseResult]] : "Aman"
+                    
+      // data.then((res) => console.log(res));
+      //* Output:- Aman
+
+// => Normal Function
+// -> In a normal function, the code is executed synchronously(sequential and orderly execution ). 
+// -> If there is a time-consuming operation, it will block the execution of the entire function until it completes.
+
+//@ EXAMPLE of normal function:-
+      /* function normalFunction() {
+        console.log("Start");
+        console.log("Middle");
+        console.log("End");
+      }
+      normalFunction(); */
+
+      //* OUTPUT:- Start
+      //*          Middle
+      //*          End
+
+//& Q6.3) Before async and await how we handled the promises?
+
+// @ EXAMPLE of handling Promises BEFORE ASYNC & AWAIT
+
+      /* const p = new Promise((resolve,reject)=>{
+      resolve("Promise is resolved")
+      })
+
+      function getData(){
+        p.then((res)=> console.log(res));
+      }
+      getData(); */
+      //* Output :- Promise is resolved
+
+//& Q6.4) How to handle promises using Async with Await?
+
+// -> Async and await are the combo used to handle promises
+// -> AWAIT can only be used inside a ASYNC function.
+
+// -> We will be using await in front of promise (await p)
+// -> Instead of doing p.then we will write await p.
+// -> Basically .then is replaced with await
+
+// @ EXAMPLE of handling Promises using ASYNC & AWAIT
+
+      /* const p = new Promise((resolve,reject)=>{
+        resolve("Promise is resolved using ASYNC AWAIT")
+        })
+
+      async function handlePromise(){
+        const val = await p;     // storing value of p in const
+        console.log(val);  
+      }
+      handlePromise(); */
+
+      //* Output :- Promise is resolved using ASYNC AWAIT
+
+//& Q6.5) Why do we even need async await ?
+
+      /* const p = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        resolve("Promise is resolved")
+        },10000)
+      }) */
+
+// => 6.5.1 HOW PROMISES ARE HANDLED BEFORE ASYNC & AWAIT
+
+      /* function getData(){
+        //^ JS Engine will not wait for promise to be resolved and will print the next console.log
+        p.then((res)=> console.log(res));
+        console.log("JS")
+      }
+      getData(); */
+
+// => 6.5.2 The problem with this was????????????????
+      //* Output:- JS
+      //*          Promise is resolved (IS PRINTED AFTER 10 sec)
+
+//=> ASYNC AWAIT WAY OF HANDLING PROMISES
+    
+// @ EXAMPLE 1(ASYNC AWAIT)
+
+    /* async function handlePromise(){
+        console.log("Hello world");
+        //^ JS Engine was waiting for promise to be resolved and once the promise is resolved than it will print the next console.log
+        const val = await p;     
+        console.log(val);  
+        console.log("JS");
+      }
+      handlePromise();  */
+
+      //* Output:- Hello world (code above await gets printed instantly)
+      //*          Promise is resolved (BOTH Promise is resolved & JS are PRINTED AFTER 10sec)
+      //*          JS 
+
+// @ EXAMPLE 2(ASYNC AWAIT)
+
+      /* async function handlePromise(){
+        console.log("Hello world");
+        const val = await p;     
+        console.log(val);  
+        console.log("JS");
+
+        const val2 = await p;     
+        console.log(val2); 
+        console.log("Promises of val1 & 2 and console log below them will be resolved after 10 sec");
+      }
+      handlePromise(); */ 
+
+      //* Output:- Hello world (code above await gets printed instantly)
+      //*          Promise is resolved (All Promise are resolved & JS are PRINTED AFTER 10sec at the same time)
+      //*          JS 
+      //*          Promise is resolved
+      //*          Promises of val1 & 2 and console log below them will be resolved after 10 sec
+
+// @ EXAMPLE 2(ASYNC AWAIT)
+// creating another promise P2
+      /* const p2 = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        resolve("Promise2 is resolved (5sec)")
+        },5000)
+      })
+
+      async function handlePromise(){
+        console.log("Hello world");
+        const val = await p;     
+        console.log(val);  
+        console.log("JS");
+
+        //^ p2 is resolved in 5 secs but still it waits for p to gets resolved first. And then after 10sec all of the promises and console are printed at the same time
+        const val2 = await p2;     
+        console.log(val2); 
+        console.log("Aman");
+      }
+      handlePromise(); */ 
+
+      //* Output:- Hello world (code above await gets printed instantly)
+      //*          Promise is resolved (All Promise are resolved & console are PRINTED AFTER 10sec even if p2 is resolved in 5sec)
+      //*          JS 
+      //*          Promise is resolved
+      //*          Aman
+
+//& How ASYNC FUNCTION IS WORKING?
+//-> Call stack (Place in console where every function comes and gets executed)
+//   |-> Initially call stack is empty
+//   |-> As soon as handlePromise(); function is called inside
+//   |-> And then it see's that there are 2 promises to be resolved in different times
+//   |-> It will start executing code line by line
+//   |-> Hello world is printed
+//   |-> then it see's await which will suspend the handle promise execution
+//   |-> handlePromise(); will move out from call stack. So that it does not block the main thread(it will prevent from page freezing)
+//   |-> And then It will wait until promise p (10sec) is resolved
+//   |->>> JS has only one call stack
+//   |->>> JS is a synchronous language it will execute call line by line. So it will wait for 10sec so the promise can be resolved.
+//   |-> Once it's get resolved then only it will move ahead which will take 10sec
+//   |-> After the promise get's resolved handlePromise again comes into callStack
+//   |-> And start the execution from where it left (from console.log(val);)
+//   |-> Promise is resolved is printed
+//   |-> JS is printed
+//   |-> then it again see's await which will suspend the handle promise execution
+//   |-> handlePromise(); will move out from call stack. So that it does not block the main thread
+//   |-> It will check if the promise p2 is resolved or not
+//   |-> Promise p2 (5sec) is already resolved by that time.
+//   |-> After the promise p2 get's resolved handlePromise again comes into callStack
+//   |-> And start the execution from where it left (from console.log(val2);)
+//   |-> After 10sec all the consoles are printed.
+
+
+// ~ 6.6) ASYNC AWAIT REAL WORLD EXAMPLE
+
+// => Fetch
+// -> Fetch is a function given to us by browser
+// -> Fetch gives you a promise
+// -> We use await to handle promise in ASYNC AWAIT
+// -> when promise is resolved it give you a response object
+// -> This response object is a readable stream
+// -> And when you want to convert your readable stream into json then you have to do Response.json()
+// -> .json() is again a promise so we have write await in front of it to.
+// -> when it gets resolved it give the result or the value.
+// -> Fetching github api(api.github.com)
+
+      /* const API_URL = "https://api.github.com/users/AmanSuryavanshi-1";
+      async function handlePromise(){
+        const data = await fetch(API_URL);
+      // converting the data into JSON
+        const jsonValue = await data.json();
+
+        console.log(jsonValue);
+      }
+      handlePromise(); */
+
+// ~ 6.6) ERROR HANDLING IN ASYNC AWAIT
+
+// -> we will use try catch for handling errors in ASYNC AWAIT
+// -> If api call gets successfully executed then the try block is executed else catch block will through a error
+
+      /* const API_URL = "https://api.github.com/users/AmanSuryavanshi-1";
+
+        async function handlePromise(){
+        try{
+        const data = await fetch(API_URL);
+        const jsonValue = await data.json();
+        console.log(jsonValue);
+      } catch(err){
+      console.log(err);
+      }}
+      handlePromise(); */
+
+// ~ 6.6) ASYNC/AWAIT VS PROMISE.THEN/CATCH
+
+// -> ASYNC AWAIT is the change in syntax behind the scenes the browser is using promise.then/catch only
+// -> Async await is simplex to write and it is more readable the promise.then method
