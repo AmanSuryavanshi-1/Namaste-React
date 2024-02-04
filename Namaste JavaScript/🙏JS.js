@@ -1143,5 +1143,14 @@ function validateCart(cart) {
 
 // ~ 6.6) ASYNC/AWAIT VS PROMISE.THEN/CATCH
 
+// => Async Await 
 // -> ASYNC AWAIT is the change in syntax behind the scenes the browser is using promise.then/catch only
 // -> Async await is simplex to write and it is more readable the promise.then method
+// -> The await keyword is used inside async functions to pause execution until the Promise is resolved.
+// -> Exception handling is done using try/catch blocks, making the code structure cleaner
+
+// => Promise.then
+// -> Uses the .then and .catch methods to handle asynchronous results.
+// -> Chaining is achieved by using multiple .then calls.
+// -> Still widely used, especially in scenarios where you need more control over the order of execution.
+// -> Useful for complex chaining of asynchronous operations.
