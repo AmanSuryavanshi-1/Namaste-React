@@ -87,13 +87,14 @@ useEffect(()=>{
 // -> Then we will convert the data into json.
 
 const fetchData = async () =>{
-  
-/*   const data = await fetch(
-    "https://corsproxy.io/"+("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9715987&lng=77.5945627&page_type=DESKTOP_WEB_LISTING")
+  // setFilteredRestaurants(resList);
+  const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImN1c19QVUlsbzBaQVE5QTBDeSIsIm1vZXNpZlByaWNpbmdJZCI6InByaWNlXzFNUXF5dkJESWxQbVVQcE1SWUVWdnlLZSIsImlhdCI6MTcwNjg3MDQxMH0.0SGkS_b-nPjyzSqqmV0JVHxSZoZJsh9kqhNEQkjNVaM";
+  const data = await fetch(
+    `https://api.techspecs.io?api_key=${apiKey}`
   );
   const json = await data.json();
   console.log(json);
-  setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants); */
+  // setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 }
 // => HOW TO HANDLE PROMISE?
 // => 1st-> by .then and catch
