@@ -135,7 +135,7 @@
 // => 1.3.2) MAX
 // -> Now writing for MAX
 
-const arr = [5,4,5,2,1];
+// const arr = [5,4,5,2,1];
 
       /* function findMax(arr){
         let max=0;
