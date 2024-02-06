@@ -2,31 +2,36 @@
 // ! NAMASTE JAVASCRIPT
 
 // $ 1) MAP filter and reduce
-   /*    const arr = [5,4,3,2,1];
+      // const arr = [5,4,3,2,1];
 
-      function double(x){
+      /* function double(x){
           return x*2;
       }
       function triple(x){
         return x*x*x;
       } */
+      
 //^ You can now pass any function inside it.  
     // const output = arr.map(double); // this function tells map that what transformation I want on each element of array
 
 //^ OR 
 //  we can directly write function inside arr.map()
-    /* const output = arr.map(function double(x){
-      return x*2;
-    });  */
+
+      /* const output = arr.map(function double(x){
+        return x*2;
+      });  */
 
 //^ OR 
 //  we can directly write function inside arr.map() using arrow function
 // just have to remove function double and everything remains same
-            // const output = arr.map((x)=>{
-            //   return x*2;
-            // }); 
+
+            /* const output = arr.map((x)=>{
+              return x*2;
+            });  */
+
         //^ OR You can just remove the bracket and return in arrow function
-            // const output = arr.map((x)=>x*2); 
+
+            /* const output = arr.map((x)=>x*2); */ 
             
 // console.log(output);
 
@@ -38,14 +43,73 @@
 //-> ^ For Example:-
 
 // ^ Before Arrow:
+
       /* hello = function() {
         return "Hello World!";
       } */
+
 // ^ With Arrow Function:
+
       /* hello = () => {
         return "Hello World!";
       } */
-// It gets shorter! If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
+      
+// -> It gets shorter! If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
+
+// $ 1.1.1) 6 Types of arrow functions
+
+// ~ a) No Parameters
+// ->   If the function takes no parameters, you use empty parentheses.
+
+      /* const greet = () => "Hello!";
+      console. log(greet());  */
+
+//*     Output: Hello! 
+
+// ~ b) Single Parameter
+// ->   If there's only one parameter, parentheses are optional.
+
+      /*  const square = X => X * X;
+      console. log(square(4)); */
+
+//*     Output: 16 
+
+// ~ c) Multiple Parameters
+// ->  If there's only one parameter, parentheses are optional.
+
+      /* const add = (a, b) => a + b;
+      console.log(add(2, 3)); */
+
+//*      Output: 5 
+
+// ~ d) Function Body with Multiple statements
+// ->  If the function body has more than one statement, you need to use curly braces and specify the return keyword (if you want to return something).
+
+      /* const greetPerson = name => {
+      const greeting = “Hello, " + name + "!";
+      return greeting;
+      }
+      console. log(greetPerson("Alice”)); */
+
+//*     Output: Hello, Alice! 
+
+// ~ e) Returning Object Literals
+// ->  When directly returning an object literal, wrap the literal in parentheses to differentiate it from the function block.
+
+      /* const makePerson = (firstName, LastName) =>
+      ({ first: firstName, last: lastName });
+      console. log(makePerson("John", "Doe")); */
+
+//*     Output: {first: 'John', last: 'Doe'} 
+
+// ~ f) Higher Order Functions and Callbacks
+// ->   Arrow functions are particularly popular when used as short callbacks.
+
+      /* const numbers = [1, 2, 3, 4];
+      const doubled = numbers.map(x => x * 2);
+      console. log(doubled) ; */
+
+//*       Output: [2,4,6,8] 
 
 // $ 1.2) Filter 
 //-> Filter function is basically used to filter the value inside an array. 
