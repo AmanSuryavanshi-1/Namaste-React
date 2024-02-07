@@ -53,7 +53,7 @@
       /* hello = () => {
         return "Hello World!";
       } */
-      
+
 // -> It gets shorter! If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
 
 // $ 1.1.1) 6 Types of arrow functions
@@ -119,10 +119,10 @@
 // @ EG-1 (Filter)
   //  const arr = [5,4,3,2,1];
 
-     /*  function isodd(x){
-          return x%2;
-      }
-      const output = arr.filter(isodd); */
+      // function isodd(x){
+      //     return x%2;
+      // }
+      /* const output = arr.filter(isodd); */
 
 //^ OR You can now pass any function inside it.  
 
@@ -165,26 +165,27 @@
 
 //^ OR BY USING REDUCE
 
-// above sum can be written using REDUCE
-// in this case acc is sum in which the sum values will get stored or accumulated
-// curr will be 
+// Above sum can be written using REDUCE
+// -> ACC is sum in which the sum values will get stored or accumulated
+// -> CURR will be the current element which will be iterating in array 
 
       /* const arr = [5,4,5,2,1];
 
-    const output = arr.reduce(function(acc, curr){
+        const output = arr.reduce(function(acc, curr){
         acc += curr;
         return acc;
     },0); // INITIAL VALUE IS SET TO 0 means acc = 0 in start
-    
-    
+
     console.log(output); */
+
 //* Output:17
+
 // -> this reduce function is iterated over each element of this arr array. curr(current) will be these values [5,4,3,2,1]
 // -> reduce function takes two arguments :-
 //      - accumulator
 //      - current
 // -> AND TAKES A INITAL VALUE IF ANY AT THE END
-// & -> WHEN INITIAL VALUE IS SET TO 4 means acc = 4 in starting
+// & => WHEN INITIAL VALUE IS SET TO 4 means acc = 4 in starting
 
 
     /*const arr = [5,4,5,2,1];
@@ -229,18 +230,18 @@
 // $ 1.4) MAP filter and reduce REAL WORLD EXAMPLES
 // consider this as data comming from API
 // List of user's
-const users =[
-{ firstName: "akshay", lastName: "saini", age: 26 },
-{ firstName: "donald", lastName: "trump", age: 75 },
-{ firstName: "elon", lastName: "musk", age: 50 },
-{ firstName: "Aman", lastName: "suryavanshi", age: 26 },
-];
+      /* const users =[
+      { firstName: "akshay", lastName: "saini", age: 26 },
+      { firstName: "donald", lastName: "trump", age: 75 },
+      { firstName: "elon", lastName: "musk", age: 50 },
+      { firstName: "Aman", lastName: "suryavanshi", age: 26 },
+      ]; */
 
 // $ 1.4.1) Give the list giving the fullnames of user's (MAP)
 
-// const output = users.map((users) => users.firstName+ " " +users.lastName);
-// console.log(output);
-//* Output: [ 'akshay saini', 'donald trump', 'elon musk', 'deepika padukone' ]
+      /* const output = users.map((users) => users.firstName+ " " +users.lastName);
+        console.log(output); */
+//* Output: [ 'akshay saini', 'donald trump', 'elon musk', 'Aman suryavanshi' ]
 
 // $ 1.4.2) Give people with the particular same age (Reduce) 
 // FOR EG:- { age : no. of people of that age group } => {26:2, 75:1, 50:1}
@@ -295,8 +296,8 @@ const users =[
 // -> This grows the code horizontally instead of vertically. That mechanism is known as callback hell. 
 
 // -> function is given in setTimeout which will be called out after 2sec of time
-/*       
-      console.log("Aman");
+      
+      /* console.log("Aman");
       setTimeout(function(){
         console.log("callback");
       },[2000]) */
