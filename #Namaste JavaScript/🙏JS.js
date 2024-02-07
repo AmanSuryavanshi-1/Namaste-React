@@ -297,10 +297,11 @@
 
 // -> function is given in setTimeout which will be called out after 2sec of time
       
-      /* console.log("Aman");
-      setTimeout(function(){
+      /* setTimeout(function(){
         console.log("callback");
-      },[2000]) */
+      },[2000])
+      console.log("Aman"); */
+
 
 //* Output:- Aman
 //*         callback(it will get printed after 2 sec)
@@ -313,7 +314,8 @@
       api.showOrderSummary(); // after completion of payment showing order summary */ 
 
 // -> 1st we have to place an order then only we will proceed to payment gateway and then at last the order summary is shown
-// -> Callback helps to fetch the order placing api first and then the proceed to payment api and then after payment is completed the showOrderSummary Api is called and order summary is data is fetched.
+// -> Callback helps to fetch the order placing api first and then the proceed to payment api
+// -> then after payment is completed the showOrderSummary Api is called and order summary of data is fetched.
 
 // -> proceedToPayment function is called after createOrder API is called.
 // -> Then we passed showOrderSummary function to proceedToPayment API
@@ -342,8 +344,8 @@
 // -> Callback hells are unreadable and unmaintainable
 
 //=> 2.2.2) INVERSION OF CONTROL
-//^ The callback function is passed to another callback, this way we lose the control of our code. 
-//^ We don't know what is happening behind the scene and the program becomes very difficult to maintain. That process is called inversion of control. 
+// -> The callback function is passed to another callback, this way we lose the control of our code. 
+// -> We don't know what is happening behind the scene and the program becomes very difficult to maintain. That process is called inversion of control. 
 
 
 //$ 3) Promises(NamasteJS s2ep2)]
@@ -413,10 +415,10 @@
 //* 3) [[promiseState]] : "fulfilled"   (After some time when data arrives)
 //* 4) [[promiseResult]] : Response      (Then the response is provided)
  
-      // const GITHUB_API = "https://github.com/AmanSuryavanshi-1";
-      // const user = fetch(GITHUB_API); 
+      /* const GITHUB_API = "https://github.com/AmanSuryavanshi-1";
+      const user = fetch(GITHUB_API); 
 
-      // console.log(user);
+      console.log(user); */
 
 //* OUTPUT  [Promise { <pending> } ]
 //* JS don't wait for the data to come from the link so it just prints it concurrently.
@@ -466,13 +468,13 @@
         return updateWalletBalance(paymentInfo);
       }) */
 
-//^ OR YOU CAN USE ARROW FUNCTION TO MAKE IT MORE READABLE
+//^ OR YOU CAN USE ARROW FUNCTION TO MAKE IT MORE READABLE 
+//& BEST & CLEAN WAY OF WRITING PROMISES
 
       /* const promise = createOrder(cart)
           .then((orderId)=> proceedToPayment(orderId))
           .then((paymentInfo) => showOrderSummary(paymentInfo))
           .then((paymentInfo) => updateWalletBalance(paymentInfo)); */
-
 
 //$ 4) Promise, Chaining & Error Handling(NamasteJS s2ep3)]
 
@@ -486,10 +488,9 @@
 // -> new Promise is a promise Constructor which takes a function which has resolve and reject
 // -> These Resolve and Reject are functions provided by JS to build promises.
 
-
-// a) Creating order
-// b) Then validatingCart
-// c) And then providing an orderId
+// -> a) Creating order
+// -> b) Then validatingCart
+// -> c) And then providing an orderId
 
       /* function createOrder(cart){
         const pr  = new Promise(function(resolve, reject){

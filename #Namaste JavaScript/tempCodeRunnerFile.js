@@ -51,9 +51,19 @@ const users =[
     if(x.age>30) console.log(x.firstName);
 }) */
 
-
+/* 
 const output = users.reduce((acc, curr)=>{
     if(curr.age<30) console.log(curr.firstName);
 })
 
-console.log(output);
+console.log(output); */
+
+/* setTimeout(function(){
+  console.log("callback");
+},[2000]) 
+console.log("Aman"); */
+
+const URL = "https://github.com/AmanSuryavanshi-1";
+
+const user=fetch(URL);
+console.log(user);
