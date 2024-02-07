@@ -916,7 +916,7 @@ function validateCart(cart){
 
 // $ 6) ASYNC AWAIT S2EP6
 
-//& Q6.1) What is asynchronous and synchronous?
+//~ Q 6.1) What is asynchronous and synchronous?
 
 // => Asynchronous(ASYNC)
 // -> Some tasks may take time, like fetching data from the internet. Instead of waiting, the program can continue with other tasks and come back when the data is ready.
@@ -949,7 +949,7 @@ function validateCart(cart){
         //*           Step 2
         //*           Step 3
 
-//& Q6.2) How ASYNC is different from a normal function ?
+//~ Q 6.2) How ASYNC is different from a normal function ?
 
 // => ASYNC Function
 // -> It always returns a promise
@@ -986,7 +986,7 @@ function validateCart(cart){
       //*          Middle
       //*          End
 
-//& Q6.3) Before async and await how we handled the promises?
+//~ Q 6.3) Before async and await how we handled the promises?
 
 // @ EXAMPLE of handling Promises BEFORE ASYNC & AWAIT
 
@@ -1000,7 +1000,7 @@ function validateCart(cart){
       getData(); */
       //* Output :- Promise is resolved
 
-//& Q6.4) How to handle promises using Async with Await?
+//~ Q 6.4) How to handle promises using Async with Await?
 
 // -> Async and await are the combo used to handle promises
 // -> AWAIT can only be used inside a ASYNC function.
@@ -1019,11 +1019,19 @@ function validateCart(cart){
         const val = await p;     // storing value of p in const
         console.log(val);  
       }
-      handlePromise(); */
+      ^ OR using arrow function
+      // const handlePromise = async ()=>{
+      //     const val=await p;
+      //     console.log(val);
+      //   }
+
+      handlePromise();
+
+      */
 
       //* Output :- Promise is resolved using ASYNC AWAIT
 
-//& Q6.5) Why do we even need async await ?
+//~ Q6.5) Why do we even need async await ?
 
       /* const p = new Promise((resolve,reject)=>{
         setTimeout(()=>{
@@ -1032,15 +1040,17 @@ function validateCart(cart){
       }) */
 
 // => 6.5.1 HOW PROMISES ARE HANDLED BEFORE ASYNC & AWAIT
-
-      /* function getData(){
+// -> Before the introduction of async and await in JavaScript, promises were handled using promise chaining and callbacks. 
+     /* function getData(){
         //^ JS Engine will not wait for promise to be resolved and will print the next console.log
         p.then((res)=> console.log(res));
         console.log("JS")
       }
       getData(); */
 
-// => 6.5.2 The problem with this was????????????????
+// => 6.5.2 The problem with this was?
+// -> This approach often led to what is commonly referred to as "callback hell" 
+ 
       //* Output:- JS
       //*          Promise is resolved (IS PRINTED AFTER 10 sec)
 
@@ -1048,9 +1058,15 @@ function validateCart(cart){
     
 // @ EXAMPLE 1(ASYNC AWAIT)
 
+      /* const p = new Promise((resolve,reject)=>{
+        setTimeout(()=>{
+        resolve("Promise is resolved")
+        },10000)
+      })  */
+
     /* async function handlePromise(){
         console.log("Hello world");
-        //^ JS Engine was waiting for promise to be resolved and once the promise is resolved than it will print the next console.log
+        ^ JS Engine was waiting for promise to be resolved and once the promise is resolved than it will print the next console.log
         const val = await p;     
         console.log(val);  
         console.log("JS");
@@ -1095,7 +1111,7 @@ function validateCart(cart){
         console.log(val);  
         console.log("JS");
 
-        //^ p2 is resolved in 5 secs but still it waits for p to gets resolved first. And then after 10sec all of the promises and console are printed at the same time
+        ^ p2 is resolved in 5 secs but still it waits for p to gets resolved first. And then after 10sec all of the promises and console are printed at the same time
         const val2 = await p2;     
         console.log(val2); 
         console.log("Aman");
@@ -1105,7 +1121,7 @@ function validateCart(cart){
       //* Output:- Hello world (code above await gets printed instantly)
       //*          Promise is resolved (All Promise are resolved & console are PRINTED AFTER 10sec even if p2 is resolved in 5sec)
       //*          JS 
-      //*          Promise is resolved
+      //*          Promise2 is resolved
       //*          Aman
 
 //& How ASYNC FUNCTION IS WORKING?
@@ -1128,7 +1144,7 @@ function validateCart(cart){
 //   |-> then it again see's await which will suspend the handle promise execution
 //   |-> handlePromise(); will move out from call stack. So that it does not block the main thread
 //   |-> It will check if the promise p2 is resolved or not
-//   |-> Promise p2 (5sec) is already resolved by that time.
+//-> |-> Promise p2 (5sec) is already resolved by that time.
 //   |-> After the promise p2 get's resolved handlePromise again comes into callStack
 //   |-> And start the execution from where it left (from console.log(val2);)
 //   |-> After 10sec all the consoles are printed.
@@ -1155,9 +1171,16 @@ function validateCart(cart){
 
         console.log(jsonValue);
       }
+      ^ OR   USING ARROW FUNCTION
+      // const handlePromise = async() =>{
+      //   const data= await fetch(API_URL);
+      //   const jsonValue = await data.json();
+      //   console.log(jsonValue);
+      // }
+
       handlePromise(); */
 
-// ~ 6.6) ERROR HANDLING IN ASYNC AWAIT
+// ~ 6.7) ERROR HANDLING IN ASYNC AWAIT
 
 // -> we will use try catch for handling errors in ASYNC AWAIT
 // -> If api call gets successfully executed then the try block is executed else catch block will through a error
@@ -1174,13 +1197,13 @@ function validateCart(cart){
       }}
       handlePromise(); */
 
-// ~ 6.6) ASYNC/AWAIT VS PROMISE.THEN/CATCH
+// ~ 6.8) ASYNC/AWAIT VS PROMISE.THEN/CATCH
 
 // => Async Await 
 // -> ASYNC AWAIT is the change in syntax behind the scenes the browser is using promise.then/catch only
 // -> Async await is simplex to write and it is more readable the promise.then method
-// -> The await keyword is used inside async functions to pause execution until the Promise is resolved.
-// -> Exception handling is done using try/catch blocks, making the code structure cleaner
+// => The await keyword is used inside async functions to pause execution until the Promise is resolved.
+// -> It provides a better way for Exception handling. It is done using try/catch blocks, making the code structure cleaner
 
 // => Promise.then
 // -> Uses the .then and .catch methods to handle asynchronous results.
