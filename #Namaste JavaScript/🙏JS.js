@@ -623,86 +623,54 @@ function validateCart(cart){
          
 // -> THIS TYPE OF CHAINING HELPS US IN GETTING RID OF CALLBACK HELLS
 
+//& HOMEWORK
+      //& CreateOrder => returning(orderId),
+      //& proceedToPayment => proceed to payment using paymentInfo,
+      //& showOrderSummary => showOrderSummary using paymentInfo,
+      //& updateWallet => show the updated wallet balance
+      
+        /* const validateCart = (cart)=> {return true};
 
-/* Homework:
+        const cart = ['shoes', 'pants', 'kurta'];
+        createOrder(cart)
+        .then((orderId)=>{console.log(orderId);return orderId; })
+        .then((orderId)=>{return proceedToPayment(orderId);})
+        .then((paymentInfo)=>{console.log(paymentInfo);return showOrderSummary(paymentInfo);})
+        .then((paymentInfo)=>{console.log("Your wallet balanced is updated");})
+        .catch((err)=> {console.log(err.message);})
+        .then(() => {console.log('No matter what happens, I will get executed');});
+        
+        
+        function createOrder(cart){
+          const pr = new Promise((resolve,reject) =>{
+            if(!validateCart(cart)){
+              const err="Cart is not valid";
+              reject(err);
+            }
+            const orderId='12345';
+            resolve(orderId);
+          })
+          return pr;
+        }
+        
+        function proceedToPayment(orderId){
+        return pr1 = new Promise((resolve,reject)=>{ resolve(`Payment Successful for order id: ${orderId}`)})
+        }
+        
+        function showOrderSummary(paymentInfo){
+          return new Promise((resolve,reject)=>{
+            if(!paymentInfo){
+                const err1="Transaction is not valid";
+                reject(err1);
+            }
+                resolve({message:'You have ordered items'})
+          })
+        } */
 
-// CreateOrder,
-// proceedToPayment,
-// showOrderSummary,
-// updateWallet
-
-const cart = ['shoes', 'pants', 'kurta'];
-
-createOrder(cart)
-  .then(function(orderId) {
-    console.log(orderId);
-    return orderId;
-  })
-  .then(function(orderID) {
-    return proceedToPayment(orderID)
-  })
-  .then(function({ message, amt }) {
-    console.log(message, 'of amount:', amt);
-    return showOrderSummary(message, amt);
-  })
-  .then(function({ message, amt }) {
-    console.log('Your wallet has beed debited by:', amt);
-  })
-  .catch(function(err) {
-    console.log(err.message);
-  })
-  .then(function() {
-    console.log('No matter what happens, I will get executed');
-  });
-
-
-
-function createOrder(cart) {
-  const pr = new Promise(function(resolve, reject) {
-    // create order
-    // Validate Cart
-    // orderId
-    if (!validateCart(cart)) {
-      const err = new Error('Cart is not valid!');
-      reject(err);
-    }
-    // logic for createOrder
-    const orderId = '12345';
-    if (orderId) {
-      setTimeout(function() {
-        resolve(orderId);
-      }, 1000)
-    }
-  });
-
-  return pr;
-}
-
-function proceedToPayment(orderID) {
-  // Logic for handling payment.
-  // This function returns a promise
-  return new Promise(function(resolve, reject) {
-    // logic
-    resolve({ message: `Payment Successful for order id: ${orderID}`, amt: 2500 });
-  })
-}
-
-function showOrderSummary(paymentInfo, amt) {
-  return new Promise(function(resolve, reject) {
-    // console.log(amt);
-    if (amt >= 2000) {
-      resolve({ message: 'You have ordered items that cost ${amt} RS', amt });
-    } else {
-      reject(new Error('Please buy more for discount'));
-    }
-  })
-}
-
-function validateCart(cart) {
-  // code to validate cart.
-  return true;
-  // return false;
-} */
+        //* OUTPUT:-12345
+        //*         Payment Successful for order id: 12345
+        //*         Your wallet balanced is updated
+        //*         No matter what happens, I will get executed
 
 
 // $ 5) Promise API's + Interview Questions S2Ep5
@@ -714,7 +682,7 @@ function validateCart(cart) {
 
 // ~ 5.1) Promise.all
 
-//^ When you want the result of all the promises or you want ot get the quick error if there are any
+//^ When you want the result of all the promises or you want to get the quick error if there are any
 
 // -> Promise.all is used to get the result from parallel api call
 // -> Used to handle multiple promises or api calls at once
@@ -782,14 +750,13 @@ function validateCart(cart) {
       // -> We can write catch and through an actual error in console.
       // -> console.error is used to through error in console.
 
-//& What if we want promise from successful results only(it's ok if one or two of them fails?
+//& What if we want promise from successful results only(it's ok if one or two of them fails)
 //& we have promise.allSettled for that
 
 
 // ~ 5.2) Promise.allSettled
 
 // -> returns same in case of all returns success or resolved
-// ->
 
       /* Promise.allSettled([p1,p2,p3]) */
 
