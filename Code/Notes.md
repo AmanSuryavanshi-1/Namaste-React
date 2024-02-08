@@ -9,8 +9,9 @@
 16) .git-ignore file is used to ignore the things which a developer don't want to push to Github
 17) - 20) index.html
 
-21) # Parcel
+# 21) PARCEL & VITE
 
+# 21.1) PARCEL
 - It plays a important role in making a react app faster
 - parcel uses other libraries from node modules to work things out
 - parcel is a bundler which minifies and optimizes the code
@@ -45,20 +46,73 @@
   * You do not have to push dist and .parcel-cache to your github as these files gets generated again if it gets deleted it will get downloaded again same happens in case when hosting on a server
   * So you can add dist and .parcel-cache to your .gitignore
 
+# 21.2) VITE
+
+> 1. Role in Making React App Faster:
+        -> Both Vite and Parcel play important roles in making React apps faster by optimizing the development/build process. 
+        -> However, Vite is specifically designed with a focus on speed during development by leveraging native ES Module support in modern browsers.
+
+> 2. Dev Build Creation:
+        -> Both Vite and Parcel create development builds, but Vite's development server is optimized for speed and efficiency during development.
+
+> 3. Local Server:
+         -> Both Vite and Parcel create local development servers to serve the application during development.
+
+> 4. Hot Module Replacement (HMR):
+        -> Both Vite and Parcel support HMR, allowing for real-time updates to the application without full page reloads during development.
+
+> 5. Build Speed:
+        -> Vite aims to provide faster builds, especially during development, by leveraging caching and optimized file watching mechanisms.
+
+> 6. Differential Bundling and Tree Shaking:
+        -> Both Vite and Parcel support tree shaking to remove unused code, but Vite may have more advanced optimizations such as differential bundling for better support in older browsers.
+        
+> 7. Error Handling:
+        -> Both Vite and Parcel provide error handling features to help developers identify and resolve issues during development.
+
+# 21.3) Parcel vs vite
+
+>Feature              Vite                       Parcel
+Development Speed     Fast	                     Slower
+Browser Support	      Limited(modern browsers)	 Wider
+Customization         Less	                     More
+Maturity	            Newer	                     Mature
+Ease of Use           Simple	                 Zero-configuration
+Production BuildSize Smaller                    Larger(bundles all dependencies)
+
+
+> Parcel weakness:-
+
+      -> Slower development server: Can be slower than Vite, especially for larger projects.
+      -> Bundling overhead: Bundles all dependencies by default, which can lead to larger production builds.
+
+>Parcel Strengths:-
+      -> Broad browser support, customization, zero-configuration, maturity
+      
+> Vite Weakness:-
+
+      -> Limited browser support: Primarily targets modern browsers that support ES modules. Transpilation for older browsers is required.
+      -> Less customization: Offers fewer configuration options compared to Parcel.
+      -> Newer tool: Has a smaller community and ecosystem compared to Parcel.
+
+> Vite Strengths:-
+      -> Key Strengths	Speed, performance, simplicity, modern focus
+
    # EP3
-    - *npx parcel index.html* will create a development build for us and host it on localHost
-    - NPX means u r executing a NPM package. In this case npm package is parcel and giving source file as index.html
-    - to make it easier we will write a script so we don't have to write ours *npx parcel index.html* to initiate our project again and again.
-    - And that script will be created in package.json in script tag
+    -> *npx parcel index.html* will create a development build for us and host it on localHost
+    -> NPX means u r executing a NPM package. In this case npm package is parcel and giving source file as index.html
+    -> to make it easier we will write a script so we don't have to write ours *npx parcel index.html* to initiate our project again and again.
+    -> And that script will be created in package.json in script tag
+
     ```JSON
     "scripts": {
     "start": "parcel index.html", //dev mode
     "build": "parcel build index.html", // build mode
     }
     ```
-    - now we can just write parcel index.html
-    - exactly same as npm run start (it is also calling npx parcel index.html behind the scenes)
-    - in that case we can just write npm start or npm run start both will start the project.
+    -> now we can just write parcel index.html
+    -> exactly same as npm run start (it is also calling npx parcel index.html behind the scenes)
+    -> in that case we can just write npm start or npm run start both will start the project.
       
 # HOW TO INITIATE A PARCEL APP
 
