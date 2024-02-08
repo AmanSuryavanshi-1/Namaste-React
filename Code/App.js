@@ -2,16 +2,13 @@
 
 //$ 8) How to give heading using React into html -->
 
-
   /*   const heading = React.createElement("h2",
      {id: "heading", xyz:"abc"}, 
      "Hello world from react");
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(heading); */
-  
 
 //$ 9) How to create nested structure inside React (using array of children in *  [] *  )
-    
 
      {/* <div id="parent">
         <div id="child">
@@ -38,7 +35,7 @@
         const root = ReactDOM.createRoot(document.getElementById("root"));
         root.render(parent); */
 
-//  root.render will not append data in index.html it will replace the data present in index.html with app.js content
+// -> root.render will not append data in index.html it will replace the data present in index.html with app.js content
 
 //$ 10) to solve the above complex writing structure we use JSX
 

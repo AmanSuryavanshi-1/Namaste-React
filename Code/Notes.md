@@ -2,13 +2,14 @@
 
 11) package.json will manage the package and dependencies which will be installed in our project
 12) package-lock.json will locks the version and keeps the record of it when the particular dependency is installed in the project
-13. package.json & package-lock.json are important files. Even if the node modules get's deleted it can be reinstalled easily by using the data of previous versions from package.json
-14. Node Modules are the collection of dependencies.And are very huge in size
-15. No need to push Node modules on github as the size of node modules is very huge
-16. .git-ignore file is used to ignore the things which a developer don't want to push to Github
-17. - 20. index.html
+13) package.json & package-lock.json are important files. Even if the node modules get's deleted it can be reinstalled easily by using the data of previous versions from package.json
 
-21. # Parcel
+14) Node Modules are the collection of dependencies.And are very huge in size
+15) No need to push Node modules on github as the size of node modules is very huge
+16) .git-ignore file is used to ignore the things which a developer don't want to push to Github
+17) - 20) index.html
+
+21) # Parcel
 
 - It plays a important role in making a react app faster
 - parcel uses other libraries from node modules to work things out
