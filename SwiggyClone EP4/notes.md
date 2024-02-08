@@ -1,9 +1,9 @@
 # 43) How to check Data of live sites like swiggy 
 => Console -> Network -> Fetch/XHR -> preview
-data is usually stored in v5 or u can just search for most relatable word in console like cuisines.
+> data is usually stored in v5 or u can just search for most relatable word in console like cuisines.
  
 => can we hide fetch/XHR data of live site?
-    -Most of the websites have hidded there data right now.
+    -Most of the websites have hided there data right now.
     -There are few ways to "hide" them or actually make them less obvious to find.
         a) Make a JSON request, they are not real AJAX calls, as they do not use the XMLHttpRequest object.
         b) You can also clear console via script among the lines of

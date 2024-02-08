@@ -1,4 +1,6 @@
 //! Read Point wise from  40) after EP2 
+//! 43- 44) is in notes.md
+
 import React from 'react'
 import ReactDOM from "react-dom/client"
 import "./App.css"
@@ -15,6 +17,7 @@ Footer
    --Links
    --Address
    --Contact */
+
    const HeaderComponent = () =>{
     return (
         <div className='Navbar'>
@@ -209,9 +212,10 @@ const resList = [
         </div>
     )
    }
-//$ 40) HOW TO FETCH DIFFERENT DATA FOR ResCards Dynamically
+
+// $ 40) HOW TO FETCH DIFFERENT DATA FOR ResCards Dynamically
 //&  -- It is done using PROPS
-//      -> Props is the shortform for properties which you can pass through components 
+//      -> Props is the shorthand used for properties which you can pass through components 
 //      -> used to Dynamically pass data to components
 //      -> Props are argument to the functions
 //@     -> Props assigned in the body is fetched in ResCard by taking                ==>  const ResCard = (props) =>{  <==
@@ -223,7 +227,8 @@ const resList = [
 //!  Destructuring of PROPS 
 //&  Props can be destructured it means instead of passing props to ResCard you can directly pass the arguments like this shown below:- 
 //&                                                                                  ==>  const ResCard = ({resName, cuisine}) <== 
-//  This is known as destructuring on the fly. Destructing is not part of react it is a concept of JS
+
+//      -> This is known as destructuring on the fly. Destructing is not part of react it is a concept of JS
 //   const ResCard = ({resName, cuisine}) =>{
 //     console.log(resName, cuisine);
 //     return (
@@ -256,21 +261,25 @@ const resList = [
 //     )
 //    }
 
-console.log("useCollapse");
+console.log("Use Collapse");
 
-//$  41) All This data comes in the form of API in JSON format 
+// $  41) All This data comes in the form of API in JSON format 
 //     -> it stores the data which has to be loaded in site
 //     -> The data can vary according to city, area etc.
 
-//$ 42) CONFIG DRIVEN UI - It means UI is driven by Config
-//  What is Config? Data in the form of API is config
-//^ The Crousel which shows offers data can be different in different locations and there can be no data or offers for some locations. All this data is stored statewise or location wise So, when there's a change in location the data in the frontend changes.
-//  It is a very imp concept used in almost every website like amazon,uber etc. (Frontend System Design)
-//  FOR EG:- You want to show different offers with different BGcolor in different areas. Then we have to send data in the JSON format as a config and this config will help us to drive the ui or change the ui this is known as config driven UI.
+// $ 42) CONFIG DRIVEN UI - It means UI is driven by Config
+//&  Q What is Config?  Ans. Data in the form of API is config
+// -> The Carousel which shows offers data can be different in different locations and there can be no data or offers for some locations.
+// -> All this data is stored state wise or location wise. So, when there's a change in location the data in the frontend changes.
+// -> It is a very imp concept used in almost every website like amazon,uber etc. (Frontend System Design)
+// -> FOR EG:- You want to show different offers with different BGcolor in different areas.
+ 
+// -> Then we have to send data in the JSON format as a config 
+// -> And this config will help us to drive the ui or change the ui this is known as config driven UI.
 
 
-//~ 42) g.  We will take the data in the form of props inside ResCard from body which is taking data from resList (an API,or a JSON object)
-//~ 42) h.  We are taking resData in brackets bcz we are taking an array of a data stored in resList
+// ~ 42) g.  We will take the data in the form of props inside ResCard from body which is taking data from resList (an API,or a JSON object)
+// ~ 42) h.  We are taking resData in brackets bcz we are taking an array of a data stored in resList
 //       const ResCard = ({resData}) =>{
 // console.log(resData);
 //     return (
