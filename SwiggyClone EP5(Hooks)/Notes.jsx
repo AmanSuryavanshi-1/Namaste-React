@@ -35,10 +35,10 @@
 //    -> It is basically a array of functions & We are just destructuring on fly
 //    -> const [listOfRestaurants , setListOfRestaurants] = arr  &  arr= useState(resList);
 
+console.log("EP6");
+// ! EP6 
 
-// # EP6 
-
-// # 56) ALL ABOUT CORS
+// $ 56) ALL ABOUT CORS
 // 1) Cross-origin resource sharing (CORS)
 // 2) CORS WILL BLOCK US TO GET DATA FROM THE LIVE SWIGGY API
 // 3) It is a security feature implemented by web browsers to restrict web pages from making requests to a different domain than the one that served the original web page.
