@@ -17,4 +17,8 @@
 // ~ 7.2) API front-end
 // -> Initiating a front-end app using vite
 //  npm create vite@latest .
+//  √ Select a framework: » React
+//  √ Select a variant: » JavaScript
+//    npm install
+//    npm run dev
 
