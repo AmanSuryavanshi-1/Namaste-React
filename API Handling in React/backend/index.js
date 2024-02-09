@@ -2,7 +2,7 @@ import express from 'express';
 const app = express();
 
 // $ 7.2) How get calls works
-// -> app.get call should be in smallcase always 
+// -> app.get call should be in smallCase always 
 // -> and when there is a change you have to run it so that it can get loaded in server link
 app.get('/api/restaurants', (req, res)=>{
     const resList = [
