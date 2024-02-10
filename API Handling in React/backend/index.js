@@ -1,11 +1,7 @@
 import express from 'express';
 const app = express();
-
-// $ 7.2) How get calls works
-// -> app.get call should be in smallCase always 
-// -> and when there is a change you have to run it so that it can get loaded in server link
-app.get('/api/restaurants', (req, res)=>{
-    const resList = [
+app.use(express.json());
+const restaurants = [
         {
                 id: 0,
                 name: "KFC",
@@ -102,23 +98,25 @@ app.get('/api/restaurants', (req, res)=>{
                 cloudinaryImageId: "30c154acd695b5f026aa01ac1d564e9a",
         },
     ];
-   
+// $ 7.2) How get calls works
+// -> app.get call should be in smallCase always 
+// -> and when there is a change you have to run it so that it can get loaded in server link
+
 // $ 7.1) Providing data according to the requested parameters in the link below:-
-// http://localhost:3000/api/resList?search=KFC
+// http://localhost:3000/api/restaurants?search=KFC
 // -> When ever we get these query parameters (?) we need to check what to provide normal list of restaurants or filtered list of it.
 // -> We need to make sure that we have the right parameters and then the backend returns the data according to it
 // -> check if req.query.search is there then pass it in for loop
 // -> Then inside the loop we will take the filteredRestaurant list and return it.
 
-if(req.query.search){
-    const filterRestaurants = resList.filter(product => product.name.includes(req.query.search))
-    res.send(filterRestaurants);
-    return;
-}
-    setTimeout(()=>{
-        res.send(resList);
-    },3000)
-})
+app.get('/api/restaurants', (req, res) => {
+        if (req.query.search) {
+          const filteredRestaurants = restaurants.filter(restaurant => restaurant.name.includes(req.query.search));
+          res.send(filteredRestaurants);
+        } else {
+          res.send(restaurants);
+        }
+      });
 const port = process.env.PORT || 3000;
 
 app.listen(port, ()=>{

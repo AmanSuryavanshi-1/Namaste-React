@@ -60,3 +60,5 @@
 //-> Community & Documentation	    Larger community & extensive documentation	         Smaller community & less extensive documentation
 //-> Features	                    More built-in	                                     Fewer built-in
 //-> Learning Curve	                Easier	                                             Steeper
+
+// npm i cors my cors error disappeared
