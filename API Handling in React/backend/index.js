@@ -1,5 +1,9 @@
 import express from 'express';
+import cors from 'cors';
+
 const app = express();
+app.use(cors());
+
 app.use(express.json());
 const restaurants = [
         {
@@ -114,8 +118,12 @@ app.get('/api/restaurants', (req, res) => {
           const filteredRestaurants = restaurants.filter(restaurant => restaurant.name.includes(req.query.search));
           res.send(filteredRestaurants);
         } else {
-          res.send(restaurants);
+          setTimeout(()=>{
+            res.send(restaurants);
+        },3000)
         }
+        
+ 
       });
 const port = process.env.PORT || 3000;
 

@@ -61,4 +61,19 @@
 //-> Features	                    More built-in	                                     Fewer built-in
 //-> Learning Curve	                Easier	                                             Steeper
 
-// npm i cors my cors error disappeared
+//@ Getting CORS Error While trying tno connect frontend with backend
+//@ after npm i cors my cors error disappeared
+//& in index.js of backend 
+// import cors from 'cors';
+// After `const app = express();`
+// app.use(cors());
+//& in vite.config.js
+// export default defineConfig({
+//     server:{
+//       proxy:{
+//         'api': 'https://localhost:3000'
+//       }
+//     },
+//     plugins: [react()],
+//   })
+  
