@@ -6,7 +6,7 @@ import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
 // ! Continuing EP6 
-// $ 59)  
+// $ 59)  ShimmerUI loading effect & Conditional Rendering
 
 
 /* Header
