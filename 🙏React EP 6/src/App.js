@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactDOM from "react-dom/client"
 import "./App.css"
-import Header from "./components/Header"
+import Header from "./components/Navbar/Navbar"
 import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
 // ! Continuing EP6 
-// $ 59)  ShimmerUI loading effect & Conditional Rendering
-
+// $ 59)  ShimmerUI loading effect & Conditional Rendering (Body.js)
+// $ 60)  State Management by taking the example of login 
 
 /* Header
    --logo

@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import RestaurantCard from './RestaurantCard';
-import resList from '../utils/MockData';
 import { ALL_RESTAURANTS_LIST } from '../utils/MockData';;
 import Shimmer from './Shimmer/Shimmer';
 
@@ -11,9 +10,6 @@ const Body = () =>{
 useEffect(()=>{
     setListOfRestaurants(ALL_RESTAURANTS_LIST);
 },[]);
-
-
-
 
 // $ 59) ShimmerUI
 // -> To handle to load time we can add Loading 

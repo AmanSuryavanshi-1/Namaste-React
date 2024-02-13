@@ -2,32 +2,6 @@
 margin: 0;
 padding: 0;
 }
-.Navbar{
-    background-color: rgb(237, 178, 68);
-    display: flex;
-    justify-content: space-between;
-    border: 20px;
-    border-color: aqua;
-}
-.logo{
-    height: 80px;
-    width: 130px;
-    mix-blend-mode:darken;
-    padding: 0 20px;
-    mix-blend-mode:multiply;
-    zoom: 1.2;
-}
-.navItems > ul{
-    font-size: 20px;
-    display: flex;
-    padding: 0px 20px;
-}
-
-.navItems > ul > li{
-    padding: 10px;
-    margin: 10px;
-    list-style-type: none;
-}
 .search{
     margin: 30px 30%;
     padding: 8px;
