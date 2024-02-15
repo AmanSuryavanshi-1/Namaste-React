@@ -23,6 +23,8 @@ useEffect(()=>{
     // --> 61.13) Whenever we have to filter restaurants we are using setListOfRestaurants (containing copy of all the restaurant) as reference 
     // -->        and updating it on setFilteredRestaurants (containing copy of all the filtered restaurant)
     // -->        & Then for displaying filtered restaurant to the UI we are using setFilteredRestaurants.
+    // ->         Whenever we are searching for a specific term only the filteredRestaurant will get updated
+    // ->         & next time when we will search it will get filtered from the ListOfRestaurants
 },[]);
 
 // $ 59) ShimmerUI
