@@ -13,11 +13,16 @@ const Body = () =>{
   const [searchText, setSearchText] = useState("");
 // ~ Whenever state variables update, react triggers a reconciliation cycle or rerenders the whole component
 
-// --> 61.10) a. For Fixing this bug we need to add a new state variable with empty initial value
+// --> 61.11) a. For Fixing this bug we need to add a new state variable with empty initial value
 const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
 useEffect(()=>{
     setListOfRestaurants(ALL_RESTAURANTS_LIST);
+    setFilteredRestaurants(ALL_RESTAURANTS_LIST);
+
+    // --> 61.13) Whenever we have to filter restaurants we are using setListOfRestaurants (containing copy of all the restaurant) as reference 
+    // -->        and updating it on setFilteredRestaurants (containing copy of all the filtered restaurant)
+    // -->        & Then for displaying filtered restaurant to the UI we are using setFilteredRestaurants.
 },[]);
 
 // $ 59) ShimmerUI
@@ -91,6 +96,8 @@ return listOfRestaurants.length === 0 ? <Shimmer/> : (
                   //     We can do this by adding toLowerCase() and to upperCase() in both searchText and restaurant's name coming from API.
                 
                  return res.data.name.toLowerCase().includes(searchText.toLowerCase())
+                //  return res.data.name.toLowerCase().includes(searchText.toLowerCase()) || res.cuisines.name.toLowerCase().includes(searchText.toLowerCase())
+
                })
 
 
@@ -136,6 +143,8 @@ return listOfRestaurants.length === 0 ? <Shimmer/> : (
           {filteredRestaurants.map((restaurant) => (
             <RestaurantCard resData={restaurant} key={restaurant.data.id} />
           ))}
+          {/* // --> 61.13) So now after making it to filteredRestaurant.map initially my page is empty bcz filteredRestaurant is empty
+              // -->        we have to make 2 copy(setListOfRestaurant & setFilteredRestaurant) of data coming from API */}
             </div>
         </div>
     )
