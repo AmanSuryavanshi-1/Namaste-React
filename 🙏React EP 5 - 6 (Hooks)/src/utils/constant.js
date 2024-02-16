@@ -10,7 +10,7 @@ export const LOGO_URL = "https://previews.123rf.com/images/miracel123/miracel123
 // export default LOGO_URL
 // $ 47) You can not export twice in the same file
 //       -> There are two types of exports (default exports & named exports)
-//       -> So export multiple times in the same file 
+//       -> named exports are used So that we can export multiple times in the same file 
 //       -> We use named exports like this :- export const CDN_URL = "link"
 //       -> We use named imports in curly braces {} like this :- import { CDN_URL } from '../utils/constant';
 //       -> Default imports does not have {} it will be like this:- import CDN_URL from '../utils/constant';

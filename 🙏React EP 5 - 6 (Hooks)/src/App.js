@@ -6,11 +6,11 @@ import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
 // ! EP5
-// $ 46)-47) in constant.js
-// $ 48) TypeError in RestaurantCard.js
-// $ 49) Creating a filter option for Top Rated Restaurant in Body.js
-// $ 50) (STATES & HOOKS) in Body.js
-// $ 51) React Algorithm (Notes.jsx)
+// $ 46)-47) in (constant.js)
+// $ 48) TypeError in (RestaurantCard.js)
+// $ 49) Creating a filter option for Top Rated Restaurant in (Body.js)
+// $ 50) STATES & HOOKS in (Body.js)
+// $ 51) React Algorithm in (Notes.jsx)
 
 // ! EP6
 // $ 52) MONOLITH ARCHITECTURE

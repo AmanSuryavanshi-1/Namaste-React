@@ -40,8 +40,8 @@ const Body = () =>{
     //    let listOfRestaurantsJS = [];
 
 //     e) inside [] data are passed it can be null or a object with a number of restaurants in it
-//  -> f) when we do setListOfRestaurants is used to update the list of restaurants in UI also
-//  -> g) Then we can add it in onclick functionality by giving filtered list to it :-setListOfRestaurants(filteredList);
+//  -> f) when we do setListOfRestaurants it is used to update the list of restaurants in UI also
+//  -> g) Then we can add it in onclick functionality by giving filtered list(a constant created to store the restaurants left after using filtering process) to it :-setListOfRestaurants(filteredList);
 //     h) When we click on Top rated restaurants list of restaurants get's filtered according to the logic inside onclick
 //     i) Then it is provided to setListOfRestaurants(filteredList) which will then use useState and update the list of restaurants.
 //  ~  j) Whenever we want to change the data going to the UI we will give that logic to setListOfRestaurants() and will then change the original data in listOfRestaurants.
