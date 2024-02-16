@@ -61,7 +61,7 @@ console.log("EP6");
 // =>  Loads -> Render -> API -> ReRender
 
 // $ 54) (useEffect HOOK) HOW TO GET DATA FROM AN API INSIDE REACT APP
-// -> useEffect will come from react library some we have to import in the file before using it.
+// -> useEffect will come from react library so we have to import in the file before using it.
 // -> There are 2 arguments which it will pass
 // -> There is an arrow function ()=>, 1st argument i.e. a callback function {} and 2nd argument as an array [] ==>  useEffect(()=>{},[]);  <==
 
