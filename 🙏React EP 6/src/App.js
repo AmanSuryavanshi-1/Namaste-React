@@ -6,7 +6,8 @@ import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
 // ! Continuing EP6 
-// $ 59)  ShimmerUI loading effect & Conditional Rendering (Body.js)
+// $ 58)  ShimmerUI loading effect (Body.js)
+// $ 59)  Conditional Rendering (Body.js)
 // $ 60)  State Management by taking the example of login 
 // $ 61)  Adding Search functionality
 /* Header

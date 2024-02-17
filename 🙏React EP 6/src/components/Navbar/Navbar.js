@@ -7,10 +7,10 @@ const Navbar = () =>{
 // -> 60.1) Login should get changed to logout when i click on login.
 // -> 60.2) JS don't allow to change the const variable.Therefore using let.
 // let btnName = "Login";
-// -> 60.6) Using useState to dynamically change Login -> Logout 
+// --> 60.6) Using useState to dynamically change Login -> Logout 
 const [btnNameReact, setBtnNameReact] = useState("Login");
-// -> const btnNameReact = "Login"; -->it can also be written like this 
-// -> on initial time btnNameReact is Login 
+// --> const btnNameReact = "Login"; ==> it can also be written like this <==
+// --> on initial time btnNameReact is Login 
 // & 60.10) If useState has const then how the values are getting changed?
 // -> Whenever setBtnNameReact is triggered then react is updating this this btnNameReact and then it is calling or rendering navbar component again.
 
@@ -39,6 +39,7 @@ const [btnNameReact, setBtnNameReact] = useState("Login");
                         // setBtnNameReact("Logout");
                         // -> 60.7) Whenever it will run setBtnNameReact react will trigger render process once again.
                         // -> 60.8) Or, Whenever your state variable changes the react will rerender the component.
+                        
                         //& Q 60.9) Is react refreshing this whole Navbar component or only this button?
                         // -> Whole Navbar component will get loaded again once this button is clicked.
                         // -> in the 2nd render it will contain the updated values in it

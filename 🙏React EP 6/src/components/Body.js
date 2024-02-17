@@ -8,7 +8,7 @@ const Body = () =>{
   const [listOfRestaurants , setListOfRestaurants] = useState([]);
 
 // $ 61) Adding Search functionality
-// --> 61.5) creating a new state variable and binding it to the input box
+// --> 61.5) creating a new state variable with initial value set to empty string ("") and binding it to the input box
 
   const [searchText, setSearchText] = useState("");
 // ~ Whenever state variables update, react triggers a reconciliation cycle or rerenders the whole component
@@ -27,7 +27,7 @@ useEffect(()=>{
     // ->         & next time when we will search it will get filtered from the ListOfRestaurants
 },[]);
 
-// $ 59) ShimmerUI
+// $ 58) ShimmerUI
 // -> To handle to load time we can add Loading 
 // -> Showing a LOADING and spinner is not a good way to display.
         /* if(listOfRestaurants.length === 0){
@@ -36,18 +36,19 @@ useEffect(()=>{
 // => ShimmerUI 
 // -> It resembles the page actual UI so that the user understand how quickly the WebApp loads.
 // -> Shimmer UI is a technique used in user interface (UI) design to indicate that content is loading.
-// -> Instead of displaying a static loading spinner or progress bar, shimmer UI creates a subtle animation effect that gives the impression of content being loaded gradually.
+// -> Instead of displaying a static loading spinner or progress bar, 
+//    shimmer UI creates a subtle animation effect that gives the impression of content being loaded gradually.
   
-// $ 59.1) CONDITIONAL RENDERING 
+// $ 59) CONDITIONAL RENDERING 
 // -> Rendering on the basis of the condition is known as the condition rendering.
 // -> Conditional rendering in React refers to the process of deciding whether to display certain elements or components based on certain conditions. 
 // -> It allows you to show different parts of your UI depending on the state of your application.
 // -> This allows you to dynamically decide what gets rendered based on the current state or props of your components.
 // -> Conditional rendering is typically done using JavaScript's conditional statements like if-else or ternary operators within the JSX (JavaScript XML) syntax.
 
-if(listOfRestaurants.length === 0){
+/* if(listOfRestaurants.length === 0){
         return <Shimmer/>
-      }
+      } */
 
 //& For testing shimmer add setTimeout to useEffect
         /* useEffect(()=>{
@@ -72,7 +73,7 @@ return listOfRestaurants.length === 0 ? <Shimmer/> : (
                 // --> 61.6) Value of searchText will keep getting changed when the user searches for something
                 // --> So we want to update the searchText whenever the user changes the text
                 // --> We can do this using onchange
-                // --> now as soon as the searchText changes
+                // --> now as soon as the input value changes the value in searchText also gets updated
 
                 // & 61.7) How to make the body components rerender when the searchText changes
                 // --> a) We have to bind the searchText with useState(""). we have done it using a empty text("").                
@@ -87,9 +88,9 @@ return listOfRestaurants.length === 0 ? <Shimmer/> : (
 
               onClick={()=>{
                 // -> 61.1) Filter the restaurant cards and update the UI
-                // -> 61.2) We have to take the value(Which user will provide inn input tag) of this input box 
-                // -> 61.3) Then we have to bind this value to local state variable
-                // -> 61.4) So we will create one more state variable
+                // -> 61.2) We have to take the value(Which user will provide in input tag) of this input box 
+                // -> 61.3) Then we have to bind this value to local state variable      
+                // -> 61.4) So we will create one more state variable                    ==> const [searchText, setSearchText] = useState(""); <==
   
                 const filteredRestaurants = listOfRestaurants.filter((res)=>{
                   // --> 61.8) whenever the state variable changes react will reRender the body component but this time it will reRender it with filteredRestaurants data.
