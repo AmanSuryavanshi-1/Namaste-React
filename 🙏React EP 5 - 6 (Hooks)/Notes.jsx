@@ -37,6 +37,7 @@
 //    -> when setListOfRestaurants function is called the old listOfRestaurant is updated with new list of restaurants to the browser window.
 
 console.log("EP6");
+
 // ! EP6 
 
 // $ 52) MONOLITH ARCHITECTURE
@@ -65,6 +66,38 @@ console.log("EP6");
 //  &  How the services connect to each other?
 //  &  Every service is hosted on different ports and hosted in different URL for eg : api is stored in url/api , url/sms, url/ for UI etc.
 //  &  So when UI needs to connect to backend it sends request to url/api and to connect with sms services it calls for url/sms
+
+// $ 53) How react renders data from an API
+// -> 1st approach => As soon as our page loads we call the API for data then it will render the whole page. Suppose it takes 500ms.
+// =>  Loads -> API -> Render
+
+// -->  2nd approach is the better approach. It is used in React & it will give you a better UX.
+// -> 2nd approach => As soon as our page loads we will render the UI and then call the API for data then it will ReRender the whole page by providing data to it. It will take lesser time.
+// =>  Loads -> Render -> API -> ReRender
+
+// $ 54) (useEffect HOOK) HOW TO GET DATA FROM AN API INSIDE REACT APP
+// -> useEffect will come from react library so we have to import in the file before using it.
+
+//&  Q: Why do we need a useEffect Hook?
+//&  A: useEffect Hook is javascript function provided by react. The useEffect Hook allows you to eliminate side effects in your components. 
+//      -> Some examples of side effects are: fetching API data, directly updating the DOM, and setting up subscriptions or timers, etc can be lead to unwarranted side-effects. 
+//      -> useEffect accepts two arguments, a callback function and a dependency array. The second argument is optional.
+
+//      -> There is an arrow function ()=>, 1st argument i.e. a callback function {} and 2nd argument as an array [] ==>  useEffect(()=>{},[]);  <==
+//     --> If we do not pass empty dependency array then the useEffect runs everytime when the UI is rendered.       ==>  useEffect(() => {})    <==
+
+            /* useEffect(()=>{
+            console.log("useEffect Called");
+            },[])
+
+            console.log("Body rendered"); */
+
+//&    When console.log will get printed?
+//      -> After the React component will get rendered it will then ReRender the data from an API.
+//      -> The code will run the body component will render and then the useEffect is executed and then the callback function is called and then the console.log() will get printed in console.
+//      -> When you have to do something which you want to be rendered after the react component will get loaded then you have to use useEffect.
+//      => The body rendered will be printed first in the console and then the useEffect called will be printed
+
 
 
 // $ 56) ALL ABOUT CORS

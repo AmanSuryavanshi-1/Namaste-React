@@ -52,29 +52,7 @@ const Body = () =>{
 console.log("EP6");
 
 // !EP6
-// $ 53) How react renders data from an API
-// -> 1st approach => As soon as our page loads we call the API for data then it will render the whole page. Suppose it takes 500ms.
-// =>  Loads -> API -> Render
-
-//&  2nd approach is the better approach. It is used in React & it will give you a better UX.
-// -> 2nd approach => As soon as our page loads we will render the UI and then call the API for data then it will ReRender the whole page by providing data to it. It will take lesser time.
-// =>  Loads -> Render -> API -> ReRender
-
-// $ 54) (useEffect HOOK) HOW TO GET DATA FROM AN API INSIDE REACT APP
-// -> useEffect will come from react library so we have to import in the file before using it.
-// -> There are 2 arguments which it will pass
-// -> There is an arrow function ()=>, 1st argument i.e. a callback function {} and 2nd argument as an array [] ==>  useEffect(()=>{},[]);  <==
-
-//& useEffect(()=>{
-//&   console.log("useEffect Called");
-//& },[])
-//=> console.log("Body rendered");
-//& When console.log wil get printed?
-// -> After the React component will get rendered it will then ReRender the data from an API.
-// -> The code will run the body component will render and then the useEffect is executed and then the callback function is called and then the console.log() will get printed in console.
-// -> When you have to do something which you want to be rendered after the react component will get loaded then you have to use useEffect.
-//=> The body rendered will be printed first in the console and then the useEffect called will be printed
-
+// $ 53) - 54) in Notes.jsx
 // $ 55) HOW TO FETCH THE DATA AFTER GETTING IT FROM AN API USING UseEffect
 
 useEffect(()=>{
