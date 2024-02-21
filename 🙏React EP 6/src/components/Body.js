@@ -34,10 +34,15 @@ useEffect(()=>{
           return <h1>LOADING...</h1>
         } */
 // => ShimmerUI 
+//&  Q: What is Shimmer UI?
+//&  A: A Shimmer UI resembles the page's actual UI, so users will understand how quickly the web or mobile app will load even before the content has shown up.
+//&     It gives people an idea of what's about to come and what's happening (while UI is being loading) when a page full of content/data takes more than 3 - 5 seconds to load.
+
 // -> It resembles the page actual UI so that the user understand how quickly the WebApp loads.
 // -> Shimmer UI is a technique used in user interface (UI) design to indicate that content is loading.
 // -> Instead of displaying a static loading spinner or progress bar, 
 //    shimmer UI creates a subtle animation effect that gives the impression of content being loaded gradually.
+//  -> It enhances user experience.
   
 // $ 59) CONDITIONAL RENDERING 
 // -> Rendering on the basis of the condition is known as the condition rendering.
