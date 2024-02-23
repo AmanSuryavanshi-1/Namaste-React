@@ -1212,4 +1212,5 @@ function validateCart(cart){
 // -> Useful for complex chaining of asynchronous operations.
 
 // $ 7) API Handling in REACT (Chai aur code YT) in API HANDLING IN REACT FOLDER (INCOMPLETE)
+
 // $ 8) Handling Events in ReactJS 
