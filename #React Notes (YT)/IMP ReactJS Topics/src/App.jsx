@@ -21,8 +21,7 @@ const arr = ["Surya","vanshi","21","2024","feb", "MESSAGE: props are passed to R
 // -> Props drilling, also known as prop threading or prop passing, refers to the process of passing props through multiple layers of components in a React application.
 // -> It occurs when a component needs to pass props down to its child components, which in turn may pass those props further down to their own child components, and so on.
 
-// $ 10) React Fragments (App.jsx)
-// $ 11) State V/S props
+// $ 10) State V/S props
 //->  Feature	                                                State	                                                        Props
 //->  Origin and Control   |  	Internal to the component, controlled by the component     |      External to the component, passed down from a parent component
 //                         |         itself using setState	                               |
@@ -32,7 +31,7 @@ const arr = ["Surya","vanshi","21","2024","feb", "MESSAGE: props are passed to R
 //->  Examples             |    Counter value, form input, fetched data	                   |      User data, theme settings, list items
 //->  Use When	           |    Data changes within the component	                         |      Data remains constant or needs to be shared with child components
 
-// $ 12) Library V/S Framework
+// $ 11) Library V/S Framework
 //-> Feature	                                              Library	                                                        Framework
 //-> Purpose	            |  Provides specific functionalities for developers to use in their projects.	          |  Provides a complete structure and set of tools for building web applications.
 //-> Control	            |  Developer has full control over how the library is used and integrated.	            |  Framework dictates the overall structure and approach to building the application.
@@ -41,13 +40,15 @@ const arr = ["Surya","vanshi","21","2024","feb", "MESSAGE: props are passed to R
 //-> Examples	            |  jQuery (for manipulating web pages), Math.js (for math calculations),React           |  Angular, Django (for building web applications)
 //                        |   React is a JavaScript library, not a framework.                                     |
 
-// $ 13) useEffect (useEffect.jsx)
+// $ 12) useEffect (useEffect.jsx)
+
+// $ 13) React Fragments (App.jsx)
 
 const App = () => {
 
   return (
 
-    // $ 10) React Fragments
+    // $ 13) React Fragments
     // -->  <> </> This is react fragment 
     //  ->  Fragments were introduced in React version 16.2 as a lightweight way to group elements without introducing unnecessary parent elements to the DOM.
     <> 
