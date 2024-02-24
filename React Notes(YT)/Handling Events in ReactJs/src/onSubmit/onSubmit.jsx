@@ -1,7 +1,12 @@
-//  $ 8.3) onSubmit  (NET NINJA)
+
+// $ 8.3) onSubmit  (NET NINJA)
 // -> It allows you to capture form submissions and control how your application reacts to them.
 // => The onSubmit event handler in React serves a crucial purpose in dealing with user interaction within forms. 
 // => It's used primarily for two key reasons:
+
+// $ 8.3.1) Handling Form Submissions
+//  -> In React, handling form submissions typically involves capturing user input and reacting to it in some way,
+//  -> such as sending data to a server or updating application state.
 
 // --> 1. Capturing and Handling Form Submissions:
 
@@ -18,7 +23,7 @@
 //  ->      |-> Process the submitted data: Access the form data through event.target.elements and use it for validation, sending to a server, updating application state, or performing other actions.
 
 
-// => Handle form submission in reactjs
+// => Handle form submission in reactJs
 // -> 1. assign a handler to submit event in form element
 // -> 2. within submit handler we prevent page refresh
 // -> 3. implement post request with fetch api to send post data to designated api
