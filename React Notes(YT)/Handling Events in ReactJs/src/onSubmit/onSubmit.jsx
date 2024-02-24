@@ -1,6 +1,22 @@
 //  $ 8.3) onSubmit  (NET NINJA)
-// -> The onSubmit event handler in React is a fundamental part of working with forms. 
 // -> It allows you to capture form submissions and control how your application reacts to them.
+// => The onSubmit event handler in React serves a crucial purpose in dealing with user interaction within forms. 
+// => It's used primarily for two key reasons:
+
+// --> 1. Capturing and Handling Form Submissions:
+
+//  -> When a user submits a form (typically by clicking a submit button), the onSubmit event triggers.
+//  -> This event provides a way to capture the submission attempt and execute custom logic in response.
+//  -> By providing a function as the value for the onSubmit prop on a form element, you define what happens when the form is submitted.
+
+// --> 2. Controlling and Preventing Default Behavior:
+
+//  -> By default, form submissions cause the entire page to reload.
+//  -> This behavior might not be desirable in React applications where you want to handle data processing and updates within the single-page application itself.
+//  -> Using onSubmit allows you to leverage JavaScript code to:
+//  ->      |-> Prevent the default reload behavior: By calling event.preventDefault() inside your handler function, you tell the browser to not reload the page.
+//  ->      |-> Process the submitted data: Access the form data through event.target.elements and use it for validation, sending to a server, updating application state, or performing other actions.
+
 
 // => Handle form submission in reactjs
 // -> 1. assign a handler to submit event in form element
@@ -19,7 +35,7 @@ const [body, setBody]= useState("");
 const [author, setAuthor]= useState("Aman");
 
 // USING ONSUBMIT
-//&  Q: why we use e.preventDefault(). or OnSubmit 
+//&  Q: why we use e.preventDefault().
 //&  A: It is used to prevent the default function which refreshes the  page when clicked on submit.
 //&     To prevent page from loading when we click on submit button.
  

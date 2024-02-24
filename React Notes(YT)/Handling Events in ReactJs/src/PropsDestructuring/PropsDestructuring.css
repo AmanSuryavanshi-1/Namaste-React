@@ -1,0 +1,25 @@
+
+.props-main {
+    background-color: #e68f8f;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .props-main h3 {
+    color: #333;
+  }
+  
+  .props-main h2 {
+    color: #007bff;
+  }
+  
+  .props-main ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .props-main ul li {
+    margin-bottom: 5px;
+    color: #801c1c;
+  }
