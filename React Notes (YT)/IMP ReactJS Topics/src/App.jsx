@@ -32,13 +32,13 @@ const arr = ["Surya","vanshi","21","2024","feb", "MESSAGE: props are passed to R
 //->  Use When	           |    Data changes within the component	                         |      Data remains constant or needs to be shared with child components
 
 // $ 11) Library V/S Framework
-//-> Feature	                                              Library	                                                        Framework
-//-> Purpose	            |  Provides specific functionalities for developers to use in their projects.	          |  Provides a complete structure and set of tools for building web applications.
-//-> Control	            |  Developer has full control over how the library is used and integrated.	            |  Framework dictates the overall structure and approach to building the application.
-//-> Flexibility	        |  More flexible, can be easily integrated with other libraries or frameworks.	        |  Less flexible, requires following the framework's guidelines and limitations.
-//-> Learning Curve	      |  Generally easier to learn and use, requires understanding specific functionalities.	|  Steeper learning curve, requires understanding the framework's entire philosophy and structure.
-//-> Examples	            |  jQuery (for manipulating web pages), Math.js (for math calculations),React           |  Angular, Django (for building web applications)
-//                        |   React is a JavaScript library, not a framework.                                     |
+//-> Feature	                                              Library	                                                           Framework
+//-> Purpose	         |  Provides specific functionalities for developers to use in their projects.	          |  Provides a complete structure and set of tools for building web applications.
+//-> Control	         |  Developer has full control over how the library is used and integrated.	              |  Framework dictates the overall structure and approach to building the application.
+//-> Flexibility	     |  More flexible, can be easily integrated with other libraries or frameworks.	          |  Less flexible, requires following the framework's guidelines and limitations.
+//-> Learning Curve	   |  Generally easier to learn and use, requires understanding specific functionalities.	  |  Steeper learning curve, requires understanding the framework's entire philosophy and structure.
+//-> Examples	         |  jQuery (for manipulating web pages), Math.js (for math calculations),React            |  Angular, Django (for building web applications)
+//                     |   React is a JavaScript library, not a framework.                                      |
 
 // $ 12) useEffect (useEffect.jsx)
 
