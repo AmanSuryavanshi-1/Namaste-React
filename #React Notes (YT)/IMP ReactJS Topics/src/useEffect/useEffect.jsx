@@ -4,10 +4,10 @@ import React,{useEffect} from 'react'
 useEffect(()=>{
 
 })
-const useEffect = () => {
+const UseEffect = () => {
   return (
     <div>useEffect</div>
   )
 }
 
-export default useEffect
+export default UseEffect

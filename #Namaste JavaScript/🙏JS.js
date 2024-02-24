@@ -1210,7 +1210,3 @@ function validateCart(cart){
 // -> Chaining is achieved by using multiple .then calls.
 // -> Still widely used, especially in scenarios where you need more control over the order of execution.
 // -> Useful for complex chaining of asynchronous operations.
-
-// $ 7) API Handling in REACT (Chai aur code YT) in API HANDLING IN REACT FOLDER (INCOMPLETE)
-
-// $ 8) Handling Events in ReactJS 

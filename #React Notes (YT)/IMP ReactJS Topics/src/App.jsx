@@ -16,7 +16,7 @@ import UseEffect from './useEffect/useEffect.jsx'
 
 // $ 9) Props are passing & destructuring (PropsDestructuring.jsx)
 const aman = "AmanSuryavanshi";
-const arr = ["Surya","vanshi","21","2024","feb", "MESSAGE: props are passed to React components (props.jsx)" ];
+const arr = ["Surya","vanshi","21","2024","feb", "MESSAGE: props are passed to React components (props.jsx)"];
 // $ 9.1) What is props drilling?         (PropsDrilling.jsx)
 // -> Props drilling, also known as prop threading or prop passing, refers to the process of passing props through multiple layers of components in a React application.
 // -> It occurs when a component needs to pass props down to its child components, which in turn may pass those props further down to their own child components, and so on.
