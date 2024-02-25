@@ -4,7 +4,7 @@ import Onsubmit from './onSubmit/onSubmit.jsx'
 import Onclick from './onClick/onClick.jsx'
 import Onchange from './onChange/onChange.jsx'
 import PropsDestructuring from './PropsDestructuring/PropsDestructuring.jsx'
-import UseEffect from './useEffect/useEffect.jsx'
+import UseEffect from './useEffect/UseEffect.jsx'
 
 // $ 8) Handling Events in ReactJS 
 

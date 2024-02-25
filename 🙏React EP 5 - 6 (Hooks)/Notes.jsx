@@ -103,6 +103,9 @@ console.log("EP6");
 
             /* useEffect(()=>{
             console.log("useEffect Called");
+            // Side Effects Handling
+
+            // Optional return function
             },[dependency array])
 
             console.log("Body rendered"); */
@@ -116,6 +119,7 @@ console.log("EP6");
 //&  Q: After loading the content of component and if there are any changes in data how are they will be shown in browser?
 //&  A: To handle these type of changes useEffect is used.
 
+// useEffect Example in React IMP Topics Notes (YT). => // $ 12) useEffect (useEffect.jsx)
 
 // $ 56) ALL ABOUT CORS
 //  1) Cross-origin resource sharing (CORS)
