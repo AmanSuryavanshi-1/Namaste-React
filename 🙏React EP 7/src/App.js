@@ -6,8 +6,7 @@ import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
 // ! EP7
-
-// $ 61)  Adding Search functionality
+// $ 62) Start kr
 /* Header
    --logo
    --Nav Items
