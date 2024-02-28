@@ -15,7 +15,6 @@ useEffect(()=>{
     setFilteredRestaurants(ALL_RESTAURANTS_LIST);
 },[]);
 
-
 return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
 

@@ -6,19 +6,7 @@ import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
 // ! EP7
-// $ 62) Start kr
-/* Header
-   --logo
-   --Nav Items
-Body 
-   --Search
-   --restaurantContainer
-   --restaurantCard
-Footer
-   --Copyright
-   --Links
-   --Address
-   --Contact */
+// $ 62) EP7
 
    const AppLayout = () => {
     return (
