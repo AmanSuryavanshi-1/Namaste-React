@@ -13,8 +13,14 @@ const UseEffect = () => {
         }
     },[count])
     // --> 12.1) Initially the the dependency array is empty useEffect only loaded once and gives ==> The count is: 0 in console. <==
+    // ->       If there is no dependency array then the useEffect is called on everytime when our component renders.
     // ->       There's no change in count in console irrespective of count getting incremented and decremented in the component itself.
+    
+    //&        Q: What happens if there is a empty dependency array?   
+    //&        A: useEffect is called on initial render (just once)
+
     // --> 12.2) Then we added the count to the dependency array. 
+    // =>       If we have something in dependency array then it will only be called when the dependency changes.
     // ->       So whenever the count gets changed the dependency array will update the console accordingly.
     // ->       & log every time the count gets changed.
             /* 
@@ -24,9 +30,9 @@ const UseEffect = () => {
                         The count is: 3 */
 
     // --> 12.3) OPTIONAL RETURN FUNCTION :- is a part of useEffect hook. It is used to clean up after the effect runs. 
-    //          -> It is especially useful for cleaning up things like timeouts, event listeners, or subscriptions that were created inside the effect.
-    //          -> The function is optional because not all effects need cleanup. 
-    //          -> But if the effect does something that needs to be cleaned up later, the return function is the place to do it.
+    // ->       It is especially useful for cleaning up things like timeouts, event listeners, or subscriptions that were created inside the effect.
+    // ->       The function is optional because not all effects need cleanup. 
+    // ->       But if the effect does something that needs to be cleaned up later, the return function is the place to do it.
     
     //  => For example, if an effect creates a timeout, the return function could be used to clear the timeout when the effect is no longer needed. 
     //  -> This is important because if the timeout is not cleared, it will continue to run even after the effect is no longer needed, which could lead to memory leaks or other problems.

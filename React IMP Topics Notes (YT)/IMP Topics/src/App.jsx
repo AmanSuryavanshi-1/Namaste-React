@@ -5,6 +5,7 @@ import Onclick from './onClick/onClick.jsx'
 import Onchange from './onChange/onChange.jsx'
 import PropsDestructuring from './PropsDestructuring/PropsDestructuring.jsx'
 import UseEffect from './useEffect/UseEffect.jsx'
+import UseState from './useState/UseState.jsx'
 
 // $ 8) Handling Events in ReactJS 
 
@@ -41,14 +42,14 @@ const arr = ["Surya","vanshi","21","2024","feb", "MESSAGE: props are passed to R
 //                     |   React is a JavaScript library, not a framework.                                      |
 
 // $ 12) useEffect (useEffect.jsx)
-
-// $ 13) React Fragments (App.jsx)
+// $ 13) useState   (useState.jsx)
+// $ 14) React Fragments (App.jsx)
 
 const App = () => {
 
   return (
 
-    // $ 13) React Fragments
+    // $ 14) React Fragments
     // -->  <> </> This is react fragment 
     //  ->  Fragments were introduced in React version 16.2 as a lightweight way to group elements without introducing unnecessary parent elements to the DOM.
     <> 
@@ -57,6 +58,7 @@ const App = () => {
     <Onchange/>
     <PropsDestructuring name={aman} array= {arr}/>
     <UseEffect/>
+    <UseState/>
     </>
   )
 }
