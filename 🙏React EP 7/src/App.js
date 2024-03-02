@@ -9,6 +9,7 @@ import Body from './components/Body'
 // $ 62) useEffect in detail from React IMP Topics -> IMP Topics -> useEffect
 // $ 63) useState in detail React IMP Topics -> IMP Topics -> useState
 
+
    const AppLayout = () => {
     return (
     <div className="app">
