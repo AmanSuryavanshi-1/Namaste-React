@@ -56,7 +56,7 @@ const UseEffect = () => {
     //   -> And then it will get recreated with the new count value.
     
     return (
-    <div>
+    <div className='useEffect'>
         <h2>COUNT <span>{count}</span></h2>
         <button onClick={()=>{
             setCount(count-1)
