@@ -4,11 +4,13 @@ import "./App.css"
 import Header from "./components/Navbar/Navbar"
 import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
+import About from './components/About'
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // ! EP7
-// $ 62) useEffect in detail from React IMP Topics Notes (YT) -> IMP Topics -> useEffect
-// $ 63) useState in detail React IMP Topics Notes (YT) -> IMP Topics -> useState
-
+// $ 62) useEffect in detail from React IMP Topics Notes (YT) -> IMP Topics -> 12) useEffect
+// $ 63) useState in detail React IMP Topics Notes (YT) -> IMP Topics -> 13) useState
+// $ 64) React Router DOM
 
    const AppLayout = () => {
     return (
@@ -16,10 +18,34 @@ import Body from './components/Body'
         <Header/>
         <Body/>
         <RestaurantCard/>
+
     </div>
         )
    };
 
-   const root = ReactDOM.createRoot(document.getElementById("root"));
-   root.render(<AppLayout/>);
+// $ 64) using React Router DOM creating About page
+// => 64.1) Creating the configuration:-
+// ->  64.1.1) Importing createBrowserRouter from React Router DOM
+//             -> createBrowserRouter takes a list of objects
+//             -> Each and every object defines a separate path and tells what should happen on that particular path.
 
+   const appRouter = createBrowserRouter([
+    {
+// -> If the path is / load home layout
+    path:"/",
+    element:<AppLayout/>,
+   },
+   {
+// -> If the path is /about load About section
+    path:"/about",
+    element:<About/>,
+   },
+   ]);
+// ->  64.1.2) RouterProvider => We need to provide the above information in order to render it.
+//             -> It is done using a React Router DOM component RouterProvider
+//             -> This router provider will provide the configuration to our app.
+   const root = ReactDOM.createRoot(document.getElementById("root"));
+// earlier we are rendering AppLayout directly
+//    root.render(<AppLayout/>);
+
+root.render(<RouterProvider router={appRouter}/>)
