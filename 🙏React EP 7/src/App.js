@@ -5,6 +5,8 @@ import Header from "./components/Navbar/Navbar"
 import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 import About from './components/About'
+import Recommended from './components/Recommended'
+import Error from './components/Error'
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // ! EP7
@@ -34,14 +36,20 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 // -> If the path is / load home layout
     path:"/",
     element:<AppLayout/>,
+    errorElement:<Error/>,
+// => 64.1.2) We can also add an error element to show the coustomized error pages.
    },
    {
 // -> If the path is /about load About section
     path:"/about",
     element:<About/>,
    },
+   {
+    path:"/recommended",
+    element:<Recommended/>,
+    }
    ]);
-// ->  64.1.2) RouterProvider => We need to provide the above information in order to render it.
+// ->  64.1.3) RouterProvider => We need to provide the above information in order to render it.
 //             -> It is done using a React Router DOM component RouterProvider
 //             -> This router provider will provide the configuration to our app.
    const root = ReactDOM.createRoot(document.getElementById("root"));
