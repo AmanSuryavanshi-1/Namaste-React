@@ -27,6 +27,11 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
         {/* <About
         // => 64.2) creating children routes
+        // --> Basically children routes are created so that we can create a redirect on different pages to that specific component
+        // --> Functionality: When a child route path is accessed in the URL, 
+        //     React Router renders the corresponding child route component within the parent route's designated area. 
+        //     This enables you to define a layout (like a header and footer) in the parent and dynamically load specific content for different sections based on the child route path. 
+        
         // --> When i am on /about i want about page to be loaded
         // --> & when i am on /body the body page must get loaded
         // --> To create the functionality we will create children routes in path = "/".
