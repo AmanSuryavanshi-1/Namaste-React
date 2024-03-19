@@ -50,6 +50,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // $ 64) using React Router DOM creating About page
 // => npm install react-router-dom
+
 // ~ 64.1) a) Creating the configuration:-
 // ~  64.1.1) Importing createBrowserRouter from React Router DOM
 //             -> createBrowserRouter takes a list of objects
