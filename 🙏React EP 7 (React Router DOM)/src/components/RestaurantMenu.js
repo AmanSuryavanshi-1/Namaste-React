@@ -8,7 +8,7 @@ import { useParams } from "react-router-dom";
 //     return ARRAY_OF_MENU_OF_RESTAURANTS.find(menu => menu.id === resId);
 // }
 
-// ~ 66.2) fetching data using useEffect Hook
+// ~ 66.2) fetching data using useEffect Hook  1h:23min
 const RestaurantMenu = () =>{
 const [menuOfRestaurants, setMenuOfRestaurants] = useState([]);
 
