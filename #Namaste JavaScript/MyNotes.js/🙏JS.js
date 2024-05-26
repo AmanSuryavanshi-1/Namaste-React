@@ -96,8 +96,8 @@
 // ~ e) Returning Object Literals
 // ->  When directly returning an object literal, wrap the literal in parentheses to differentiate it from the function block.
 
-      /* const makePerson = (firstName, LastName) =>
-      ({ first: firstName, last: lastName });
+      /* const makePerson = (firstName, LastName) => ({ first: firstName, last: lastName });
+
       console. log(makePerson("John", "Doe")); */
 
 //*     Output: {first: 'John', last: 'Doe'} 
@@ -122,7 +122,7 @@
       // function isodd(x){
       //     return x%2;
       // }
-      /* const output = arr.filter(isodd); */
+      /* const output = arr.filter(isood); */
 
 //^ OR You can now pass any function inside it.  
 
