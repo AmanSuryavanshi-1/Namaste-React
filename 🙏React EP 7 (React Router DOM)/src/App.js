@@ -18,7 +18,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // $ 63) useState in detail React IMP Topics Notes (YT) -> IMP Topics -> 13) useState
 // $ 64) React Router DOM  (App.js)
 // $ 65) Types of Routing   (Notes.jsx)
-// $ 66) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
 
    const AppLayout = () => {
     return (
