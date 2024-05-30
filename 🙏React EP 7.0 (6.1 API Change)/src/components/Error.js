@@ -8,7 +8,7 @@ const Error = ()=>{
     <div>
         <h1>OOPS!!!</h1>
         <h2> Something went Wrong</h2>
-        <h3>Coustomized error component</h3>
+        <h3>Customized error component</h3>
         <h4>{err.status}: {err.statusText}</h4>
     </div>
     );

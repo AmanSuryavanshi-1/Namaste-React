@@ -1,8 +1,7 @@
 // $ 66) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
 // -> we will reuse this component for rendering the data for every Restaurant.
 import React, { useEffect, useState } from "react";
-import { ARRAY_OF_MENU_OF_RESTAURANTS } from "../utils/mockData";
-import { idIndexPair, getMenuFromResID } from "../utils/helper";
+// import { ARRAY_OF_MENU_OF_RESTAURANTS } from "../utils/mockData";
 import { useParams } from "react-router-dom";
 // export function getMenuFromResID(resId) {
 //     return ARRAY_OF_MENU_OF_RESTAURANTS.find(menu => menu.id === resId);
@@ -22,10 +21,10 @@ const { resId } = useParams();
   function addFoodItem(item) {
     dispatch(addItem(item));
   }
-    useEffect(() => {
-        const menu = getMenuFromResID(resId, ARRAY_OF_MENU_OF_RESTAURANTS,idIndexPair);
-        setRestaurantMenu(menu);
-    }, [resId]);
+    // useEffect(() => {
+    //     const menu = getMenuFromResID(resId, ARRAY_OF_MENU_OF_RESTAURANTS,idIndexPair);
+    //     setRestaurantMenu(menu);
+    // }, [resId]);
 
 
     if (!restaurantMenu) {
@@ -34,11 +33,11 @@ const { resId } = useParams();
         </div>;
     }
 
-    const test = getMenuFromResID(
-        resId,
-        ARRAY_OF_MENU_OF_RESTAURANTS,
-        idIndexPair
-      );
+    // const test = getMenuFromResID(
+    //     resId,
+    //     ARRAY_OF_MENU_OF_RESTAURANTS,
+    //     idIndexPair
+    //   );
       
     return (
         <div>
