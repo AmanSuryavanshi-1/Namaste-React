@@ -15,13 +15,15 @@ const Body = () =>{
   },[]);
 // $ EP 6.1) Updating the api key
 
-// -> 6.1.2) Changing the API key & destructing the data which we are getting from api link
+// -> 6.1.2) Changing the API tkey & destructing the data which we are getting from api link
 // -> 6.1.3) Check Notion for details about destructuring  
 // -> 6.1.4) Changing the CDN_URL from old to new url
-// -> 6.1.5) Check Notion for details about get and post request
+// -> 6.1.5) Check Notion for fixing CORS issue
+// -> 6.1.6) Check Notion for details about get and post request
 
   const fetchData = async () => {
-    const data = await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999");
+    const data = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999'));
+    // const data = "https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999");
     const json = await data.json();
     console.log(json.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);  
     setListOfRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
@@ -51,6 +53,7 @@ return listOfRestaurants.length === 0 ? <Shimmer/> : (
             </div>
             </div>
 
+            
             <div className='filter'>
                 <button className="filter-btn"
                 onClick={() => {
