@@ -22,13 +22,43 @@ const Body = () =>{
 // -> 6.1.6) Check Notion for details about get and post request
 
   const fetchData = async () => {
+    try {
+
     const data = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999'));
     // const data = "https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999");
     const json = await data.json();
-    console.log(json.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);  
-    setListOfRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-    setFilteredRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+    // console.log(json.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);  
+    const response = json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+    // setListOfRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+    // setFilteredRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+    if (Array.isArray(response)) {
+      setListOfRestaurants(response);
+      setFilteredRestaurants(response);
+    } else {
+      console.error("Invalid data structure for restaurants", restaurants);
+    }
+
+    // EXAMPLE POST REQUEST 
+    // const postData = {};
+
+    // const postResponse = await fetch('https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.65200&lng=77.16630&carousel=true&third_party_vendor=1"), {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: JSON.stringify(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    // });
+
+    // const postJson = await postResponse.json(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    // console.log(postJson);
+
+  } catch (error) {
+    console.error("Error fetching data:", error);
   }
+};
+
+    // const postURL = await fetch('https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.65200&lng=77.16630&carousel=true&third_party_vendor=1"));
+
 
 return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
