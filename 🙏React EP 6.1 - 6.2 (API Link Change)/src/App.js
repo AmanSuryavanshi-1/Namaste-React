@@ -10,7 +10,6 @@ import Error from './components/Error'
 import Fav from './components/NavComponents/fav'
 import Contact from './components/NavComponents/Contact'
 import Cart from './components/NavComponents/Cart'
-import RestaurantMenu from './components/RestaurantMenu'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // ! EP 6.1 Changing the updated Swiggy API 
@@ -54,10 +53,6 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
         {
             path:"/cart",
             element:<Cart/>
-        },
-        {
-            path:"/restaurants/:resId",
-            element:<RestaurantMenu/>
         },
     ],
     errorElement:<Error/>,
