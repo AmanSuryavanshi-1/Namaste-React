@@ -12,13 +12,15 @@ const Body = () =>{
   useEffect(()=>{
     fetchData();
   },[]);
-// $ EP 6.1) Updating the api key
+// $ 66) Updating the api key
 
-// -> 6.1.2) Changing the API tkey & destructing the data which we are getting from api link
-// -> 6.1.3) Check Notion for details about destructuring  
-// -> 6.1.4) Changing the CDN_URL from old to new url
-// -> 6.1.5) Check Notion for fixing CORS issue
-// -> 6.1.6) Check Notion for details about get and post request
+// -> 66.1) Changing the API key & destructing the data which we are getting from api link
+// -> 66.2) Check Notion for details about destructuring  
+// -> 66.3) Making Changes in RestaurantCard.js according to the new API   
+// -> 66.3) Changing the CDN_URL from old to new url
+
+// $ 67) Using corsProxy.io for avoiding CORS issues
+// -> 66.4) Check Notion for fixing CORS issue
 
   const fetchData = async () => {
     try {
@@ -36,28 +38,10 @@ const Body = () =>{
     } else {
       console.error("Invalid data structure for restaurants", restaurants);
     }
-
-    // EXAMPLE POST REQUEST 
-    // const postData = {};
-
-    // const postResponse = await fetch('https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.65200&lng=77.16630&carousel=true&third_party_vendor=1"), {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    // });
-
-    // const postJson = await postResponse.json(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    // console.log(postJson);
-
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 };
-
-    // const postURL = await fetch('https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.65200&lng=77.16630&carousel=true&third_party_vendor=1"));
-
 
 return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">

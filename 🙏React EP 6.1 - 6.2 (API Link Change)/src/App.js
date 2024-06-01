@@ -12,9 +12,11 @@ import Contact from './components/NavComponents/Contact'
 import Cart from './components/NavComponents/Cart'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-// ! EP 6.1 Changing the updated Swiggy API 
+// ! EP 6.1 Changing the Swiggy API 
 // $ 66) Updating the Swiggy API
-// $ 67) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
+
+// ! EP 6.2 Avoiding CORS problem without extension
+// $ 67) Using corsProxy.io for avoiding CORS issues
 
    const AppLayout = () => {
     return (

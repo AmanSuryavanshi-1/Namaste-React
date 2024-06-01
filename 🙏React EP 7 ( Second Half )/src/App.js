@@ -13,9 +13,8 @@ import Cart from './components/NavComponents/Cart'
 import RestaurantMenu from './components/RestaurantMenu'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-// ! EP 6.1 Changing the updated Swiggy API 
-// $ 66) Updating the Swiggy API
-// $ 67) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
+// ! EP 7 (2Half)
+// $ 68) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
 
    const AppLayout = () => {
     return (

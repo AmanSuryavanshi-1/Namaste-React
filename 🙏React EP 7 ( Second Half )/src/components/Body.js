@@ -15,7 +15,7 @@ const Body = () =>{
   },[]);
 // $ EP 6.1) Updating the api key
 
-// -> 6.1.2) Changing the API tkey & destructing the data which we are getting from api link
+// -> 6.1.2) Changing the API key & destructing the data which we are getting from api link
 // -> 6.1.3) Check Notion for details about destructuring  
 // -> 6.1.4) Changing the CDN_URL from old to new url
 // -> 6.1.5) Check Notion for fixing CORS issue
