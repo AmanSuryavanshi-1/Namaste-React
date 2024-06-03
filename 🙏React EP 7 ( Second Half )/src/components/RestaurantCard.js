@@ -18,7 +18,7 @@ locality,
 
   return (
     <div className='RestaurantCard'>
-        <img className='ResLogo' src={CDN_URL+cloudinaryImageId} alt="ResLogo" />
+        <img className='ResLogo' style={{ height: "200px", width: "200px" }} src={CDN_URL+cloudinaryImageId} alt="ResLogo" />
         <h3>{name}</h3>
         <h4>Cuisines : {cuisines.join(", ")}</h4>
         <h4>Ratings : {avgRatingString} <span>{totalRatingsString}</span></h4>
