@@ -1,42 +1,48 @@
 // $ 68) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
 // -> we will reuse this component for rendering the data for every Restaurant.
 import React, { useEffect, useState } from "react";
+
 import Shimmer  from "./Shimmer/Shimmer"
 import { CDN_URL } from "../utils/constant";
+import { corsSH_Header } from "../utils/constant"
+import { useParams } from "react-router-dom";
+import { menuAPI_URL } from "../utils/constant"
 
 const RestaurantMenu = () =>{
 const [res, setRes] = useState(null);
 const [recommended, setRecommended] = useState(null);
 
+const {resId} = useParams();
+
     useEffect(() => {
         fetchMenu();
     }, []);
-// -> 68.1) fetching data using useEffect Hook
+// => 68.1) fetching data using useEffect Hook
 //          -> Empty Dependency array which means it will recalled once after initial render 
-// -> 68.2) For loading the fetched data in json format in restaurantMenu we will need a state variable.
-// -> 68.3) API call will be made & then that data will be stored in state variable and Whenever my state variable updates it will automatically update the UI.
+// => 68.2) For loading the fetched data in json format in restaurantMenu we will need a state variable.
+// => 68.3) API call will be made & then that data will be stored in state variable and Whenever my state variable updates it will automatically update the UI.
    
     const fetchMenu = async () => {
-        // const data = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=55473&catalog_qa=undefined&submitAction=ENTER'));
-        const data = await fetch
-        ('https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=55473&catalog_qa=undefined&submitAction=ENTER',
-    {
-      headers: {
-        'x-cors-api-key': 'temp_7c2e6610d552855652c720ec06b89198'
-      }
-    }
-  );
+       // Now we have to pass this resId to my URL
+        const data = await fetch (menuAPI_URL + resId,
+        corsSH_Header); // Taking this headers from constant.js
+        
         const json = await data.json();
         console.log(json);
         // console.log(json?.data?.cards[2]?.card?.card?.info?.name);
         const restaurantData = json?.data?.cards[2]?.card?.card?.info;  
-// -> 68.4) As soon as i made the data call i will fill the res with this json
+// => 68.4) As soon as i made the data call i will fill the res with this json
         setRes(restaurantData);
 
-// -> 68.5) Now for loading menuItems we need the data to be stored in new useState variable & a constant variable for destructuring the location
+// => 68.5) Now for loading menuItems we need the data to be stored in new useState variable & a constant variable for destructuring the location
         const RecommendedData = json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
         console.log(RecommendedData);
         setRecommended(RecommendedData);
+// => 68.6) Putting All my API's in constant.js
+//          -> Always you should keep the api keys separately defined in different file where it is not accessible publicly
+
+// => 68.7) Every Restaurant has different hosted API link (in Notion EP7 (Second Half))
+
     };
 
     // -> Fetching the required data felids by performing optional chaining
