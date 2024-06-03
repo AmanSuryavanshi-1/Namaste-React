@@ -3,6 +3,8 @@ import { useState } from 'react';
 import RestaurantCard from './RestaurantCard';
 // import { ALL_RESTAURANTS_LIST } from '../utils/mockData';
 import Shimmer from './Shimmer/Shimmer';
+import { corsSH_Header } from "../utils/constant"
+import { resAPI_URL } from "../utils/constant"
 
 const Body = () =>{
   const [listOfRestaurants , setListOfRestaurants] = useState([]);
@@ -26,13 +28,7 @@ const Body = () =>{
     // const data = "https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999";
     // const data = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999'));
     
-    const data = await fetch('https://proxy.cors.sh/https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999',
-    {
-      headers: {
-        'x-cors-api-key': 'temp_7c2e6610d552855652c720ec06b89198'
-      }
-    }
-  );
+    const data = await fetch( resAPI_URL , corsSH_Header);
  
     const json = await data.json();
     // console.log(json.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);  

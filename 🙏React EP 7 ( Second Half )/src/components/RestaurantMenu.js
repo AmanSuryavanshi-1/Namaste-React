@@ -5,8 +5,8 @@ import React, { useEffect, useState } from "react";
 import Shimmer  from "./Shimmer/Shimmer"
 import { CDN_URL } from "../utils/constant";
 import { corsSH_Header } from "../utils/constant"
-import { useParams } from "react-router-dom";
 import { menuAPI_URL } from "../utils/constant"
+import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () =>{
 const [res, setRes] = useState(null);
@@ -44,9 +44,6 @@ const {resId} = useParams();
 // => 68.7) Every Restaurant has different hosted API link (in Notion EP7 (Second Half))
 
     };
-
-    // -> Fetching the required data felids by performing optional chaining
-    // const restaurantInfo = res?.data?.cards[2]?.card?.card?.info;
 
     return res===null ? (<Shimmer/>) : (
         <div>
