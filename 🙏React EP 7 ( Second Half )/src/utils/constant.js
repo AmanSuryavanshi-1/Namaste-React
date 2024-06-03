@@ -12,5 +12,9 @@ export const corsSH_Header = {
 };
 
 export const menuAPI_URL = 'https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=';
-                                               
+
 export const resAPI_URL = 'https://proxy.cors.sh/https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999';
+
+
+export const menuAPI_URL1 = 'https://crossorigin.me/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId='                             
+export const resAPI_URL1 = 'https://crossorigin.me/https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999';

@@ -5,6 +5,7 @@ import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer/Shimmer';
 import { corsSH_Header } from "../utils/constant"
 import { resAPI_URL } from "../utils/constant"
+import { Link } from 'react-router-dom';
 
 const Body = () =>{
   const [listOfRestaurants , setListOfRestaurants] = useState([]);
@@ -102,7 +103,12 @@ return listOfRestaurants.length === 0 ? <Shimmer/> : (
             </div>
             <div className="RestaurantContainer">
           {filteredRestaurants.map((res) => (
-            <RestaurantCard resInfo={res} key={res.info.id} />
+            <Link 
+              key={res.info.id} 
+              to={"/restaurants/"+ res.info.id} 
+            > 
+                <RestaurantCard resInfo={res} />
+            </Link>
           ))}
          </div>
         </div>
