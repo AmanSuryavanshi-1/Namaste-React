@@ -1,4 +1,3 @@
-
 // ! NAMASTE JAVASCRIPT
 
 // $ 1) MAP filter and reduce
@@ -8,7 +7,8 @@
           return x*2;
       }
       function triple(x){
-        return x*x*x;
+        return 
+        x*x*x;
       } */
       
 //^ You can now pass any function inside it.  

@@ -3,8 +3,7 @@ import { useState } from 'react';
 import RestaurantCard from './RestaurantCard';
 // import { ALL_RESTAURANTS_LIST } from '../utils/mockData';
 import Shimmer from './Shimmer/Shimmer';
-import { corsSH_Header } from "../utils/constant"
-import { resAPI_URL } from "../utils/constant"
+import { menuAPI_URL } from "../utils/constant"
 import { Link } from 'react-router-dom';
 
 const Body = () =>{
@@ -23,47 +22,30 @@ const Body = () =>{
 // -> 6.1.4) Changing the CDN_URL from old to new url
 // -> 6.1.5) Check Notion for fixing CORS issue
 // -> 6.1.6) Check Notion for details about get and post request
-
+// ! 6.2) Changed the api url bcz cors not working properly when console is closed
+// !      using foodfire api link
   const fetchData = async () => {
     try {
     // const data = "https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999";
     // const data = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999'));
     
-    const data = await fetch( resAPI_URL , corsSH_Header);
- 
+    const data = await fetch( menuAPI_URL);
     const json = await data.json();
     // console.log(json.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);  
-    const response = json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
+    const responseRes = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
     // setListOfRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
     // setFilteredRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-    if (Array.isArray(response)) {
-      setListOfRestaurants(response);
-      setFilteredRestaurants(response);
+    if (Array.isArray(responseRes)) {
+      setListOfRestaurants(responseRes);
+      setFilteredRestaurants(responseRes);
     } else {
       console.error("Invalid data structure for restaurants", restaurants);
     }
-
-    // EXAMPLE POST REQUEST 
-    // const postData = {};
-
-    // const postResponse = await fetch('https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.65200&lng=77.16630&carousel=true&third_party_vendor=1"), {
-    //   method: 'POST',
-    //   headers: {
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-    // });
-
-    // const postJson = await postResponse.json(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    // console.log(postJson);
 
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 };
-
-    // const postURL = await fetch('https://corsproxy.io/?' + encodeURIComponent("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=28.65200&lng=77.16630&carousel=true&third_party_vendor=1"));
-
 
 return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">

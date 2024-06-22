@@ -4,8 +4,7 @@ import React, { useEffect, useState } from "react";
 
 import Shimmer  from "./Shimmer/Shimmer"
 import { CDN_URL } from "../utils/constant";
-import { corsSH_Header } from "../utils/constant"
-import { menuAPI_URL } from "../utils/constant"
+import { resAPI_URL } from "../utils/constant"
 import { useParams } from "react-router-dom";
 
 const RestaurantMenu = () =>{
@@ -24,8 +23,7 @@ const {resId} = useParams();
    
     const fetchMenu = async () => {
        // Now we have to pass this resId to my URL
-        const data = await fetch (menuAPI_URL + resId,
-        corsSH_Header); // Taking this headers from constant.js
+        const data = await fetch (resAPI_URL + resId); 
         
         const json = await data.json();
         console.log(json);
@@ -35,7 +33,7 @@ const {resId} = useParams();
         setRes(restaurantData);
 
 // => 68.5) Now for loading menuItems we need the data to be stored in new useState variable & a constant variable for destructuring the location
-        const RecommendedData = json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+        const RecommendedData = json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
         console.log(RecommendedData);
         setRecommended(RecommendedData);
 // => 68.6) Putting All my API's in constant.js

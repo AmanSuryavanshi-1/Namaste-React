@@ -5,16 +5,16 @@ export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_l
 
 export const LOGO_URL = "https://previews.123rf.com/images/miracel123/miracel1231801/miracel123180100795/94312687-food-delivery-logo.jpg";
 
-export const corsSH_Header = {
-  headers: {
-    'x-cors-api-key': 'temp_7c2e6610d552855652c720ec06b89198'
-  }
-};
+// export const corsSH_Header = {
+//   headers: {
+//     'x-cors-api-key': 'temp_7c2e6610d552855652c720ec06b89198'
+//   }
+// };
 
-export const menuAPI_URL = 'https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=';
+// export const menuAPI_URL = 'https://proxy.cors.sh/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId=';
 
-export const resAPI_URL = 'https://proxy.cors.sh/https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999';
+// export const resAPI_URL = 'https://proxy.cors.sh/https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999';
 
+export const menuAPI_URL ="https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING";
 
-export const menuAPI_URL1 = 'https://crossorigin.me/https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=28.7040592&lng=77.10249019999999&restaurantId='                             
-export const resAPI_URL1 = 'https://crossorigin.me/https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999';
+export const resAPI_URL = "https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId="
