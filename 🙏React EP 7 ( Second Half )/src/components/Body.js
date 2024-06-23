@@ -26,26 +26,37 @@ const Body = () =>{
 // !      using foodfire api link
   const fetchData = async () => {
     try {
-    // const data = "https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999";
-    // const data = await fetch('https://corsproxy.io/?' + encodeURIComponent('https://www.swiggy.com/mapi/homepage/getCards?lat=28.7040592&lng=77.10249019999999'));
-    
     const data = await fetch( menuAPI_URL);
     const json = await data.json();
     // console.log(json.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);  
-    const responseRes = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
-    // setListOfRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-    // setFilteredRestaurants(json?.data?.success?.cards[1]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-    if (Array.isArray(responseRes)) {
+    // const responseRes = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+
+// ! 6.3) fetching only valid restaurants & increasing the number of restaurants listed on our site
+    const checkJsonData = (json) => {
+      for (let i = 0; i < json?.data?.cards.length; i++) {
+        // ^ initialize checkData for Swiggy Restaurant data
+        let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        // -> checkData will contain all the cards all the restaurants available in different json?.data?.cards[i]
+        // -> it will take ll the restaurants avaiable in the different cards and will provide them in checkData
+        // -> By this we can increase the number of restaurants listed 
+        // ^ if checkData is not undefined then return it
+        if (checkData !== undefined) {
+          return checkData;
+        }
+      }
+    }
+
+    // call the checkJsonData() function which return Swiggy Restaurant data
+    const responseRes= checkJsonData(json);
+
       setListOfRestaurants(responseRes);
       setFilteredRestaurants(responseRes);
-    } else {
-      console.error("Invalid data structure for restaurants", restaurants);
-    }
 
   } catch (error) {
     console.error("Error fetching data:", error);
   }
 };
+
 
 return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
