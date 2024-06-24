@@ -13,6 +13,7 @@ import RestaurantMenu from './components/RestaurantMenu'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // ! EP 7 (2Half)
+// $ 67) Fixing API link issues (# EP 6.1) (Body.js & constant.js)
 // $ 68) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
 
    const AppLayout = () => {

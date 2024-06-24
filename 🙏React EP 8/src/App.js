@@ -12,8 +12,9 @@ import Cart from './components/NavComponents/Cart'
 import RestaurantMenu from './components/RestaurantMenu'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-// ! EP 7 (2Half)
-// $ 68) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
+// ! EP 8 class based components (X)
+// ! EP 9 Optimizing our app
+// $ 69) Creating a custom hook useRestaurantMenu() in ( RestaurantMenu.js )
 
    const AppLayout = () => {
     return (

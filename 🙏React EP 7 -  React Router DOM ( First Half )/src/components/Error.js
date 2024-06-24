@@ -1,7 +1,8 @@
 import React from "react";
 import { useRouteError } from "react-router-dom";
+// => 66.1) useRouteError
 // -> This is the hook provided by react-router-dom for handling errors
-// => Anything which contains a use in the name then it is a hook
+// -> Anything which contains a use in the name then it is a hook
 // -> It is used to give more details about the error or how the error has occurred. 
 const Error = ()=>{
     const err = useRouteError();
