@@ -11,44 +11,44 @@
         x*x*x;
       } */
       
-//^ You can now pass any function inside it.  
+// -> You can also pass any function inside it.  
     // const output = arr.map(double); // this function tells map that what transformation I want on each element of array
 
 //^ OR 
-//  we can directly write function inside arr.map()
+// -> We can directly write function inside arr.map()
 
       /* const output = arr.map(function double(x){
         return x*2;
       });  */
 
 //^ OR 
-//  we can directly write function inside arr.map() using arrow function
-// just have to remove function double and everything remains same
+// -> Using arrow function
+// -> just have to remove function double and everything remains same
 
             /* const output = arr.map((x)=>{
               return x*2;
             });  */
 
-        //^ OR You can just remove the bracket and return in arrow function
+        //* OR You can just remove the bracket and return in arrow function
 
             /* const output = arr.map((x)=>x*2); */ 
             
 // console.log(output);
 
-//^ ALL WILL GIVE SAME OUTPUT
+// ALL WILL GIVE SAME OUTPUT
 
 // $ 1.1) WHAT IS ARROW FUNCTION
 //-> Arrow functions were introduced in ES6.
 //-> Arrow functions allow us to write shorter function syntax.
-//-> ^ For Example:-
+//-> For Example:-
 
-// ^ Before Arrow:
+// --> Before Arrow:
 
       /* hello = function() {
         return "Hello World!";
       } */
 
-// ^ With Arrow Function:
+// --> With Arrow Function:
 
       /* hello = () => {
         return "Hello World!";
@@ -184,7 +184,7 @@
 // -> reduce function takes two arguments :-
 //      - accumulator
 //      - current
-// -> AND TAKES A INITAL VALUE IF ANY AT THE END
+// -> AND TAKES A INITIAL VALUE IF ANY AT THE END
 // & => WHEN INITIAL VALUE IS SET TO 4 means acc = 4 in starting
 
 
@@ -217,7 +217,7 @@
         if(curr>acc) acc== curr;
         return acc;
       },{}) */
-// OR u can change arguments name also
+//^ OR u can change arguments name also
       /* const output = arr.reduce(function(max,curr){
         if(curr>max) max = curr;
         return max;
@@ -228,8 +228,8 @@
 
 
 // $ 1.4) MAP filter and reduce REAL WORLD EXAMPLES
-// consider this as data comming from API
-// List of user's
+// -> consider this as data comming from API
+// -> List of user's
       /* const users =[
       { firstName: "akshay", lastName: "saini", age: 26 },
       { firstName: "donald", lastName: "trump", age: 75 },
@@ -244,8 +244,8 @@
 //* Output: [ 'akshay saini', 'donald trump', 'elon musk', 'Aman suryavanshi' ]
 
 // $ 1.4.2) Give people with the particular same age (Reduce) 
-// FOR EG:- { age : no. of people of that age group } => {26:2, 75:1, 50:1}
-// We will be using reduce for it bcz we want to reduce a array to a particular value that we want in our case it's age
+//   FOR EG:- { age : no. of people of that age group } => {26:2, 75:1, 50:1}
+//-> We will be using reduce for it bcz we want to reduce a array to a particular value that we want in our case it's age
 
       /* const output = users.reduce(function(acc,curr){
         if(acc[curr.age]){
@@ -268,10 +268,11 @@
           console.log(x.firstName);
         }
       }); 
-      // OR we can simply use map along wiht filter
-        const output=users.filter((x) => x.age<30).map((x)=>x.firstName);
-         console.log(output)
-         */
+      */
+      // ^ OR we can simply use map along with filter
+         /* const output=users.filter((x) => x.age<30).map((x)=>x.firstName);
+         console.log(output) */
+       
 
 //* Output:[ 'akshay', 'Aman' ]
 
