@@ -15,6 +15,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // ! EP 8 class based components (X)
 // ! EP 9 Optimizing our app
 // $ 69) Creating a custom hook useRestaurantMenu() in ( RestaurantMenu.js )
+// $ 70) Creating online offline feature
 
    const AppLayout = () => {
     return (

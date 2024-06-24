@@ -4,6 +4,7 @@ import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer/Shimmer';
 import { menuAPI_URL } from "../utils/constant"
 import { Link } from 'react-router-dom';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 const Body = () =>{
   const [listOfRestaurants , setListOfRestaurants] = useState([]);
@@ -38,6 +39,11 @@ const Body = () =>{
     console.error("Error fetching data:", error);
   }
 };
+
+const onlineStatus = useOnlineStatus();
+if(onlineStatus === false){
+  return(<h1> Looks like you are offline!! Please Check you internet connection"</h1>)
+}
 
 return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
