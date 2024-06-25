@@ -19,7 +19,7 @@ const onlineStatus = useOnlineStatus();
                 <ul>
                     <li>Online Status: { onlineStatus ? "✅" : "🔴"} </li>
                     <li>        
-                         <Link to="/recommended"> Recommended </Link> </li>
+                         <Link to="/recommendations"> Recommendations </Link> </li>
                     <li> <Link to="/about"> About </Link> </li>
                     <li> <Link to="/cart"> Cart </Link> </li>
                     <li> <Link to="/contact"> Contact </Link> </li>
