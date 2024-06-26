@@ -1,6 +1,6 @@
 // $ 68) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
 // -> we will reuse this component for rendering the data for every Restaurant.
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import Shimmer  from "./Shimmer/Shimmer"
 import { CDN_URL } from "../utils/constant";

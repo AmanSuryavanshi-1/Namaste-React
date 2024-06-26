@@ -13,19 +13,10 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // ! EP 8 class based components (X)
 // ! EP 9 Optimizing our app
-// $ 69) Creating a custom hook useRestaurantMenu() in ( RestaurantMenu.js )
-// $ 70) Creating online offline feature
-// $ 71) Lazy Loading
-// We will not import AiRecommendations directly we will take the help of lazy loading or dynamic loading
-// The Recommendations code is not fetched at the time of website loading
-//  It will be load only when the Recommendations section is opened i.e. the code will only come when the user clicks on it or asked for it.  
-// import Recommendations from './components/Recommendations'
+// $ 69) Creating a custom hook useRestaurantMenu() in ( RestaurantMenu.js & useRestaurantMenu.js)
+// $ 70) Creating online offline feature in ( useOnlineStatus.js & Body.js & Navbar.js)
+// $ 71) Lazy Loading & fallback (App.js & Recommendations.js)
 
-// Lazy is a named export which come with react
-// Now we will lazy load it
-
-// We will not import it with normal import like :-
-//  import Recommendations from './components/Recommendations'
 const Recommendations = lazy(()=> import("./components/Recommendations"));
 
 
