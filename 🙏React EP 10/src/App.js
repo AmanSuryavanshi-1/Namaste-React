@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import ReactDOM from "react-dom/client"
-import "./App.css"
+// import "./App.css"
 import Header from "./components/Navbar/Navbar"
 import Body from './components/Body'
 import About from './components/NavComponents/About'
