@@ -1,7 +1,7 @@
 import React, { Suspense, lazy } from 'react'
 import ReactDOM from "react-dom/client"
-// import "./App.css"
-import Header from "./components/Navbar/Navbar"
+import "./index.css"
+import Header from "./components/Navbar"
 import Body from './components/Body'
 import About from './components/NavComponents/About'
 import Error from './components/Error'
