@@ -19,6 +19,7 @@ const useRestaurantMenu = (resId) => {
         setRes(restaurantData);
 
         const RecommendedData = json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
+
         setRecommended(RecommendedData);
     };
   return [res, recommended];

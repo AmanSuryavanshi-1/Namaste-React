@@ -1,10 +1,15 @@
+// $ 68) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
+// -> we will reuse this component for rendering the data for every Restaurant.
 import React from "react";
+
 import Shimmer  from "./Shimmer/Shimmer"
 import { CDN_URL } from "../utils/constant";
+import { resAPI_URL } from "../utils/constant"
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () =>{
+
 const {resId} = useParams();
 const [res,recommended] = useRestaurantMenu(resId);
 
@@ -24,16 +29,7 @@ const [res,recommended] = useRestaurantMenu(resId);
 
             <div className="topPicks">
                 <h2>Top Picks</h2>
-                {/* <div className="TopPicksCarousel">
-                    {res.topPicks.map((item, index) => (
-                        <div key={index}>
-                            <img src={item.imageUrl} alt={item.name} />
-                            <h4>{item.name}</h4>
-                            <h4>${item.price}</h4>
-                        </div>
-                    ))}
-                </div> */}
-
+    
             </div>
 
             <div className="recommended">

@@ -1,6 +1,6 @@
 import React, { Suspense, lazy } from 'react'
 import ReactDOM from "react-dom/client"
-import "./index.css"
+import "./App.css"
 import Header from "./components/Navbar"
 import Body from './components/Body'
 import About from './components/NavComponents/About'
@@ -11,8 +11,8 @@ import Cart from './components/NavComponents/Cart'
 import RestaurantMenu from './components/RestaurantMenu'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
-// ! EP 10
-// $ 72) Using Tailwind CSS for styling aur app
+// ! EP10 Tailwind CSS
+// $ 72) 
 
 const Recommendations = lazy(()=> import("./components/Recommendations"));
 
