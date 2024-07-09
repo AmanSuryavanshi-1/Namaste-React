@@ -9,23 +9,10 @@
 <body>
 
 <!--! EP1 -->
-<!-- $ 1) React is a JavaScript library not a framework, it does not impose an exhaustive application structure like frameworks do -->
-<!-- $ 2) React uses one-way data binding and virtual DOM, whereas Angular uses two-way data binding and real DOM -->
-        <!-- ^   2.1)          One Way Data Binding =  Data flow is one-directional.
-                                            This means that the flow of code is from typescript file to Html file. -->
-        <!-- ^   2.2)         Two Way Binding = Data flow is bi-directional.
-                                            This means that the flow of code is from typescript file to Html file as well as from Html file to ts file. -->
-<!--$ 3)  index.html gets executed line by line if the Javascript tag is placed above react script tags the react will not work -->
-<!--$ 4)  REACT IS ONLY APPLICABLE FOR THE DIV WITH ID ROOT And if there's something inside root div it will get replaced as soon as the execution of react script tags and app.js occurs -->
-
-    <div id="root"></div>
-
-<!--$ 5) This means we can use react in small portion of page also only the div with root id consists react in it -->
-
-<!--$ 6) How to give heading using JS into html -->
+<!-- 1) - 4) Major part of notes in Noiton -->
+<!--$ 5) How to give heading using JS into html -->
 
     <!-- <script>
-         
         const heading = document.createElement("h1");
         heading.innerHTML = "Hello World from jS";
 
@@ -33,24 +20,17 @@
         root.appendChild(heading);
     </script> -->
 
-<!--$ 7) How to inject react in the project 
+<!--$ 6) How to inject react in the project 
      a) Using React CDN links -->
-     
-<!--$ App.js 8) - 10) -->
-<!--$ Notes.md 11) - 16)  -->
+       <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+            <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
 
-<!--$ 17) CDN links is not a preferred way to host a react app bcz fetching from CDN is costly as it have to fetch data from unpkg.com  -->
-<!--$ 18) And it will not be present in the package.json so if there's some updates it will be easy to update the dependencies -->
-<!--$ 19) So the best way to get react in our project is by installing it using npm i react (i is short form for install) -->
+<!--$ 7) CDN links is not a preferred way to host a react app bcz fetching from CDN is costly as it have to fetch data from unpkg.com  -->
+<!--       -> And it will not be present in the package.json so if there's some updates it will be easy to update the dependencies -->
+<!--       -> So the best way to get react in our project is by installing it using npm i react (i is short form for install) -->
 
-    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
+<!--$ App.js 8) - 9) -->
 
     <script type="module" src="./App.js"></script>
-<!--$ 20) 
-    -type="module" is defined bcz the normal js file does not have IMPORTS & EXPORTS in it.
-    -We need to tell that this is not a normal JS file it's a module
-    -if u write type="module" it will be considered as a module not a normal js file
--->
 </body>
 </html>
