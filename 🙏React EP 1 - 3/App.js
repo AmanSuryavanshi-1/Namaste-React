@@ -1,6 +1,4 @@
-// Ctrl+shift+/ for multiline comment
-
-//$ 8) How to give heading using React into html -->
+//$ 1) How to give heading using React into html -->
 
   /*   const heading = React.createElement("h2",
      {id: "heading", xyz:"abc"}, 
@@ -8,7 +6,7 @@
     const root = ReactDOM.createRoot(document.getElementById("root"));
     root.render(heading); */
 
-//$ 9) How to create nested structure inside React (using array of children in *  [] *  )
+//$ 2) How to create nested structure inside React (using array of children in *  [] *  )
 
      {/* <div id="parent">
         <div id="child">

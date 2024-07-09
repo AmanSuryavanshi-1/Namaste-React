@@ -349,6 +349,19 @@
 // -> We don't know what is happening behind the scene and the program becomes very difficult to maintain. That process is called inversion of control. 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //$ 3) Promises(NamasteJS s2ep2)]
 // -> A promise is an object that represents eventual completion/failure of an asynchronous operation.
 
