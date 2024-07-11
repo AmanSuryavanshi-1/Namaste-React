@@ -1,4 +1,4 @@
-//! 18 - 22) in notion notes
+//$ 18 - 22) in notion notes
 
 import React from 'react'
 import ReactDOM from "react-dom/client"
