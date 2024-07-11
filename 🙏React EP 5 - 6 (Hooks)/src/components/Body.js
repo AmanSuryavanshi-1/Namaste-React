@@ -4,15 +4,14 @@ import RestaurantCard from './RestaurantCard';
 import resList from '../utils/MockData';
 import { ALL_RESTAURANTS_LIST } from '../utils/MockData';;
 
-// $ 49) Creating a filter for top rated restaurants
+// $ 26) Creating a filter for top rated restaurants
 //       -> Adding onclick(a JS event) to give functionality
 //       -> u can add multiple events too.
 //       -> passing empty list instead of resList
-// $ 49.1) Using const we will not be able to change the values which will be displayed in the cards(NORMAL JS VARIABLE)
+// $ 26.1) Using const we will not be able to change the values which will be displayed in the cards(NORMAL JS VARIABLE)
 //       -> so to change and update the values we should use let for these instances
 
 const Body = () =>{
-
 // $ 50) (STATES & HOOKS) Used When data gets changed when we use filter to filter ListOfRestaurants then data should also get changed in UI.
 //       -> This is the main problem which react is solving and other framework's are not able to do.
 //       -> We have to keep data and UI layer to change together.
@@ -89,7 +88,6 @@ return(
         <div className="body">
             <div className="search">Search</div>
             <div className='filter'>
-
                 <button className="filter-btn"
                 onClick={() => {
                     const filteredList = listOfRestaurants.filter(
