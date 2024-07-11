@@ -1,6 +1,6 @@
+// $ 1) - 4) Major part of notes in Notion
 // $ 5) - 7) in index.html
-
-//$ 8) How to give heading using React into html -->
+//$ 8) How to giv heading using React into html -->
 
   /*   const heading = React.createElement("h2",
      {id: "heading", xyz:"abc"}, 

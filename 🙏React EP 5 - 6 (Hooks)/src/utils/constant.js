@@ -1,4 +1,4 @@
-// $ 46) Don't use hardcoded data on your file instead build a constant file in utils folder
+// $ 23 ) Don't use hardcoded data on your file instead build a constant file in utils folder
 //       -> You can store all the constant data or links here
 
 export const CDN_URL = "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_264,h_288,c_fill/";
@@ -8,7 +8,7 @@ export const LOGO_URL = "https://previews.123rf.com/images/miracel123/miracel123
 
 // export default CDN_URL
 // export default LOGO_URL
-// $ 47) You can not export twice in the same file
+// $ 24 ) You can not export twice in the same file
 //       -> There are two types of exports (default exports & named exports)
 //       -> named exports are used So that we can export multiple times in the same file 
 //       -> We use named exports like this :- export const CDN_URL = "link"
