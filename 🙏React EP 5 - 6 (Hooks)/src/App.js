@@ -8,9 +8,9 @@ import Body from './components/Body'
 // ! EP5
 // $ 23)-24) in (constant.js)
 // $ 25) TypeError in ( Notion Notes RestaurantCard.js )
-// $ 26) Creating a filter option for Top Rated Restaurant in (Body.js)
-// $ 50) STATES & HOOKS in (Body.js)   ==> // $ 63) useState in detail React IMP Topics -> IMP Topics -> useState
-// $ 51) React Algorithm in (Notes.jsx)
+// $  Creating a filter option for Top Rated Restaurant in (Body.js)
+// $  STATES & HOOKS in (Body.js)   ==> // $ 63) useState in detail React IMP Topics -> IMP Topics -> useState
+// $ 26) React Algorithm in (Notes.jsx)
 
 // ! EP6
 // $ 52) MONOLITH ARCHITECTURE & Microservices in (Notes.jsx)

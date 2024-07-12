@@ -4,47 +4,11 @@ import RestaurantCard from './RestaurantCard';
 import resList from '../utils/MockData';
 import { ALL_RESTAURANTS_LIST } from '../utils/MockData';;
 
-// $ 26) Creating a filter for top rated restaurants
-//       -> Adding onclick(a JS event) to give functionality
-//       -> u can add multiple events too.
-//       -> passing empty list instead of resList
-// $ 26.1) Using const we will not be able to change the values which will be displayed in the cards(NORMAL JS VARIABLE)
-//       -> so to change and update the values we should use let for these instances
+
 
 const Body = () =>{
-// $ 50) (STATES & HOOKS) Used When data gets changed when we use filter to filter ListOfRestaurants then data should also get changed in UI.
-//       -> This is the main problem which react is solving and other framework's are not able to do.
-//       -> We have to keep data and UI layer to change together.
-//       -> To do this React provides State variable
-//       -> For this we will use a react hook known as useState.
 
-// $ 50.1) REACT HOOKS
-//   -> are normal JS utility functions
-//   -> all these function are stored in nodeModules we import it from there while creating webapp with react 
-
-//   ~ There are two important React Hooks
-//   -> There are 2 Most Important hooks which are used almost 99% of times:-
-//   ->   50.1.1) useState(); 
-//   ->   50.1.2) useEffect();  
-
-// ~  50.1.1) useState()
-//    ->  a) You have to import it inside react form node modules
-//    ->  b) It maintains the state of a component
-//    ->  c) import { useState } from 'react';
-//    ->  d) local state variable is created inside the scope of component in our case inside Body
-
-// State variable
         const [listOfRestaurants , setListOfRestaurants] = useState([]);
-// Normal JS variable
-    //    let listOfRestaurantsJS = [];
-
-//     e) inside [] data are passed it can be null or a object with a number of restaurants in it
-//  -> f) when we do setListOfRestaurants it is used to update the list of restaurants in UI also
-//  -> g) Then we can add it in onclick functionality by giving filtered list(a constant created to store the restaurants left after using filtering process) to it :-setListOfRestaurants(filteredList);
-//     h) When we click on Top rated restaurants list of restaurants get's filtered according to the logic inside onclick
-//     i) Then it is provided to setListOfRestaurants(filteredList) which will then use useState and update the list of restaurants.
-//  ~  j) Whenever we want to change the data going to the UI we will give that logic to setListOfRestaurants() and will then change the original data in listOfRestaurants.
-//  ~  k) Whenever a state variable changes react ReRender's the component
 
 // ! 51) REACT ALGORITHM(Notes.jsx)
 
