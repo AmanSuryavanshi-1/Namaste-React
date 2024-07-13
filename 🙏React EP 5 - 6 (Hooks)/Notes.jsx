@@ -3,51 +3,7 @@ console.log("EP6");
 
 // ! EP6 
 
-
-// $ 53) How react renders data from an API
-// -> 1st approach => As soon as our page loads we call the API for data then it will render the whole page. Suppose it takes 500ms.
-// =>  Loads -> API -> Render
-
-// -->  2nd approach is the better approach. It is used in React & it will give you a better UX.
-// -> 2nd approach => As soon as our page loads we will render the UI and then call the API for data then it will ReRender the whole page by providing data to it. It will take lesser time.
-// =>  Loads -> Render -> API -> ReRender
-
-// $ 54) ( useEffect HOOK ) HOW TO GET DATA FROM AN API INSIDE REACT APP  &&  useEffect implementation from IMP ReactJS Topics
-
-//  --> Purpose :-
-//      -> Allows you to perform side effects in functional components.
-//      -> Side effects include data fetching, subscriptions, timers, DOM manipulation, and anything outside the render cycle.
-
-// --> When it runs :-
-//      -> After the component renders (including the first render).
-//      -> Optionally, after every render if the dependency array changes.
-
-
-// --> useEffect will come from react library so we have to import in the file before using it.
-
-//&  Q: Why do we need a useEffect Hook?
-//&  A: useEffect Hook is javascript function provided by react. The useEffect Hook allows you to eliminate side effects in your components. 
-//      -> Some examples of side effects are: fetching API data, directly updating the DOM, and setting up subscriptions or timers, etc can be lead to unwarranted side-effects. 
-//      -> useEffect accepts two arguments, a callback function and a dependency array. The second argument is optional.
-
-//      -> There is an arrow function ()=>, 1st argument i.e. a callback function {} and 2nd argument as a dependency array []      ==>  useEffect(()=>{},[]);  <==
-
-
-// --> Dependency Array:
-//      -> An optional array of values used to determine when the effect re-runs.
-//      -> If the array is empty, the useEffect only runs after the initial render or when the UI is rendered.
-//      -> If the array includes values, the effect re-runs whenever any of those values change.
-
-            /* useEffect(()=>{
-            console.log("useEffect Called");
-            // Side Effects Handling
-
-            // Optional return function
-            },[dependency array])
-
-            console.log("Body rendered"); */
-
-//&  Q: When console.log will get printed?
+//&  Q: 
 //&  A: -> After the React component will get rendered it will then ReRender the data from an API.
 //      -> The code will run the body component will render and then the useEffect is executed and then the callback function is called and then the console.log() will get printed in console.
 //      -> When you have to do something which you want to be rendered after the react component will get loaded then you have to use useEffect.
