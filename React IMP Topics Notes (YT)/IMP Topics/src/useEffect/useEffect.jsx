@@ -12,7 +12,7 @@ const UseEffect = () => {
             console.log("I am being cleaned up");
         }
     },[count])
-    //$ useEffect notes from notion
+    
     return (
     <div className='useEffect'>
         <h2>COUNT <span>{count}</span></h2>

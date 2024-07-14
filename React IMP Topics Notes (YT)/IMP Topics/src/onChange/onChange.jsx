@@ -1,11 +1,3 @@
-// $ 8.2) onChange event
-//  -> onChange = Event handler used primarily with form elements.
-//                ex. <input>, <textarea>, <select>, <radio>
-//                Triggers a function every time the value of the input changes.
-
-//  -> Using onChange allows React to maintain control over the form elements and their values, making it easier to manage and synchronize user input with component state. 
-// --> This is particularly useful for building interactive forms and user interfaces in React applications.
-
 import React, { useState } from 'react'
 import './onChange.css'
 

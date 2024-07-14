@@ -1,6 +1,4 @@
-// $ 8.1) onCLick
-// -> onClick is another event handler in React, used to handle the click event on elements such as buttons, links, or any other clickable component.
-// -> It's similar to onChange, but it specifically listens for clicks rather than changes in input values.
+
 import React from 'react'
 import { useState } from 'react'
 import './onClick.css'
@@ -42,8 +40,7 @@ const onClick = () => {
               }}
       >{name}</button>
 
-
-      {/* Simmilary there are many JS events in Which can be used just change the name of event function for eg:-  */}
+      {/* Similarly there are many JS events in Which can be used just change the name of event function for eg:-  */}
       <button onMouseEnter={bgChange} onMouseLeave={bgBack}>{name}</button>
     </div>
   )

@@ -1,7 +1,4 @@
 import React,{useState} from 'react'
-//* YT link ( https://www.youtube.com/watch?v=V9i3cGD-mts )
-
-// $ 13) useState notes from notion
 const UseState = () => {
   // -> useState generally takes a initial value inside ()
   // -> if not defined it will be remain undefined 
