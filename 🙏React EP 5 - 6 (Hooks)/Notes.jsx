@@ -1,16 +1,4 @@
-
-console.log("EP6");
-
 // ! EP6 
-
-//&  Q: 
-//&  A: -> After the React component will get rendered it will then ReRender the data from an API.
-//      -> The code will run the body component will render and then the useEffect is executed and then the callback function is called and then the console.log() will get printed in console.
-//      -> When you have to do something which you want to be rendered after the react component will get loaded then you have to use useEffect.
-//      => The body rendered will be printed first in the console and then the useEffect called will be printed
-
-//&  Q: After loading the content of component and if there are any changes in data how are they will be shown in browser?
-//&  A: To handle these type of changes useEffect is used.
 
 // useEffect Example in React IMP Topics Notes (YT). => // $ 12) useEffect (useEffect.jsx)
 
