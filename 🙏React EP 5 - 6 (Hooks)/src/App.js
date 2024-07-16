@@ -5,21 +5,17 @@ import Header from "./components/Header"
 import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
-// ! EP5
+// ! EP5 & 6
 // $ 23)-24) in (constant.js)
-// $ 25) TypeError in ( Notion Notes RestaurantCard.js )
-// $  Creating a filter option for Top Rated Restaurant in (Body.js)
-// $  STATES & HOOKS in (Body.js)   ==> // $ 63) useState in detail React IMP Topics -> IMP Topics -> useState
-// $ 26) React Algorithm in (Notes.jsx)
+// $ 25) React Algorithm in (Notion Notes)
+// $ 26) MONOLITH ARCHITECTURE & Microservices in (Notion Notes)
 
-// ! EP6
-// $ 52) MONOLITH ARCHITECTURE & Microservices in (Notes.jsx)
+// $ 34) CORS in (Notion Notes)
 
-// $ 53) How react renders data from an API (Notes.jsx)
-// $ 54) (useEffect HOOK) HOW TO GET DATA FROM AN API INSIDE REACT APP (Notes.jsx)
+// $ 35) TypeError in ( Notion Notes RestaurantCard.js )
+// $ 36) Hooks & State -> Creating a filter option for Top Rated Restaurant in (Body.js)
+
 // $ 55) FETCH THE DATA AFTER GETTING IT FROM AN API USING UseEffect (Body.js)
-
-// $ 56) CORS in (Notes.jsx)
 // $ 57) Getting the data from live API Link (Change link? EP6 44:55)
  
 

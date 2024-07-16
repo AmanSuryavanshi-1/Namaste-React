@@ -4,8 +4,6 @@ import RestaurantCard from './RestaurantCard';
 import resList from '../utils/MockData';
 import { ALL_RESTAURANTS_LIST } from '../utils/MockData';;
 
-
-
 const Body = () =>{
 
         const [listOfRestaurants , setListOfRestaurants] = useState([]);
@@ -42,7 +40,6 @@ useEffect(()=>{
 // => 1st-> by .then and catch
 // => 2nd-> using async await (mostly preferred)
 
-// $ 56) CORS in notes.md
 // $ 57) Getting the data from live API Link(Change link? EP6 44:55)
 // -> Rendering data inside body with the live api link instead of using hardcoded Data.
 // -> using setListOfRestaurants inside fetchData
