@@ -6,9 +6,9 @@ import RestaurantCard from './components/RestaurantCard'
 import Body from './components/Body'
 
 // ! Continuing EP6 
-// $ 58)  ShimmerUI loading effect (Body.js)
-// $ 59)  Conditional Rendering (Body.js)
-// $ 60)  State Management by taking the example of login 
+// $ 36)  ShimmerUI loading effect (Notion notes Body.js)
+// $ 37)  Conditional Rendering (Notion notes Body.js)
+// $ 33)  State Management by taking the example of login 
 
 
 // $ 61)  Adding Search functionality
