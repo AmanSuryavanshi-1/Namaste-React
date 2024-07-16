@@ -10,14 +10,15 @@ import Body from './components/Body'
 // $ 25) React Algorithm in (Notion Notes)
 // $ 26) MONOLITH ARCHITECTURE & Microservices in (Notion Notes)
 
-// $ 34) CORS in (Notion Notes)
+// $ 30) CORS in (Notion Notes)
 
-// $ 35) TypeError in ( Notion Notes RestaurantCard.js )
-// $ 36) Hooks & State -> Creating a filter option for Top Rated Restaurant in (Body.js)
+// $ 37) Conditional rendering to avoid Type Error ( Notion Notes RestaurantCard.js )
+// $ 38) How to fetch data from updated Swiggy API ( EP 6.1 Notion Notes )
+// $ 39) using useEffect hook to get Data in our website ( Notion Notes & Body.js)
 
-// $ 55) FETCH THE DATA AFTER GETTING IT FROM AN API USING UseEffect (Body.js)
-// $ 57) Getting the data from live API Link (Change link? EP6 44:55)
- 
+
+// Creating a filter option for Top Rated Restaurant & adding a search funationality in (Body.js)
+
 
 
 /* Header

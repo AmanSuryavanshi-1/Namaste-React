@@ -101,7 +101,7 @@ return listOfRestaurants.length === 0 ? <Shimmer/> : (
                     const filteredList = listOfRestaurants.filter(
                       (res) => res.data.avgRating > 4
                     );
-                    setListOfRestaurants(filteredList);
+                    setFilteredRestaurants(filteredList);
                   }}
                 >
                     Top Rated Restaurants
