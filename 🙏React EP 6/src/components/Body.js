@@ -20,12 +20,24 @@ useEffect(()=>{
     setListOfRestaurants(ALL_RESTAURANTS_LIST);
     setFilteredRestaurants(ALL_RESTAURANTS_LIST);
 
+    /* const fetchData = async () =>{
+  // setFilteredRestaurants(resList);
+  const apiKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImN1c19QVUlsbzBaQVE5QTBDeSIsIm1vZXNpZlByaWNpbmdJZCI6InByaWNlXzFNUXF5dkJESWxQbVVQcE1SWUVWdnlLZSIsImlhdCI6MTcwNjg3MDQxMH0.0SGkS_b-nPjyzSqqmV0JVHxSZoZJsh9kqhNEQkjNVaM";
+  const data = await fetch(
+    `https://api.techspecs.io?api_key=${apiKey}`
+  );
+  const json = await data.json();
+  console.log(json);
+  // setListOfRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+} */
+
     // --> 61.13) Whenever we have to filter restaurants we are using setListOfRestaurants (containing copy of all the restaurant) as reference 
     // -->        and updating it on setFilteredRestaurants (containing copy of all the filtered restaurant)
     // -->        & Then for displaying filtered restaurant to the UI we are using setFilteredRestaurants.
     // ->         Whenever we are searching for a specific term only the filteredRestaurant will get updated
     // ->         & next time when we will search it will get filtered from the ListOfRestaurants
 },[]);
+
 return listOfRestaurants.length === 0 ? <Shimmer/> : (
         <div className="body">
 
