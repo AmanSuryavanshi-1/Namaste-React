@@ -16,10 +16,10 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 // ! EP7
 // $ 43) Types of Routing   (Notion Notes)
 // $ 44) React Router DOM  (App.js)
-// $ 45) Dynamic routing 
-// $ 46) useParams hook
+// $ 45) Dynamic routing in Notion Notes
+// $ 46) useParams hook in Notion Notes
 // $ 47) useRouteError (Notion Notes & Error.js)
-
+// $ 48-52) in Notion Notes
    const AppLayout = () => {
     return (
     <div className="app">
