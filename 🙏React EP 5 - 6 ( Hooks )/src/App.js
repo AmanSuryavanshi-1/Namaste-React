@@ -12,15 +12,13 @@ import Body from './components/Body'
 
 // $ 30) CORS in (Notion Notes)
 
+// $ 33) State Management by taking the example of login 
+// $ 36) ShimmerUI loading effect (Notion notes Body.js)
 // $ 37) Conditional rendering to avoid Type Error ( Notion Notes RestaurantCard.js )
 // $ 38) How to fetch data from updated Swiggy API ( EP 6.1 Notion Notes )
 // $ 39) using useEffect hook to get Data in our website ( Notion Notes & Body.js)
 
 // ! Continuing EP6 
-// $ 36)  ShimmerUI loading effect (Notion notes Body.js)
-// $ 37)  Conditional Rendering (Notion notes Body.js)
-// $ 33)  State Management by taking the example of login 
-
 
 // $ 41) Creating a filter option for Top Rated Restaurant
 // $ 42) Adding a search funationality in (Body.js)
