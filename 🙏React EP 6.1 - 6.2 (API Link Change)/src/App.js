@@ -13,11 +13,10 @@ import Cart from './components/NavComponents/Cart'
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // ! EP 6.1 Changing the Swiggy API 
-// $ 66) Updating the Swiggy API
+// $ 38) Updating the Swiggy API (Notion Notes Body.js)
 
 // ! EP 6.2 Avoiding CORS problem without extension
-// $ 67) Using corsProxy.io for avoiding CORS issues
-
+// $ 40) Using corsProxy.io for avoiding CORS issues (Notion Notes)
    const AppLayout = () => {
     return (
     <div className="app">

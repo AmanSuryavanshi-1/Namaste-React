@@ -12,15 +12,13 @@ const Body = () =>{
   useEffect(()=>{
     fetchData();
   },[]);
-// $ 66) Updating the api key
+  
+// $ 38) Updating the api key
+// -> 38.1) Changing the API key & destructing the data which we are getting from api link
+// -> 38.2) Check Notion for details about destructuring  
+// -> 38.3) Making Changes in RestaurantCard.js according to the new API   
+// -> 38.4) Changing the CDN_URL from old to new url
 
-// -> 66.1) Changing the API key & destructing the data which we are getting from api link
-// -> 66.2) Check Notion for details about destructuring  
-// -> 66.3) Making Changes in RestaurantCard.js according to the new API   
-// -> 66.3) Changing the CDN_URL from old to new url
-
-// $ 67) Using corsProxy.io for avoiding CORS issues
-// -> 66.4) Check Notion for fixing CORS issue
 
   const fetchData = async () => {
     try {
