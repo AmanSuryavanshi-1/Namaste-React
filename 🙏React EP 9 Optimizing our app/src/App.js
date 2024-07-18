@@ -13,9 +13,9 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // ! EP 8 class based components (X)
 // ! EP 9 Optimizing our app
-// $ 69) Creating a custom hook useRestaurantMenu() in ( RestaurantMenu.js & useRestaurantMenu.js)
-// $ 70) Creating online offline feature in ( useOnlineStatus.js & Body.js & Navbar.js)
-// $ 71) Lazy Loading & fallback (App.js & Recommendations.js)
+// $ 53) Creating a custom hook useRestaurantMenu() in ( RestaurantMenu.js & useRestaurantMenu.js)
+// $ 70) 54) Creating online offline feature in ( useOnlineStatus.js & Body.js & Navbar.js)
+// $ 71) 55) Lazy Loading & fallback (Notion notesApp.js & Recommendations.js)
 
 const Recommendations = lazy(()=> import("./components/Recommendations"));
 
