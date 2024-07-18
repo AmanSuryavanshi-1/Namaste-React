@@ -1,4 +1,4 @@
-// $ 68) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
+// $ 49) Creating restaurantMenu for every Restaurant in body (RestaurantMenu.js 
 // -> we will reuse this component for rendering the data for every Restaurant.
 import React, { useEffect, useState } from "react";
 
@@ -16,10 +16,10 @@ const {resId} = useParams();
     useEffect(() => {
         fetchMenu();
     }, []);
-// => 68.1) fetching data using useEffect Hook
+// => 49.1) fetching data using useEffect Hook
 //          -> Empty Dependency array which means it will recalled once after initial render 
-// => 68.2) For loading the fetched data in json format in restaurantMenu we will need a state variable.
-// => 68.3) API call will be made & then that data will be stored in state variable and Whenever my state variable updates it will automatically update the UI.
+// => 49.2) For loading the fetched data in json format in restaurantMenu we will need a state variable.
+// => 49.3) API call will be made & then that data will be stored in state variable and Whenever my state variable updates it will automatically update the UI.
    
     const fetchMenu = async () => {
        // Now we have to pass this resId to my URL
@@ -29,17 +29,17 @@ const {resId} = useParams();
         console.log(json);
         // console.log(json?.data?.cards[2]?.card?.card?.info?.name);
         const restaurantData = json?.data?.cards[2]?.card?.card?.info;  
-// => 68.4) As soon as i made the data call i will fill the res with this json
+// => 49.4) As soon as i made the data call i will fill the res with this json
         setRes(restaurantData);
 
-// => 68.5) Now for loading menuItems we need the data to be stored in new useState variable & a constant variable for destructuring the location
+// => 49.5) Now for loading menuItems we need the data to be stored in new useState variable & a constant variable for destructuring the location
         const RecommendedData = json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
         console.log(RecommendedData);
         setRecommended(RecommendedData);
-// => 68.6) Putting All my API's in constant.js
+// => 49.6) Putting All my API's in constant.js
 //          -> Always you should keep the api keys separately defined in different file where it is not accessible publicly
 
-// => 68.7) Every Restaurant has different hosted API link (in Notion EP7 (Second Half))
+// => 49.7) Every Restaurant has different hosted API link (in Notion EP7 (Second Half))
 
     };
 

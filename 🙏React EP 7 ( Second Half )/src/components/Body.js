@@ -16,14 +16,14 @@ const Body = () =>{
     fetchData();
   },[]);
   
-// => 67.1) Fixing API issues
-// $ EP 6.1) Updating the api key
-// -> 6.1.2) Changing the API key & destructing the data which we are getting from api link
-// -> 6.1.3) Check Notion for details about destructuring  
-// -> 6.1.4) Changing the CDN_URL from old to new url
-// -> 6.1.5) Check Notion for fixing CORS issue
-// -> 6.1.6) Check Notion for details about get and post request
-// ! 6.2) Changed the api url bcz cors not working properly when console is closed
+// => 48) Fixing API issues
+// ! EP 6.1
+// $ 48) Updating the api key
+// -> 48.1) Changing the API key & destructing the data which we are getting from api link
+// -> 48.2) Check Notion for details about destructuring  
+// -> 48.3) Changing the CDN_URL from old to new url
+// -> 48.4) Check Notion for fixing CORS issue
+// => 48.5) Changed the api url bcz cors not working properly when console is closed
 // !      using foodfire api link
   const fetchData = async () => {
     try {
@@ -32,13 +32,13 @@ const Body = () =>{
     // console.log(json.data.success.cards[1].gridWidget.gridElements.infoWithStyle.restaurants);  
     // const responseRes = json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
-// ! 6.3) fetching only valid restaurants & increasing the number of restaurants listed on our site
+// $ 51) fetching only valid restaurants & increasing the number of restaurants listed on our site
     const checkJsonData = (json) => {
       for (let i = 0; i < json?.data?.cards.length; i++) {
         // ^ initialize checkData for Swiggy Restaurant data
         let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
         // -> checkData will contain all the cards all the restaurants available in different json?.data?.cards[i]
-        // -> it will take ll the restaurants avaiable in the different cards and will provide them in checkData
+        // -> it will take all the restaurants available in the different cards and will provide them in checkData
         // -> By this we can increase the number of restaurants listed 
         // ^ if checkData is not undefined then return it
         if (checkData !== undefined) {
