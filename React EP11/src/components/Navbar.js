@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 // import mainLogo from '../../Assets/MainLogo.png';
 import mainLogo from '../../Assets/Logo.png';
 import { MdOutlineAddShoppingCart, MdOutlineFavoriteBorder, MdOutlineShoppingCartCheckout } from "react-icons/md";
@@ -10,10 +10,17 @@ import { Link } from 'react-router-dom';
 import { IoCallOutline } from "react-icons/io5";
 import { RiSignalWifiOffLine } from "react-icons/ri";
 import { MdOutlineNetworkWifi } from "react-icons/md";
+import UserContext from '../utils/UserContext';
 
 const Navbar = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
+
+  const {loggedInUser}  = useContext(UserContext);
+  console.log(loggedInUser);
+
+  const { setUserName } = useContext(UserContext);
+  
   return (
     <div className="flex items-center justify-between px-4 py-1 font-serif bg-primary-bgColor h-1/5">
       <div className="flex items-center">
@@ -66,6 +73,20 @@ const Navbar = () => {
           >
             {onlineStatus ? <MdOutlineNetworkWifi className="w-6 h-6"/> : <RiSignalWifiOffLine className="w-6 h-6"/>}
           </li>
+
+    {/* user context */}
+          <li className="flex items-center px-2 cursor-pointer text-primary-light hover:text-primary-white"  
+          >
+            {loggedInUser}
+          </li>
+          <li className="flex items-center text-primary-light rounded-xl hover:text-primary-white"  
+          >
+            UserName:<input className='px-2 mx-2 border-2 w-36 rounded-xl bg-primary-bgColor border-primary-yellow ' 
+            value={loggedInUser} //giving default value as loggedInUser or Aman Suryavanshi
+            onChange={(e)=>setUserName(e.target.value)}/>
+          </li>
+    {/* user context */}
+     
         </ul>
       </div>
     </div>
