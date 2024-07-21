@@ -6,10 +6,11 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import useFallbackImage from "../utils/useFallbackImage";
 import vegIcon from "../../Assets/veg.png"; 
 import nonVegIcon from "../../Assets/nonVeg.png";
+import RestaurantCategory from "../components/RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [res, menuItems] = useRestaurantMenu(resId);
+  const [res, menuItems, categories] = useRestaurantMenu(resId);
   const handleImageError = useFallbackImage();
 
   return res === null ? (
@@ -58,7 +59,11 @@ const RestaurantMenu = () => {
         </div>
 
         <div className="grid grid-cols-1 gap-4 mt-12">
-          <h1 className="font-serif text-xl font-bold text-primary-light">{menuItems?.title}</h1>
+          {/*84.2) 3. iii. => Taking the recommended data and styling structure & giving it to ItemList so that it can have all the categories not only the recommended*/}
+          {/* Creating category section other then recommended */}
+          {categories.map((i)=> ( <RestaurantCategory key={i?.card?.card?.title} catData={i?.card?.card} /> ))}
+          
+          {/* <h1 className="font-serif text-xl font-bold text-primary-light">{menuItems?.title}</h1>
           {menuItems?.itemCards.map((item, index) => (
             <div key={index} className="flex items-center p-4 pt-0 mt-0 overflow-hidden rounded-lg shadow-xl">
               <img className="object-cover w-32 h-32 mr-4 rounded" src={CDN_URL + item?.card?.info?.imageId} alt={item?.card?.info?.name} onError={handleImageError} />
@@ -90,8 +95,10 @@ const RestaurantMenu = () => {
                 </div>
               </div>
             </div>
-          ))}
+          ))} */}
         </div>
+        
+        
       </div>
     </div>
   );
