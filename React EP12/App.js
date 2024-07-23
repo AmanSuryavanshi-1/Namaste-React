@@ -34,10 +34,6 @@ const About = lazy(()=> import("./src/pages/About"));
       },[]);
 
     return (
-      // providing userName to all the components
-      // Anywhere inside our app every loggedInUser will be equal to userName
-      //  OR
-      //  Everywhere the default value ( loggedInUser ) is changed to userName
       <UserContext.Provider value={{ loggedInUser : userName, setUserName }}>
     <div className='min-h-screen bg-primary-bgColor'> 
       <ScrollToTop/>
