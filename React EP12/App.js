@@ -13,6 +13,8 @@ import Error from './src/pages/Error'
 import Footer from './src/components/Footer'
 import ScrollToTop from './src/components/ScrollToTop'
 import UserContext from './src/utils/UserContext'
+import { Provider } from 'react-redux'
+import appStore from './src/utils/appStore'
 
 // import Wishlist from './src/components/NavComponents/Wishlist'
 
@@ -23,25 +25,24 @@ const About = lazy(()=> import("./src/pages/About"));
 
       //$ React Context 
       const[userName, setUserName] = useState();
-
       useEffect(()=>{
-         // Making an API call which will send username & Password
          const data ={
-            // After the verification name is provided
             name:"Aman Suryavanshi"
          };
          setUserName(data.name);
       },[]);
 
     return (
+      <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser : userName, setUserName }}>
-    <div className='min-h-screen bg-primary-bgColor'> 
-      <ScrollToTop/>
-        <Navbar/>
-        <Outlet />
-        <Footer/>
-    </div>
+         <div className='min-h-screen bg-primary-bgColor'> 
+            <ScrollToTop/>
+            <Navbar/>
+            <Outlet />
+            <Footer/>
+         </div>
       </UserContext.Provider>
+      </Provider>
         )
    };
 

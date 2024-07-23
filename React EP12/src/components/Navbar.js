@@ -11,16 +11,20 @@ import { IoCallOutline } from "react-icons/io5";
 import { RiSignalWifiOffLine } from "react-icons/ri";
 import { MdOutlineNetworkWifi } from "react-icons/md";
 import UserContext from '../utils/UserContext';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
 
+  // React Context
   const {loggedInUser}  = useContext(UserContext);
-  console.log(loggedInUser);
-
   const { setUserName } = useContext(UserContext);
   
+  // $ Redux selector
+  const cartItems = useSelector((store)=> store.cart.items);
+  console.log(cartItems);
+
   return (
     <div className="flex items-center justify-between px-4 py-1 font-serif bg-primary-bgColor h-1/5">
       <div className="flex items-center">
@@ -51,12 +55,15 @@ const Navbar = () => {
               Wishlist 
             </Link>
           </li>
+
+          {/* Redux updates to show length of cartItems */}
           <li className="flex items-center px-2 cursor-pointer text-primary-light hover:text-primary-white">
             <Link to="/cart" className="flex items-center"> 
               <MdOutlineAddShoppingCart className="w-6 h-6 mr-1" /> 
-              Cart 
+              Cart-({cartItems.length} items)
             </Link>
           </li>
+          
           <li 
             className="flex items-center px-2 cursor-pointer text-primary-light hover:text-primary-white" 
             onClick={() => setBtnName(btnName === "Login" ? "Logout" : "Login")}
