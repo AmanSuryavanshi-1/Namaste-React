@@ -3,11 +3,20 @@ import { CDN_URL } from "../utils/constant";
 import vegIcon from "../../Assets/veg.png"; 
 import nonVegIcon from "../../Assets/nonVeg.png";
 import useFallbackImage from "../utils/useFallbackImage";
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 const ItemList = ({ itemCardsData }) => {
     const handleImageError = useFallbackImage();
     // console.log(itemCardsData);
-    return(
 
+    const dispatch = useDispatch();
+    const handleAddItemToCart = (i) => {
+      // dispatch an action which we are exporting in our cartSlice.js component 
+      dispatch(addItem(i));
+    }
+
+    return(
+ 
         <div>
             {itemCardsData.map((i)=> (
                 // <div key={i.card.info.id}>
@@ -36,7 +45,7 @@ const ItemList = ({ itemCardsData }) => {
                      ₹
                         {
                         (i?.card?.info?.defaultPrice || i?.card?.info?.price > 0)
-                        ? (i?.card?.info?.defaultPrice || i?.card?.info?.price / 100)
+                        ? (i?.card?.info?.defaultPrice/100 || i?.card?.info?.price / 100)
                         : " "}
                     </span>
                     <p className="text-sm text-green-600">★ {i?.card?.info?.ratings?.aggregatedRating?.rating}
@@ -47,8 +56,14 @@ const ItemList = ({ itemCardsData }) => {
   
                   <div className="flex items-center justify-between">
                   <p className="mb-2 mr-12 text-sm text-primary-light">{i?.card?.info?.description}</p>
-  
-                    <button className="px-3 py-1 transition duration-300 rounded shadow-md bg-primary-yellow text-primary-bgColor hover:bg-primary-light">ADD</button>
+{/* Redux -> adding item to cart */}
+                    <button className="px-3 py-1 transition duration-300 rounded shadow-md bg-primary-yellow text-primary-bgColor hover:bg-primary-light" 
+                    
+                    onClick={() => handleAddItemToCart(i)} // passing a callback function // passing item card data in i and giving it to handleADdItemToCart
+                    // onClick={handleAddItemToCart(item)} // calling a function just after
+                    // onClick={handleAddItemToCart}
+                    >
+                      ADD+</button>
                   </div>
                 </div>
               </div>

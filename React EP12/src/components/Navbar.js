@@ -56,7 +56,7 @@ const Navbar = () => {
             </Link>
           </li>
 
-          {/* Redux updates to show length of cartItems */}
+{/* Redux updates to show length of cartItems */}
           <li className="flex items-center px-2 cursor-pointer text-primary-light hover:text-primary-white">
             <Link to="/cart" className="flex items-center"> 
               <MdOutlineAddShoppingCart className="w-6 h-6 mr-1" /> 
