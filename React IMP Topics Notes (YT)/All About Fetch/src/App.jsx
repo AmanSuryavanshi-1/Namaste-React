@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
+
+//! 1) Using Fetch
+//! 2) Using AXIOS
 const App = () => {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(false);
