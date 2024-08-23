@@ -29,6 +29,7 @@ const App = () => {
   if(loading) {
   return <h1>LOADING.......</h1>
   }
+  
   if(error){
     return <h1>ERROR:SOMETHING WENT WRONG! PLEASE TRY AGAIN</h1>
   } 
